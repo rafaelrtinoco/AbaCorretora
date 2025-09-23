@@ -24,6 +24,8 @@ export const Nav = styled.nav`
   
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding: 1rem;
+    display: flex;
+    justify-content: space-between;
   }
 `;
 
@@ -93,6 +95,6 @@ export const MobileMenuButton = styled.button`
   cursor: pointer;
   
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
-    display: block;
+    display: flex;
   }
 `;

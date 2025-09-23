@@ -1,28 +1,43 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { theme } from '../../theme';
 
 export const PartnersContainer = styled.section`
   padding: 5rem 0;
-  background-color: ${theme.colors.white};
+  background-color: ${theme.colors.lightGray};
   
   @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 3rem 0;
   }
 `;
 
-export const PartnersGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 3rem;
-  align-items: center;
-  justify-items: center;
-  max-width: 1000px;
-  margin: 3rem auto 0;
+// Marquee animation to scroll logos to the left
+const scrollLeft = keyframes`
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+`;
+
+// Visible window for the marquee
+export const Marquee = styled.div`
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
   padding: 0 2rem;
-  
-  @media (max-width: ${theme.breakpoints.mobile}) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+`;
+
+// Track that actually moves
+export const MarqueeTrack = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: nowrap;
+  width: max-content;
+  animation: ${scrollLeft} 20s linear infinite;
+
+  // Pause on hover (desktop)
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      animation-play-state: paused;
+    }
   }
 `;
 
@@ -30,11 +45,13 @@ export const PartnerLogo = styled.div`
   filter: grayscale(100%);
   opacity: 0.7;
   transition: all ${theme.transitions.default};
+  flex: 0 0 auto;
+  min-width: 160px;
   
   img {
     max-width: 100%;
     height: auto;
-    max-height: 60px;
+    max-height: 100px;
     object-fit: contain;
   }
   

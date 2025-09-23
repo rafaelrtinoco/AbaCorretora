@@ -9,10 +9,14 @@ import {
   MobileMenuButton,
 } from "./Header.styles";
 import Logo from "../../assets/icons/logo.png";
+import { Link } from 'react-router-dom'
+import './header.css'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const handleCloseMenu = () => setIsMobileMenuOpen(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,19 +48,19 @@ const Header = () => {
 
         <NavMenu $isOpen={isMobileMenuOpen}>
           <NavItem>
-            <NavLink href="#products">Produtos</NavLink>
+            <Link className="navLink" to="/" onClick={handleCloseMenu}>Home</Link>
           </NavItem>
           <NavItem>
-            <NavLink href="#benefits">Benefícios</NavLink>
+            <Link className="navLink" to="/seguros" onClick={handleCloseMenu}>Seguros</Link>
           </NavItem>
           <NavItem>
-            <NavLink href="#testimonials">Depoimentos</NavLink>
+            <Link className="navLink" to="/consorcios" onClick={handleCloseMenu}>Consórcios</Link>
           </NavItem>
           <NavItem>
-            <NavLink href="#faq">FAQ</NavLink>
+            <Link className="navLink" to="/blog" onClick={handleCloseMenu}>Blog</Link>
           </NavItem>
           <NavItem>
-            <NavLink href="#contact">Contato</NavLink>
+            <Link className="navLink" to="/contato" onClick={handleCloseMenu}>Contato</Link>
           </NavItem>
         </NavMenu>
       </Nav>

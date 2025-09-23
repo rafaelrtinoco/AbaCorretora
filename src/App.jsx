@@ -1,40 +1,37 @@
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import { theme } from './theme'; // Importe seu arquivo de tema
-import GlobalStyles from './globalStyles'; // Importe seus estilos globais
-import { GlobalContainer } from './App.styles';
-import Header from './components/Header/Header';
-import HeroSection from './components/HeroSection/HeroSection';
-import BenefitsSection from './components/Benefits/Benefits';
-import PartnersSection from './components/Partners/Partiners';
-import TestimonialsSection from './components/Testimonials/Testimonials';
-import ProductsSection from './components/Products/Products';
-import BlogSection from './components/Blog/Blog';
-import FAQSection from './components/FAQ/FAQ';
-import ContactSection from './components/Contacts/Contacts';
-import Footer from './components/Footer/Footer';
+import React from "react";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./theme";
+import GlobalStyles from "./globalStyles";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import WhatsAppFloat from "./components/WhatsAppFloat/WhatsAppFloat";
+
+import { Routes, Route, Navigate } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import Seguros from "./pages/Seguros/Seguros";
+import Consorcios from "./pages/Consorcios/Consorcios";
+import Blog from "./pages/Blog/Blog";
+import Contato from "./pages/Contato/Contato";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Header />
-      
+
       <main>
-        <HeroSection />
-        
-        <GlobalContainer>
-          <BenefitsSection />
-          <PartnersSection />
-          <TestimonialsSection />
-          <ProductsSection />
-          <BlogSection />
-          <FAQSection />
-          <ContactSection />
-        </GlobalContainer>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Navigate to="/" replace />} />
+          <Route path="/seguros" element={<Seguros />} />
+          <Route path="/consorcios" element={<Consorcios />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contato" element={<Contato />} />
+        </Routes>
       </main>
-      
+
       <Footer />
+      <WhatsAppFloat />
     </ThemeProvider>
   );
 }
