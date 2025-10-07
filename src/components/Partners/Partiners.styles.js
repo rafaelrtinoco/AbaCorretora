@@ -50,8 +50,8 @@ export const PartnerLogo = styled.div`
   
   img {
     max-width: 100%;
-    height: auto;
-    max-height: 100px;
+    /* height: auto; */
+    max-height: 50px;
     object-fit: contain;
   }
   

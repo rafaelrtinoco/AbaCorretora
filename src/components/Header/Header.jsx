@@ -48,19 +48,19 @@ const Header = () => {
 
         <NavMenu $isOpen={isMobileMenuOpen}>
           <NavItem>
-            <Link className="navLink" to="/" onClick={handleCloseMenu}>Home</Link>
+            <Link className="navLink" to="/" onClick={handleCloseMenu}>HOME</Link>
           </NavItem>
           <NavItem>
-            <Link className="navLink" to="/seguros" onClick={handleCloseMenu}>Seguros</Link>
+            <Link className="navLink" to="/seguros" onClick={handleCloseMenu}>SEGUROS</Link>
           </NavItem>
           <NavItem>
-            <Link className="navLink" to="/consorcios" onClick={handleCloseMenu}>Consórcios</Link>
+            <Link className="navLink" to="/consorcios" onClick={handleCloseMenu}>CONSÓRCIOS</Link>
           </NavItem>
           <NavItem>
-            <Link className="navLink" to="/blog" onClick={handleCloseMenu}>Blog</Link>
+            <Link className="navLink" to="/blog" onClick={handleCloseMenu}>BLOG</Link>
           </NavItem>
           <NavItem>
-            <Link className="navLink" to="/contato" onClick={handleCloseMenu}>Contato</Link>
+            <Link className="navLink" to="/contato" onClick={handleCloseMenu}>CONTATO</Link>
           </NavItem>
         </NavMenu>
       </Nav>

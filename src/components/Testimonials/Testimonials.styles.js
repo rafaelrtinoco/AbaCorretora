@@ -46,7 +46,7 @@ export const TestimonialCard = styled.div`
     left: 20px;
     font-size: 4rem;
     font-weight: bold;
-    color: rgba(0, 200, 83, 0.1);
+    color: #26a9e0;
   }
   
   .testimonial {
@@ -82,5 +82,15 @@ export const TestimonialCard = styled.div`
   
   @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 2rem 1.5rem;
+  }
+`;
+
+export const SectionTitle = styled.h2`
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    font-size: 2rem;
   }
 `;

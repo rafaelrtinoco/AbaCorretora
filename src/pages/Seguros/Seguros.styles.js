@@ -2,9 +2,9 @@ import styled from "styled-components";
 import { theme } from "../../theme";
 
 export const PageSection = styled.section`
-  padding: 5rem 0;
+  padding: 3rem 0;
   background: ${theme.colors.white};
-  margin-top: 90px;
+  /* margin-top: 60px; */
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 3rem 0;
@@ -125,5 +125,115 @@ export const BenefitCard = styled.div`
   &:hover {
     transform: translateY(-2px);
     box-shadow: ${theme.shadows.small};
+  }
+`;
+
+export const HeroContainer = styled.section`
+  background: ${theme.colors.white};
+  padding: 7rem 0 0;
+  position: relative;
+  overflow: hidden;
+  
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    padding: 6rem 0 0;
+  }
+`;
+
+export const HeroContent = styled.div`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    padding: 0 1rem;
+  }
+`;
+
+export const HeroRow = styled.div`
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+`;
+
+export const HeroText = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    align-items: center;
+  }
+`;
+
+export const HeroTitle = styled.h1`
+  color: ${({ theme }) => theme.colors.secundary};
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1.2;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    font-size: 1.8rem;
+  }
+`;
+
+export const HeroSubtitle = styled.p`
+  color: ${theme.colors.mediumGray};
+  margin: 0;
+  font-size: 1.125rem;
+  max-width: 52ch;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    max-width: 100%;
+  }
+`;
+
+export const HeroImage = styled.img`
+  max-width: 600px; 
+  width: 100%; 
+  height: auto; 
+  display: block; 
+  margin: 0 auto; 
+  
+  
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    margin: 1rem auto 0; 
+    max-width: 440px;
+  }
+`;
+
+
+export const ButtonMain = styled.button`
+color:#e4e8eb;
+background-color: ${theme.colors.secundary};
+font-size: 1rem;
+border: none;
+padding: 12px 16px;
+border-radius: 5px;
+margin: 20px 0;
+
+ @media (max-width: ${theme.breakpoints.mobile}) {
+   font-size: 1rem;
+   padding: 14px 18px;
+ }
+`
+
+export const HeroDivider = styled.div`
+  position: relative;
+  height: 60px;
+  background: linear-gradient(to bottom, ${theme.colors.white} 0%, ${theme.colors.white} 40%, ${theme.colors.lightGray} 41%, ${theme.colors.lightGray} 100%);
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    height: 40px;
+    clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 100%);
   }
 `;

@@ -1,11 +1,12 @@
 import React from 'react'
 import { SectionTitle, SectionSubtitle } from "../../App.styles";
-import { PageSection, ContentWrap, ProductsGrid, ProductCard, Tip } from './Seguros.styles'
+import { PageSection, ContentWrap, ProductsGrid, ProductCard, Tip, HeroContainer, HeroContent, HeroRow, HeroText, HeroTitle, HeroSubtitle, HeroImage, ButtonMain, HeroDivider} from './Seguros.styles'
 import { BenefitsContainer, BenefitsGrid, BenefitCard } from './Seguros.styles';
 import { FaShieldAlt } from "react-icons/fa";
 import { FaRegMoneyBillAlt } from "react-icons/fa";
 import { FaClockRotateLeft } from "react-icons/fa6";
 import { MdOutlineSupportAgent } from "react-icons/md";
+import ImgHome from "../../assets/Img/hero-seguros.png";
 
 const Seguros = () => {
 
@@ -34,6 +35,25 @@ const Seguros = () => {
 
   return (
     <>
+      <HeroContainer>
+              <HeroContent>
+                <HeroRow>
+                  <HeroText>
+                    <HeroTitle>
+                      Proteção completa para manter você e sua família seguros.
+                    </HeroTitle>
+                    <HeroSubtitle>
+                      Soluções em seguros, convênios e consórcios para pessoas e
+                      empresas, com atendimento consultivo e as melhores condições do
+                      mercado.
+                    </HeroSubtitle>
+                    <ButtonMain>COTE AGORA</ButtonMain>
+                  </HeroText>
+                  <HeroImage src={ImgHome} alt="imagem hero" />
+                </HeroRow>
+              </HeroContent>
+              <HeroDivider />
+            </HeroContainer>
     
       <PageSection>
         <ContentWrap>

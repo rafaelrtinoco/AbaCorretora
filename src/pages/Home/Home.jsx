@@ -22,6 +22,7 @@ import {
 import { SectionTitle, SectionSubtitle } from "../../App.styles";
 import FAQSection from "../../components/FAQ/FAQ";
 import PartnersSection from "../../components/Partners/Partiners";
+import TestimonialsSection from "../../components/Testimonials/Testimonials";
 
 import ImgHome from "../../assets/Img/img-home.png";
 import AutomovelIcon from "../../assets/Img/automovel.png";
@@ -63,7 +64,7 @@ const ProductsSection = () => {
       icon: ResidencialIcon,
       title: "Seguro Residencial",
       description:
-        "Cobertura para sua casa contra incêndios, roubos e desastres naturais.",
+        "Cobertura contra incêndios, roubos e desastres naturais.",
     },
     {
       icon: saudeIcon,
@@ -81,7 +82,7 @@ const ProductsSection = () => {
       icon: viagemIcon,
       title: "Seguro Viagem",
       description:
-        "Cobertura internacional para emergências médicas e extravio de bagagem.",
+        "Cobertura para emergências médicas e extravio de bagagem.",
     },
     {
       icon: empresaIcon,
@@ -307,6 +308,7 @@ const ProductsSection = () => {
         </CTAInner>
       </CTABanner>
       <PartnersSection />
+      <TestimonialsSection/>
 
       <FAQSection />
      

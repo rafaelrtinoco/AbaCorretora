@@ -1,14 +1,14 @@
 import React from 'react';
-import { TestimonialsContainer, TestimonialContent, TestimonialText, TestimonialCard } from './Testimonials.styles';
-import { SectionTitle } from '../../App.styles';
+import { TestimonialsContainer, TestimonialContent, TestimonialText, TestimonialCard, SectionTitle } from './Testimonials.styles';
+
 
 const TestimonialsSection = () => {
   return (
     <TestimonialsContainer id="testimonials">
       <TestimonialContent>
         <div>
-          <SectionTitle $inverted>
-            O que nossos <span>clientes</span> dizem
+          <SectionTitle>
+            O que nossos clientes dizem
           </SectionTitle>
           <TestimonialText>
             Mais de 10.000 clientes confiam em nossos serviços de proteção. Sua satisfação é nossa maior recompensa.

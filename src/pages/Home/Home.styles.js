@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { theme } from "../../theme";
 
 export const ProductsContainer = styled.section`
-  padding: 5rem 0;
+  padding: 3rem 0;
   background-color: ${theme.colors.lightGray};
 
   @media (max-width: ${theme.breakpoints.mobile}) {
@@ -13,7 +13,7 @@ export const ProductsContainer = styled.section`
 export const ProductsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 2fr);
-  gap: 2rem;
+  gap: 1rem;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -32,8 +32,9 @@ export const ProductCard = styled.div`
   background: ${theme.colors.white};
   border-radius: 12px;
   border: 2px solid #26a9e0 ;
-  padding: 1.5rem;
+  padding: 1rem;
   transition: all ${theme.transitions.default};
+  
 
   h3 {
     font-size: 1.25rem;
@@ -64,7 +65,7 @@ export const ProductCard = styled.div`
   }
 
   &:hover {
-    transform: translateY(-5px);
+    /* transform: translateY(-5px); */
     box-shadow: ${theme.shadows.medium};
   }
 `
@@ -98,7 +99,7 @@ export const ProductsCarouselTrack = styled.div`
 `;
 
 export const ProductSlide = styled.div`
-  flex: 0 0 33%;
+  flex: 0 0 32%;
   scroll-snap-align: start;
 
   @media (max-width: ${theme.breakpoints.tablet}) {
