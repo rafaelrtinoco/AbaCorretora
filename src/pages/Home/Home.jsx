@@ -21,7 +21,7 @@ import {
 } from "./Home.styles";
 import { SectionTitle, SectionSubtitle } from "../../App.styles";
 import FAQSection from "../../components/FAQ/FAQ";
-import PartnersSection from "../../components/Partners/Partiners";
+import { PartnersHomeSection } from "../../components/Partners/Partiners";
 import TestimonialsSection from "../../components/Testimonials/Testimonials";
 
 import ImgHome from "../../assets/Img/img-home.png";
@@ -124,7 +124,7 @@ const ProductsSection = () => {
         <HeroDivider />
       </HeroContainer>
       <ProductsContainer id="products">
-        <SectionTitle>Nossos Planos</SectionTitle>
+        <SectionTitle >Nossos Planos</SectionTitle>
         <SectionSubtitle>Opções que cabem no seu orçamento</SectionSubtitle>
 
         {(() => {
@@ -307,7 +307,7 @@ const ProductsSection = () => {
           </CTAButtons>
         </CTAInner>
       </CTABanner>
-      <PartnersSection />
+      <PartnersHomeSection />
       <TestimonialsSection/>
 
       <FAQSection />

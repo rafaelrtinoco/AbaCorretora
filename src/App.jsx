@@ -10,7 +10,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Seguros from "./pages/Seguros/Seguros";
 import Consorcios from "./pages/Consorcios/Consorcios";
-import Blog from "./pages/Blog/Blog";
+import Saude from "./pages/Saude/Saude";
 import Contato from "./pages/Contato/Contato";
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
           <Route path="/products" element={<Navigate to="/" replace />} />
           <Route path="/seguros" element={<Seguros />} />
           <Route path="/consorcios" element={<Consorcios />} />
-          <Route path="/blog" element={<Blog />} />
+          <Route path="/saude" element={<Saude />} />
           <Route path="/contato" element={<Contato />} />
         </Routes>
       </main>

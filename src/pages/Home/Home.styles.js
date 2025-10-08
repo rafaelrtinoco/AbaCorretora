@@ -156,6 +156,7 @@ export const HeroContainer = styled.section`
   position: relative;
   overflow: hidden;
   
+  
   @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 6rem 0 0;
   }
