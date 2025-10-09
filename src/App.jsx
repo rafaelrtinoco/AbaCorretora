@@ -13,12 +13,15 @@ import Consorcios from "./pages/Consorcios/Consorcios";
 import Saude from "./pages/Saude/Saude";
 import Contato from "./pages/Contato/Contato";
 import CookieBanner from "./components/CookieBanner/CookieBanner";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Header />
+
+      <ScrollToTop />
 
       <main>
         <Routes>

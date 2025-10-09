@@ -7,7 +7,7 @@ export const PageSection = styled.section`
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 3rem 0;
-    margin-top: 80px;
+   
   }
 `;
 
@@ -134,6 +134,7 @@ export const HeroTitle = styled.h1`
   font-weight: 800;
   margin: 0;
   line-height: 1.2;
+  text-align: center;
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     font-size: 1.8rem;
@@ -311,8 +312,6 @@ export const ButtonMain = styled.button`
     transform: scale(1.05);
   }
 `;
-
-// --- NOVOS ESTILOS ---
 
 export const BenefitsSection = styled.section`
   background: ${theme.colors.white};

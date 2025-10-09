@@ -23,18 +23,18 @@ export const BlogCard = styled.article`
   border-radius: 12px;
   overflow: hidden;
   transition: all ${theme.transitions.default};
-  border: 1px solid ${theme.colors.border || "#e5e7eb"}; /* Adicionado para borda */
-  background: ${theme.colors.white}; /* Fundo branco para se destacar */
-  display: flex; /* Para flex-direction column */
-  flex-direction: column; /* Para conteúdo vertical */
-  height: 100%; /* Para os cards terem altura igual no grid */
-  padding-bottom: 0; /* Começa sem padding inferior específico aqui, pois o conteúdo interno terá */
+  border: 1px solid ${theme.colors.border || "#e5e7eb"}; 
+  background: ${theme.colors.white}; 
+  display: flex; 
+  flex-direction: column; 
+  height: 100%; 
+  padding-bottom: 0; 
 
   .image-container {
     position: relative;
     height: 200px;
     overflow: hidden;
-    border-bottom: 1px solid ${theme.colors.border || "#e5e7eb"}; /* Linha sutil abaixo da imagem */
+    border-bottom: 1px solid ${theme.colors.border || "#e5e7eb"}; 
 
     img {
       width: 100%;
@@ -58,20 +58,20 @@ export const BlogCard = styled.article`
 
   h3 {
     font-size: 1.25rem;
-    margin: 1.5rem 1.25rem 1rem; /* Ajustado para ter padding interno */
+    margin: 1.5rem 1.25rem 1rem; 
     line-height: 1.4;
     color: ${theme.colors.dark};
   }
 
   p {
-    margin: 0 1.25rem 1.5rem; /* Adicionado padding interno */
+    margin: 0 1.25rem 1.5rem; 
     color: ${theme.colors.mediumGray};
-    flex-grow: 1; /* Permite que o parágrafo ocupe o espaço restante */
+    flex-grow: 1; 
   }
 
   .read-more {
     display: inline-block;
-    margin: 0 1.25rem 1.5rem; /* Ajustado para ter padding interno */
+    margin: 0 1.25rem 1.5rem; 
     color: ${theme.colors.primary};
     font-weight: 500;
     text-decoration: none;
@@ -113,9 +113,9 @@ export const HeroContent = styled.div`
 `;
 
 export const HeroRow = styled.div`
-  display: flex; /* -> Alterado de 'grid' para 'flex' */
-  flex-direction: column; /* -> Adicionado para empilhar os itens verticalmente */
-  align-items: flex-start; /* -> Garante que tudo fique alinhado à esquerda */
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-start; 
   gap: 2rem;
   margin-top: 2rem;
   padding-bottom: 40px;
@@ -135,6 +135,7 @@ export const HeroTitle = styled.h1`
   font-weight: 800;
   margin: 0;
   line-height: 1.2;
+  text-align:center;
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     font-size: 1.8rem;
@@ -156,9 +157,9 @@ export const HeroImage = styled.img`
   width: 100%;
   max-width: 1200px;
   max-height: 500px;
-  aspect-ratio: 16 / 9; /* -> Força um formato de paisagem (16:9). Ajuste se precisar. */
-  object-fit: cover; /* -> Garante que a imagem cubra a área sem distorcer */
-  border-radius: 8px; /* -> Opcional: um leve arredondamento nas bordas */
+  aspect-ratio: 16 / 9; 
+  object-fit: cover; 
+  border-radius: 8px; 
   box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.5);
 
   @media (max-width: ${theme.breakpoints.mobile}) {
@@ -169,7 +170,6 @@ export const HeroImage = styled.img`
 
 export const HeroDivider = styled.div`
   position: relative;
-  /* height: 60px; */
   background: linear-gradient(
     to bottom,
     ${theme.colors.white} 0%,
@@ -180,7 +180,6 @@ export const HeroDivider = styled.div`
   clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
 
   @media (max-width: ${theme.breakpoints.mobile}) {
-    height: 40px;
     clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 100%);
   }
 `;
@@ -192,10 +191,10 @@ export const Tip = styled.div`
   border-radius: 8px;
   color: ${theme.colors.mediumGray};
   margin-top: 1rem;
-  margin: 1rem 1.25rem 1.25rem; /* Adicionado para ter padding interno */
+  margin: 1rem 1.25rem 1.25rem; 
 `;
 
-// --- NOVO Componente para o título da seção ---
+
 export const SectionTitle = styled.h2`
   font-size: 2.5rem;
   color: ${theme.colors.secundary};
@@ -204,10 +203,10 @@ export const SectionTitle = styled.h2`
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     font-size: 2rem;
+    padding: 0 1.2rem;
   }
 `;
 
-// --- NOVO Componente para o subtitulo da seção ---
 export const SectionSubtitle = styled.p`
   font-size: 1.25rem;
   color: ${theme.colors.mediumGray};
@@ -222,14 +221,14 @@ export const SectionSubtitle = styled.p`
   }
 `;
 
-// --- BlogContainer e BlogGrid (com pequenos ajustes) ---
+
 export const BlogContainer = styled.section`
   padding: 3rem 0;
   background-color: ${theme.colors.white};
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 3rem 0;
-    margin-top: 80px;
+   
   }
 `;
 
@@ -297,7 +296,7 @@ export const HealthPlanCard = styled.article`
   }
 `;
 
-// --- ProductButton (reutilizado) ---
+
 export const ProductButton = styled.button`
   display: flex;
   align-items: center;

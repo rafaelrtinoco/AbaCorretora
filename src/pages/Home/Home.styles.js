@@ -164,9 +164,10 @@ export const IconWrapper = styled.div`
 
 export const HeroContainer = styled.section`
   background: ${theme.colors.white};
-  padding: 10rem 0 8rem 0;
+  padding: 7rem 0 8rem 0;
   position: relative;
   overflow: hidden;
+    
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 6rem 0 0;
@@ -177,6 +178,7 @@ export const HeroContent = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+  
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 0 1rem;

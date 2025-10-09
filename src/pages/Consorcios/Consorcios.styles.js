@@ -7,7 +7,6 @@ export const PageSection = styled.section`
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 3rem 0;
-    margin-top: 80px;
   }
 `;
 
@@ -21,7 +20,6 @@ export const ContentWrap = styled.div`
   }
 `;
 
-// NOVO: Grid para 3 produtos
 export const ProductsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -41,7 +39,6 @@ export const ProductImage = styled.img`
   background-color: ${theme.colors.lightGray};
 `;
 
-// CARD COM HOVER APRIMORADO
 export const ProductCard = styled.article`
   background: ${theme.colors.white};
   border: 1px solid ${theme.colors.border || "#e5e7eb"};
@@ -90,8 +87,6 @@ export const ProductButton = styled.button`
     background-color: ${theme.colors.primaryDark};
   }
 `;
-
-// --- NOVAS SEÇÕES ---
 
 export const HowItWorksSection = styled.section`
   padding: 4rem 0;
@@ -201,10 +196,9 @@ export const ButtonMain = styled.button`
   }
 `;
 
-// --- ESTILOS DO HERO (mantidos e ajustados) ---
 export const HeroContainer = styled.section`
   background: ${theme.colors.lightGray};
-  padding: 7rem 0 0;
+  padding: 7rem 0 0 0;
   position: relative;
   overflow: hidden;
 
@@ -212,6 +206,7 @@ export const HeroContainer = styled.section`
     padding: 6rem 0 0;
   }
 `;
+
 export const HeroContent = styled.div`
   max-width: 1200px;
   margin: 0 auto;
@@ -229,8 +224,9 @@ export const HeroRow = styled.div`
 export const HeroText = styled.div``;
 export const HeroTitle = styled.h1`
   color: ${({ theme }) => theme.colors.secundary};
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   font-weight: 800;
+  margin: 0;
   line-height: 1.2;
   @media (max-width: ${theme.breakpoints.mobile}) {
     font-size: 2rem;

@@ -134,7 +134,7 @@ const ProductsSection = () => {
             const slide = trackRef.current.querySelector(":scope > *");
             const slideWidth = slide
               ? slide.getBoundingClientRect().width + 16
-              : viewport.clientWidth; // 16 ~ gap
+              : viewport.clientWidth; 
             const delta = direction === "next" ? slideWidth : -slideWidth;
             trackRef.current.scrollBy({ left: delta, behavior: "smooth" });
           };
@@ -254,11 +254,11 @@ const ProductsSection = () => {
       <StatsBar>
         <StatsGrid>
           <StatItem>
-            <strong>10+</strong>
-            <span>Anos de mercado</span>
+            <strong>8+</strong>
+            <span>Anos de experiência</span>
           </StatItem>
           <StatItem>
-            <strong>2k+</strong>
+            <strong>600+</strong>
             <span>Clientes atendidos</span>
           </StatItem>
           <StatItem>

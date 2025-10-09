@@ -54,7 +54,7 @@ function BlogSection() {
         </SectionSubtitle>
 
         <BlogGrid>
-          {/* CARD 1: Convênio Médico */}
+          
           <HealthPlanCard>
             <div className="image-container">
               <img
@@ -82,7 +82,7 @@ function BlogSection() {
             </div>
           </HealthPlanCard>
 
-          {/* CARD 2: Convênio Odontológico */}
+          
           <HealthPlanCard>
             <div className="image-container">
               <img
@@ -110,7 +110,7 @@ function BlogSection() {
             </div>
           </HealthPlanCard>
 
-          {/* CARD 3: Convênio Pet */}
+          
           <HealthPlanCard>
             <div className="image-container">
               <img
@@ -140,7 +140,7 @@ function BlogSection() {
         </BlogGrid>
       </BlogContainer>
 
-      {/* Nova Seção: Detalhes do Convênio Médico */}
+      
       <BlogContainer style={{ backgroundColor: "#f9f9f9" }}>
         <SectionTitle>Por que ter um Convênio Médico?</SectionTitle>
         <SectionSubtitle>
@@ -180,7 +180,7 @@ function BlogSection() {
         </BlogGrid>
       </BlogContainer>
 
-      {/* Nova Seção: Detalhes do Convênio Odontológico */}
+      
       <BlogContainer>
         <SectionTitle>A Importância do Convênio Odontológico</SectionTitle>
         <SectionSubtitle>
@@ -217,7 +217,7 @@ function BlogSection() {
         </BlogGrid>
       </BlogContainer>
 
-      {/* Nova Seção: Detalhes do Convênio Pet */}
+      
       <BlogContainer style={{ backgroundColor: "#f9f9f9" }}>
         <SectionTitle>
           Cuide do seu Melhor Amigo com um Convênio Pet
