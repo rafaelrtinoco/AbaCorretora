@@ -30,7 +30,7 @@ const Header = () => {
   return (
     <HeaderContainer $isScrolled={isScrolled}>
       <Nav>
-        <NavLogo href="/">
+        <NavLogo href="/AbaCorretora">
           <img
             src={Logo}
             alt="Logo"
@@ -48,7 +48,7 @@ const Header = () => {
 
         <NavMenu $isOpen={isMobileMenuOpen}>
           <NavItem>
-            <Link className="navLink" to="/" onClick={handleCloseMenu}>HOME</Link>
+            <Link className="navLink" to="/AbaCorretora" onClick={handleCloseMenu}>HOME</Link>
           </NavItem>
           <NavItem>
             <Link className="navLink" to="/seguros" onClick={handleCloseMenu}>SEGUROS</Link>

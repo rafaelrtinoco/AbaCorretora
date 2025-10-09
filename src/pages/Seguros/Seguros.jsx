@@ -26,7 +26,6 @@ import {
   BenefitsSection,
   BenefitsGrid,
   BenefitItem,
-  BenefitIcon,
   FAQSection,
   FAQItem,
 } from "./Seguros.styles";
@@ -37,13 +36,13 @@ import { FaClockRotateLeft } from "react-icons/fa6";
 import { MdOutlineSupportAgent } from "react-icons/md";
 
 // Imagens
-import ImgHome from "../../assets/Img/img-seguro.png";
-import SeguroAuto from "../../assets/Img/seguro-auto.png";
-import SeguroResidencia from "../../assets/Img/seguro-residencial.png";
-import SeguroEquipamentos from "../../assets/Img/seguro-equipamentos.png";
-import SeguroBike from "../../assets/Img/seguro-bike.png";
-import SeguroVida from "../../assets/Img/seguro-vida.png";
-import SegurViagem from "../../assets/Img/seguro-viagem.png";
+import ImgHome from "../../assets/Img/img-seguro.webp";
+import SeguroAuto from "../../assets/Img/seguro-auto.webp";
+import SeguroResidencia from "../../assets/Img/seguro-residencial.webp";
+import SeguroEquipamentos from "../../assets/Img/seguro-equipamentos.webp";
+import SeguroBike from "../../assets/Img/seguro-bike.webp";
+import SeguroVida from "../../assets/Img/seguro-vida.webp";
+import SegurViagem from "../../assets/Img/seguro-viagem.webp";
 
 const Seguros = () => {
   const benefits = [
@@ -95,7 +94,6 @@ const Seguros = () => {
     },
   ];
 
-
   return (
     <>
       <HeroContainer>
@@ -141,7 +139,7 @@ const Seguros = () => {
                 Indicado para quem busca tranquilidade no dia a dia e proteção
                 patrimonial.
               </Tip>
-              <ProductButton>Planos a partir de R$ 30,00</ProductButton>
+              <ProductButton as="a" href="https://wa.me/5511945411551">Planos a partir de R$ 30,00</ProductButton>
             </ProductCard>
 
             {/* CARD SEGURO RESIDENCIAL */}
@@ -165,7 +163,7 @@ const Seguros = () => {
               <Tip>
                 Excelente custo-benefício para proteger seu patrimônio e rotina.
               </Tip>
-              <ProductButton>Planos a partir de R$ 30,00</ProductButton>
+              <ProductButton as="a" href="https://wa.me/5511945411551">Planos a partir de R$ 30,00</ProductButton>
             </ProductCard>
 
             {/* CARD SEGURO VIAGEM */}
@@ -187,8 +185,8 @@ const Seguros = () => {
               <Tip>
                 Essencial para viagens internacionais e para garantir sua paz de
                 espírito.
-              </Tip>
-              <ProductButton>Planos a partir de R$ 30,00</ProductButton>
+              </Tip> 
+              <ProductButton as="a" href="https://wa.me/5511945411551">Planos a partir de R$ 30,00</ProductButton>
             </ProductCard>
 
             {/* CARD SEGURO DE VIDA */}
@@ -211,7 +209,7 @@ const Seguros = () => {
                 Essencial para proteger financeiramente sua família e entes
                 queridos.
               </Tip>
-              <ProductButton>Planos a partir de R$ 30,00</ProductButton>
+              <ProductButton as="a" href="https://wa.me/5511945411551">Planos a partir de R$ 30,00</ProductButton>
             </ProductCard>
 
             {/* CARD EQUIPAMENTOS PORTÁTEIS */}
@@ -234,10 +232,9 @@ const Seguros = () => {
                 Perfeito para profissionais e estudantes que dependem de seus
                 equipamentos.
               </Tip>
-              <ProductButton>Planos a partir de R$ 30,00</ProductButton>
+              <ProductButton as="a" href="https://wa.me/5511945411551">Planos a partir de R$ 30,00</ProductButton>
             </ProductCard>
 
-            {/* CARD SEGURO DE BICICLETA */}
             <ProductCard>
               <ProductImage
                 src={SeguroBike}
@@ -257,13 +254,13 @@ const Seguros = () => {
                 Ideal para ciclistas urbanos e atletas que querem garantir a
                 segurança do seu investimento.
               </Tip>
-              <ProductButton>Planos a partir de R$ 30,00</ProductButton>
+              <ProductButton as="a" href="https://wa.me/5511945411551">Planos a partir de R$ 30,00</ProductButton>
             </ProductCard>
           </ProductsGrid>
         </ContentWrap>
       </PageSection>
 
-      {/* NOVA SEÇÃO DE BENEFÍCIOS */}
+      
       <BenefitsSection>
         <ContentWrap>
           <SectionTitle>Nossos Diferenciais</SectionTitle>
@@ -273,7 +270,7 @@ const Seguros = () => {
           <BenefitsGrid>
             {benefits.map((benefit, index) => (
               <BenefitItem key={index}>
-               <h3>{benefit.title}</h3>
+                <h3>{benefit.title}</h3>
                 <p>{benefit.description}</p>
               </BenefitItem>
             ))}
@@ -318,11 +315,12 @@ const Seguros = () => {
         </Steps>
       </HowItWorksSection>
 
-      {/* NOVA SEÇÃO DE FAQ */}
-      <FAQSection>
+       <FAQSection>
         <ContentWrap>
           <SectionTitle>Perguntas Frequentes</SectionTitle>
-          <SectionSubtitle>Ainda tem dúvidas? A gente ajuda você a esclarecer.</SectionSubtitle>
+          <SectionSubtitle>
+            Ainda tem dúvidas? A gente ajuda você a esclarecer.
+          </SectionSubtitle>
           {faqs.map((faq, index) => (
             <FAQItem key={index}>
               <h4>{faq.question}</h4>
@@ -331,7 +329,6 @@ const Seguros = () => {
           ))}
         </ContentWrap>
       </FAQSection>
-
 
       <CTABanner>
         <CTAInner>
@@ -342,16 +339,10 @@ const Seguros = () => {
             </p>
           </div>
           <CTAButtons>
-            <ButtonMain as="a" href="#contact">
+            <ButtonMain as="a" href="https://wa.me/5511945411551">
               Solicitar cotação
             </ButtonMain>
-            <ButtonMain
-              as="a"
-              href="#faq"
-              style={{ backgroundColor: "#fff", color: "#001f3D" }}
-            >
-              Tirar dúvidas
-            </ButtonMain>
+            
           </CTAButtons>
         </CTAInner>
       </CTABanner>

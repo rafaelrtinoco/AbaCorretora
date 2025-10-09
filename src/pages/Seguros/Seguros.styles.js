@@ -166,22 +166,6 @@ export const HeroImage = styled.img`
   }
 `;
 
-export const ButtonMain = styled.button`
-  color: #e4e8eb;
-  background-color: ${theme.colors.secundary};
-  font-size: 1rem;
-  border: none;
-  padding: 12px 16px;
-  border-radius: 5px;
-  margin: 20px 0;
-  cursor: pointer;
-
-  @media (max-width: ${theme.breakpoints.mobile}) {
-    font-size: 1rem;
-    padding: 14px 18px;
-  }
-`;
-
 export const HeroDivider = styled.div`
   position: relative;
   background: linear-gradient(
@@ -217,6 +201,7 @@ export const ProductButton = styled.button`
   text-align: center;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
+  text-decoration: none;
 
   &:hover {
     background-color: ${theme.colors.primaryDark};
@@ -283,9 +268,9 @@ export const StepItem = styled.li`
 `;
 
 export const CTABanner = styled.section`
-  background: ${theme.colors.primary};
+  background: ${theme.colors.primary}; /* Cor de destaque */
   color: ${theme.colors.white};
-  padding: 2.5rem 0;
+  padding: 3rem 0;
 `;
 
 export const CTAInner = styled.div`
@@ -295,29 +280,35 @@ export const CTAInner = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 2rem;
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     flex-direction: column;
-    align-items: flex-start;
-    padding: 0 1rem;
+    text-align: center;
   }
 `;
 
 export const CTAButtons = styled.div`
   display: flex;
-  gap: 0.75rem;
+  flex-shrink: 0;
+  
+`;
 
-  a,
-  button {
-    background: ${theme.colors.white};
-    color: ${theme.colors.primary};
-    border: none;
-    padding: 12px 16px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    cursor: pointer;
+export const ButtonMain = styled.button`
+  background: ${theme.colors.secundary};
+  color: ${theme.colors.white};
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+
+  &:hover {
+    background: ${theme.colors.primaryDark};
+    transform: scale(1.05);
   }
 `;
 

@@ -23,10 +23,10 @@ import {
 
 import { PartnersHealthSection } from "../../components/Partners/Partiners";
 
-import ImgSaude from "../../assets/Img/img-saude.png";
-import ImgConvenioMedico from "../../assets/Img/convenio-medico.png";
-import ImgConvenioOdonto from "../../assets/Img/convenio-odonto.png";
-import ImgConvenioPet from "../../assets/Img/convenio-pet.png";
+import ImgSaude from "../../assets/Img/img-saude.webp";
+import ImgConvenioMedico from "../../assets/Img/convenio-medico.webp";
+import ImgConvenioOdonto from "../../assets/Img/convenio-odonto.webp";
+import ImgConvenioPet from "../../assets/Img/convenio-pet.webp";
 
 function BlogSection() {
   return (
@@ -149,7 +149,6 @@ function BlogSection() {
         </SectionSubtitle>
         <BlogGrid>
           <BlogCard>
-            
             <h3>Acesso Facilitado</h3>
             <p>
               Com um convênio médico, você e sua família têm acesso a uma ampla
@@ -160,7 +159,6 @@ function BlogSection() {
             </p>
           </BlogCard>
           <BlogCard>
-           
             <h3>Economia e Previsibilidade</h3>
             <p>
               Evite surpresas com os altos custos de consultas, exames,
@@ -171,7 +169,6 @@ function BlogSection() {
             </p>
           </BlogCard>
           <BlogCard>
-            
             <h3>Cuidado Completo e Preventivo</h3>
             <p>
               Além do atendimento para doenças e emergências, muitos planos
@@ -192,7 +189,6 @@ function BlogSection() {
         </SectionSubtitle>
         <BlogGrid>
           <BlogCard>
-            
             <h3>Prevenção de Doenças</h3>
             <p>
               Consultas e limpezas regulares são fundamentais para prevenir
@@ -202,7 +198,6 @@ function BlogSection() {
             </p>
           </BlogCard>
           <BlogCard>
-            
             <h3>Cobertura para Tratamentos Essenciais</h3>
             <p>
               De obturações a tratamentos de canal, o convênio cobre uma série
@@ -211,7 +206,6 @@ function BlogSection() {
             </p>
           </BlogCard>
           <BlogCard>
-            
             <h3>Estética e Bem-estar</h3>
             <p>
               Um sorriso bonito aumenta a autoestima e a confiança. Além da
@@ -225,14 +219,15 @@ function BlogSection() {
 
       {/* Nova Seção: Detalhes do Convênio Pet */}
       <BlogContainer style={{ backgroundColor: "#f9f9f9" }}>
-        <SectionTitle>Cuide do seu Melhor Amigo com um Convênio Pet</SectionTitle>
+        <SectionTitle>
+          Cuide do seu Melhor Amigo com um Convênio Pet
+        </SectionTitle>
         <SectionSubtitle>
           Seu pet merece o melhor cuidado! Proteja a saúde do seu companheiro de
           quatro patas com planos veterinários completos e acessíveis.
         </SectionSubtitle>
         <BlogGrid>
           <BlogCard>
-           
             <h3>Atendimento Veterinário Completo</h3>
             <p>
               Garanta consultas, exames, vacinas e até cirurgias para seu pet
@@ -241,7 +236,6 @@ function BlogSection() {
             </p>
           </BlogCard>
           <BlogCard>
-            
             <h3>Prevenção e Bem-estar</h3>
             <p>
               Mantenha seu pet protegido com a cobertura de vacinas essenciais,
@@ -250,7 +244,6 @@ function BlogSection() {
             </p>
           </BlogCard>
           <BlogCard>
-            
             <h3>Segurança em Emergências</h3>
             <p>
               Acidentes e doenças podem acontecer. Com um convênio pet, você tem
@@ -265,20 +258,11 @@ function BlogSection() {
         <CTAInner>
           <div>
             <h3>Fale com um especialista</h3>
-            <p>
-              Receba uma consultoria gratuita para encontrar o plano ideal.
-            </p>
+            <p>Receba uma consultoria gratuita para encontrar o plano ideal.</p>
           </div>
           <CTAButtons>
-            <ButtonMain as="a" href="#contact">
+            <ButtonMain as="a" href="https://wa.me/5511945411551">
               Solicitar cotação
-            </ButtonMain>
-            <ButtonMain
-              as="a"
-              href="#faq"
-              style={{ backgroundColor: "#fff", color: "#001f3D" }}
-            >
-              Tirar dúvidas
             </ButtonMain>
           </CTAButtons>
         </CTAInner>

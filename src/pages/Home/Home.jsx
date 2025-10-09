@@ -24,15 +24,15 @@ import FAQSection from "../../components/FAQ/FAQ";
 import { PartnersHomeSection } from "../../components/Partners/Partiners";
 import TestimonialsSection from "../../components/Testimonials/Testimonials";
 
-import ImgHome from "../../assets/Img/img-home.png";
-import AutomovelIcon from "../../assets/Img/automovel.png";
-import ResidencialIcon from "../../assets/Img/residencial.png";
-import saudeIcon from "../../assets/Img/saude.png";
-import vidaIcon from "../../assets/Img/vida.png";
-import empresaIcon from "../../assets/Img/empresa.png";
-import viagemIcon from "../../assets/Img/viagem.png";
-import celularIcon from "../../assets/Img/celular.png";
-import petIcon from "../../assets/Img/pet.png";
+import ImgHome from "../../assets/Img/img-home.webp";
+import AutomovelIcon from "../../assets/Img/automovel.webp";
+import ResidencialIcon from "../../assets/Img/residencial.webp";
+import saudeIcon from "../../assets/Img/saude.webp";
+import vidaIcon from "../../assets/Img/vida.webp";
+import empresaIcon from "../../assets/Img/empresa.webp";
+import viagemIcon from "../../assets/Img/viagem.webp";
+import celularIcon from "../../assets/Img/celular.webp";
+import petIcon from "../../assets/Img/pet.webp";
 // import ContactSection from "../../components/Contacts/Contacts";
 import {
   ValuePropsSection,
@@ -114,7 +114,7 @@ const ProductsSection = () => {
                 empresas, com atendimento consultivo e as melhores condições do
                 mercado.
               </HeroSubtitle>
-              <ButtonMain>Contrate Agora</ButtonMain>
+              <ButtonMain as="a" href="https://wa.me/5511945411551">Contrate Agora</ButtonMain>
             </HeroText>
             <HeroImage src={ImgHome} alt="imagem hero" />
           </HeroRow>
@@ -165,7 +165,7 @@ const ProductsSection = () => {
                         <p>{product.description}</p>
                         
                         <div className="saiba-mais-wrapper">
-                          <a href="#">Saiba mais </a>{" "}
+                          <a href="https://wa.me/5511945411551">Saiba mais </a>{" "}
                           
                         </div>
                       </ProductCard>
@@ -311,7 +311,7 @@ const ProductsSection = () => {
             </p>
           </div>
           <CTAButtons>
-            <ButtonMain as="a" href="#contact">
+            <ButtonMain as="a" href="https://wa.me/5511945411551">
               Solicitar cotação
             </ButtonMain>
             <ButtonMain

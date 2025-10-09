@@ -26,18 +26,14 @@ import {
   CTAButtons,
   ButtonMain,
 } from "./Consorcios.styles";
-
-// Ícones para a seção de vantagens
 import { FaPiggyBank, FaHandHoldingUsd, FaThumbsUp } from "react-icons/fa";
-
-// Imagens
-import ImgConsorcio from "../../assets/Img/img-consorcio.png";
-import ConsorcioImovel from "../../assets/Img/consorcio-imovel.png"; // Sugestão de nova imagem
-import ConsorcioVeiculo from "../../assets/Img/consorcio-automovel.png"; // Sugestão de nova imagem
-import ConsorcioServico from "../../assets/Img/consorcio-servicos.png"; // Sugestão de nova imagem
+import ImgConsorcio from "../../assets/Img/img-consorcio.webp";
+import ConsorcioImovel from "../../assets/Img/consorcio-imovel.webp"; 
+import ConsorcioVeiculo from "../../assets/Img/consorcio-automovel.webp"; 
+import ConsorcioServico from "../../assets/Img/consorcio-servicos.webp"; 
 
 const Consorcios = () => {
-  // Dados para os cards de produtos
+  
   const products = [
     {
       img: ConsorcioImovel,
@@ -79,22 +75,21 @@ const Consorcios = () => {
             Uma modalidade de compra baseada na união de pessoas que formam uma poupança comum destinada à aquisição de bens ou serviços. Ideal para quem não tem pressa e busca disciplina financeira para atingir grandes objetivos.
           </SectionSubtitle>
 
-          {/* SEÇÃO DE PRODUTOS COM 3 CARDS */}
+         
           <ProductsGrid>
             {products.map((product, index) => (
               <ProductCard key={index}>
                 <ProductImage src={product.img} alt={product.title} />
                 <h3>{product.title}</h3>
                 <p>{product.description}</p>
-                <ProductButton>Simular Agora</ProductButton>
+                <ProductButton as="a" href="https://wa.me/5511945411551">Simular Agora</ProductButton>
               </ProductCard>
             ))}
           </ProductsGrid>
         </ContentWrap>
       </PageSection>
 
-      {/* NOVA SEÇÃO: COMO FUNCIONA */}
-      <HowItWorksSection>
+            <HowItWorksSection>
         <ContentWrap>
           <SectionTitle>Como Funciona na Prática?</SectionTitle>
           <SectionSubtitle>O processo é simples e transparente. Veja as 4 etapas principais:</SectionSubtitle>
@@ -119,8 +114,7 @@ const Consorcios = () => {
         </ContentWrap>
       </HowItWorksSection>
 
-      {/* NOVA SEÇÃO: VANTAGENS */}
-      <BenefitsSection>
+           <BenefitsSection>
         <ContentWrap>
           <SectionTitle>Principais Vantagens</SectionTitle>
           <SectionSubtitle>Descubra por que o consórcio é a melhor opção para o seu planejamento.</SectionSubtitle>
@@ -144,15 +138,14 @@ const Consorcios = () => {
         </ContentWrap>
       </BenefitsSection>
 
-      {/* NOVA SEÇÃO: CALL TO ACTION (CTA) */}
-      <CTABanner>
+            <CTABanner>
         <CTAInner>
           <div>
             <h3>Pronto para dar o primeiro passo?</h3>
             <p>Faça uma simulação gratuita e sem compromisso para encontrar o plano perfeito para você.</p>
           </div>
           <CTAButtons>
-            <ButtonMain as="a" href="#contact">
+            <ButtonMain as="a" href="https://wa.me/5511945411551">
               Fazer Simulação
             </ButtonMain>
           </CTAButtons>

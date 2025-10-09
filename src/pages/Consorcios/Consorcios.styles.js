@@ -74,7 +74,7 @@ export const ProductButton = styled.button`
   width: calc(100% - 2.5rem);
   padding: 0.75rem 1rem;
   margin: 0 1.25rem 1.25rem;
-  
+
   background-color: ${theme.colors.primary};
   color: ${theme.colors.white};
   border: none;
@@ -84,6 +84,7 @@ export const ProductButton = styled.button`
   text-align: center;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
+  text-decoration: none;
 
   &:hover {
     background-color: ${theme.colors.primaryDark};
@@ -138,7 +139,7 @@ export const BenefitsGrid = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-top: 3rem;
-  
+
   @media (max-width: ${theme.breakpoints.tablet}) {
     grid-template-columns: 1fr;
   }
@@ -180,7 +181,6 @@ export const CTAInner = styled.div`
 export const CTAButtons = styled.div`
   display: flex;
   flex-shrink: 0;
-  
 `;
 
 export const ButtonMain = styled.button`
@@ -200,7 +200,6 @@ export const ButtonMain = styled.button`
     transform: scale(1.05);
   }
 `;
-
 
 // --- ESTILOS DO HERO (mantidos e ajustados) ---
 export const HeroContainer = styled.section`
