@@ -194,8 +194,7 @@ export const HeroDivider = styled.div`
   clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
 
   @media (max-width: ${theme.breakpoints.mobile}) {
-    height: 40px;
-    clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 100%);
+   clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 100%);
   }
 `;
 
