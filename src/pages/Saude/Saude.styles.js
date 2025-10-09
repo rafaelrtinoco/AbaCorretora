@@ -23,11 +23,18 @@ export const BlogCard = styled.article`
   border-radius: 12px;
   overflow: hidden;
   transition: all ${theme.transitions.default};
+  border: 1px solid ${theme.colors.border || "#e5e7eb"}; /* Adicionado para borda */
+  background: ${theme.colors.white}; /* Fundo branco para se destacar */
+  display: flex; /* Para flex-direction column */
+  flex-direction: column; /* Para conteúdo vertical */
+  height: 100%; /* Para os cards terem altura igual no grid */
+  padding-bottom: 0; /* Começa sem padding inferior específico aqui, pois o conteúdo interno terá */
 
   .image-container {
     position: relative;
     height: 200px;
     overflow: hidden;
+    border-bottom: 1px solid ${theme.colors.border || "#e5e7eb"}; /* Linha sutil abaixo da imagem */
 
     img {
       width: 100%;
@@ -51,13 +58,20 @@ export const BlogCard = styled.article`
 
   h3 {
     font-size: 1.25rem;
-    margin: 1.5rem 1rem 1rem;
+    margin: 1.5rem 1.25rem 1rem; /* Ajustado para ter padding interno */
     line-height: 1.4;
+    color: ${theme.colors.dark};
+  }
+
+  p {
+    margin: 0 1.25rem 1.5rem; /* Adicionado padding interno */
+    color: ${theme.colors.mediumGray};
+    flex-grow: 1; /* Permite que o parágrafo ocupe o espaço restante */
   }
 
   .read-more {
     display: inline-block;
-    margin: 0 1rem 1.5rem;
+    margin: 0 1.25rem 1.5rem; /* Ajustado para ter padding interno */
     color: ${theme.colors.primary};
     font-weight: 500;
     text-decoration: none;
@@ -145,6 +159,7 @@ export const HeroImage = styled.img`
   aspect-ratio: 16 / 9; /* -> Força um formato de paisagem (16:9). Ajuste se precisar. */
   object-fit: cover; /* -> Garante que a imagem cubra a área sem distorcer */
   border-radius: 8px; /* -> Opcional: um leve arredondamento nas bordas */
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.5);
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     margin: 1rem auto 0;
@@ -170,21 +185,6 @@ export const HeroDivider = styled.div`
   }
 `;
 
-export const ButtonMain = styled.button`
-  color: #e4e8eb;
-  background-color: ${theme.colors.secundary};
-  font-size: 1rem;
-  border: none;
-  padding: 12px 16px;
-  border-radius: 5px;
-  margin: 20px 0;
-
-  @media (max-width: ${theme.breakpoints.mobile}) {
-    font-size: 1rem;
-    padding: 14px 18px;
-  }
-`;
-
 export const Tip = styled.div`
   background: ${theme.colors.white};
   border-left: 4px solid ${theme.colors.primary};
@@ -192,6 +192,7 @@ export const Tip = styled.div`
   border-radius: 8px;
   color: ${theme.colors.mediumGray};
   margin-top: 1rem;
+  margin: 1rem 1.25rem 1.25rem; /* Adicionado para ter padding interno */
 `;
 
 // --- NOVO Componente para o título da seção ---
@@ -221,7 +222,7 @@ export const SectionSubtitle = styled.p`
   }
 `;
 
-// --- SEU BlogContainer e BlogGrid (com pequenos ajustes) ---
+// --- BlogContainer e BlogGrid (com pequenos ajustes) ---
 export const BlogContainer = styled.section`
   padding: 3rem 0;
   background-color: ${theme.colors.white};
@@ -233,21 +234,20 @@ export const BlogContainer = styled.section`
 `;
 
 export const HealthPlanCard = styled.article`
-  /* Estilos do BlogCard como base, com ajustes para se parecer mais com o ProductCard */
   border-radius: 12px;
   overflow: hidden;
   transition: all ${theme.transitions.default};
-  border: 1px solid ${theme.colors.border || "#e5e7eb"}; /* Adiciona borda do ProductCard */
-  background: ${theme.colors.lightGray}; /* Cor de fundo do ProductCard */
-  padding-bottom: 0; /* Remove padding-bottom do BlogCard original para o botão */
+  border: 1px solid ${theme.colors.border || "#e5e7eb"};
+  background: ${theme.colors.lightGray};
+  padding-bottom: 0;
 
-  display: flex; /* Transforma em flex container */
-  flex-direction: column; /* Para empilhar o conteúdo e posicionar o botão no final */
-  height: 100%; /* Garante que todos os cards tenham a mesma altura no grid */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 
   .image-container {
     position: relative;
-    height: 220px; /* Altura da imagem do card. Pode ajustar. */
+    height: 220px;
     overflow: hidden;
     border-bottom: 1px solid ${theme.colors.border || "#e5e7eb"}; /* Linha sutil abaixo da imagem */
 
@@ -283,13 +283,10 @@ export const HealthPlanCard = styled.article`
     margin: 0.25rem 0;
   }
 
-  /* NOVO: Estilo para o botão no final do card */
   .card-button-wrapper {
-    margin-top: auto; /* Empurra o wrapper do botão para o final */
-    padding: 1rem 1.25rem 1.25rem; /* Padding na base do card para o botão */
+    margin-top: auto;
+    padding: 1rem 1.25rem 1.25rem;
   }
-
-  /* REMOVIDO: .read-more, pois será substituído pelo botão */
 
   &:hover {
     box-shadow: ${theme.shadows.medium};
@@ -300,7 +297,7 @@ export const HealthPlanCard = styled.article`
   }
 `;
 
-// --- SEU ProductButton (reutilizado) ---
+// --- ProductButton (reutilizado) ---
 export const ProductButton = styled.button`
   display: flex;
   align-items: center;
@@ -323,5 +320,50 @@ export const ProductButton = styled.button`
 
   &:hover {
     background-color: ${theme.colors.primaryDark};
+  }
+`;
+
+export const CTABanner = styled.section`
+  background: ${theme.colors.primary}; /* Cor de destaque */
+  color: ${theme.colors.white};
+  padding: 3rem 0;
+`;
+
+export const CTAInner = styled.div`
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    flex-direction: column;
+    text-align: center;
+  }
+`;
+
+export const CTAButtons = styled.div`
+  display: flex;
+  flex-shrink: 0;
+  
+`;
+
+export const ButtonMain = styled.button`
+  background: ${theme.colors.secundary};
+  color: ${theme.colors.white};
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+
+  &:hover {
+    background: ${theme.colors.primaryDark};
+    transform: scale(1.05);
   }
 `;

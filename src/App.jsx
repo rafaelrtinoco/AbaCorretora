@@ -12,6 +12,7 @@ import Seguros from "./pages/Seguros/Seguros";
 import Consorcios from "./pages/Consorcios/Consorcios";
 import Saude from "./pages/Saude/Saude";
 import Contato from "./pages/Contato/Contato";
+import CookieBanner from "./components/CookieBanner/CookieBanner";
 
 function App() {
   return (
@@ -29,7 +30,7 @@ function App() {
           <Route path="/contato" element={<Contato />} />
         </Routes>
       </main>
-
+      <CookieBanner />
       <Footer />
       <WhatsAppFloat />
     </ThemeProvider>

@@ -1,83 +1,96 @@
 import React from 'react';
-import { ContactContainer, ContactGrid, ContactCard, ContactForm, FormGrid, FormField, Label, Input, Select, SubmitRow, SubmitButton } from './Contato.styles';
-import { SectionTitle } from '../../App.styles';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { SectionTitle, SectionSubtitle } from '../../App.styles';
+import {
+  ContactPageContainer,
+  IntroSection,
+  MainContentGrid,
+  ContactChannels,
+  ChannelCard,
+  MapContainer,
+  BusinessInfoSection,
+  InfoBlock,
+} from './Contato.styles';
 
-const ContactSection = () => {
+// Ícones atualizados e adicionado o WhatsApp
+import { FaWhatsapp, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+
+const ContactPage = () => { // Renomeado para ContactPage
   return (
-    <ContactContainer id="contact">
-      <SectionTitle>
-        Fale <span>conosco</span>
-      </SectionTitle>
-      
-      <ContactGrid>
-        <ContactCard>
-          <div className="icon">
-            <FaPhone />
-          </div>
-          <h3>Telefone</h3>
-          <p>(11) 4004-4004</p>
-          <a href="tel:+551140044004">Ligar agora</a>
-        </ContactCard>
-        
-        <ContactCard>
-          <div className="icon">
-            <FaEnvelope />
-          </div>
-          <h3>E-mail</h3>
-          <p>contato@segurosonline.com.br</p>
-          <a href="mailto:contato@segurosonline.com.br">Enviar e-mail</a>
-        </ContactCard>
-        
-        <ContactCard>
-          <div className="icon">
-            <FaMapMarkerAlt />
-          </div>
-          <h3>Endereço</h3>
-          <p>Av. Paulista, 1000 - São Paulo/SP</p>
-          <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer">Ver no mapa</a>
-        </ContactCard>
-        
-        <ContactCard>
-          <div className="icon">
-            <FaClock />
-          </div>
-          <h3>Horário</h3>
-          <p>Segunda a Sexta: 8h às 18h</p>
-          <p>Sábado: 9h às 13h</p>
-        </ContactCard>
-      </ContactGrid>
+    <ContactPageContainer id="contact">
+      <IntroSection>
+        <SectionTitle>Estamos aqui para ajudar</SectionTitle>
+        <SectionSubtitle>
+          Escolha o melhor canal para falar conosco. Nossa equipe de especialistas está pronta para atender você.
+        </SectionSubtitle>
+      </IntroSection>
 
-      <ContactForm onSubmit={(e) => e.preventDefault()}>
-        <FormGrid>
-          <FormField>
-            <Label htmlFor="nome">Nome</Label>
-            <Input id="nome" name="nome" type="text" placeholder="Seu nome" required />
-          </FormField>
-          <FormField>
-            <Label htmlFor="telefone">Telefone/WhatsApp</Label>
-            <Input id="telefone" name="telefone" type="tel" placeholder="(00) 00000-0000" required />
-          </FormField>
-          <FormField>
-            <Label htmlFor="email">E-mail</Label>
-            <Input id="email" name="email" type="email" placeholder="voce@email.com" required />
-          </FormField>
-          <FormField>
-            <Label htmlFor="servico">Serviço desejado</Label>
-            <Select id="servico" name="servico" defaultValue="">
-              <option value="" disabled>Selecione</option>
-              <option value="seguro">Seguro</option>
-              <option value="convenio">Convênio</option>
-              <option value="consorcio">Consórcio</option>
-            </Select>
-          </FormField>
-        </FormGrid>
-        <SubmitRow>
-          <SubmitButton type="submit">Enviar</SubmitButton>
-        </SubmitRow>
-      </ContactForm>
-    </ContactContainer>
+      <MainContentGrid>
+        {/* Coluna da Esquerda: Canais de Contato */}
+        <ContactChannels>
+          <ChannelCard 
+            href="https://wa.me/5511999999999" // <-- SUBSTITUA PELO SEU NÚMERO DE WHATSAPP
+            target="_blank" 
+            rel="noopener noreferrer" 
+            primary
+          >
+            <FaWhatsapp />
+            <div>
+              <h3>WhatsApp</h3>
+              <p>Clique aqui para iniciar uma conversa agora mesmo.</p>
+            </div>
+          </ChannelCard>
+
+          <ChannelCard href="tel:+551140044004">
+            <FaPhoneAlt />
+            <div>
+              <h3>Telefone</h3>
+              <p>(11) 4004-4004</p>
+            </div>
+          </ChannelCard>
+
+          <ChannelCard href="mailto:contato@abacorretora.com.br">
+            <FaEnvelope />
+            <div>
+              <h3>E-mail</h3>
+              <p>contato@abacorretora.com.br</p>
+            </div>
+          </ChannelCard>
+        </ContactChannels>
+
+        {/* Coluna da Direita: Mapa */}
+        <MapContainer>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.106695383502!2d-46.65657118440693!3d-23.56409456760337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1668102353915!5m2!1spt-BR!2sbr"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Endereço da ABA Corretora na Av. Paulista"
+          ></iframe>
+        </MapContainer>
+      </MainContentGrid>
+
+      {/* Seção Inferior: Endereço e Horários */}
+      <BusinessInfoSection>
+        <InfoBlock>
+          <FaMapMarkerAlt />
+          <div>
+            <h4>Nosso Endereço</h4>
+            <p>Av. Paulista, 1000 - Bela Vista, São Paulo/SP</p>
+          </div>
+        </InfoBlock>
+        <InfoBlock>
+          <FaClock />
+          <div>
+            <h4>Horário de Atendimento</h4>
+            <p>Segunda a Sexta: 08h às 18h | Sábado: 09h às 13h</p>
+          </div>
+        </InfoBlock>
+      </BusinessInfoSection>
+    </ContactPageContainer>
   );
 };
 
-export default ContactSection;
+export default ContactPage;

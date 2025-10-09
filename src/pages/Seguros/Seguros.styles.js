@@ -41,12 +41,19 @@ export const ProductCard = styled.article`
   border: 1px solid ${theme.colors.border || "#e5e7eb"};
   border-radius: 12px;
   padding: 1.25rem;
-
   display: flex;
   flex-direction: column;
   height: 100%;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  }
 
   h3 {
+    font-size: 24px;
     margin: 0 0 0.5rem;
     color: ${theme.colors.dark};
   }
@@ -67,11 +74,11 @@ export const ProductCard = styled.article`
 export const ProductImage = styled.img`
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 9; /* Formato paisagem, mantém todas as imagens com a mesma proporção */
-  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
-  border-radius: 8px; /* Bordas arredondadas para combinar com o card */
-  margin-bottom: 1.25rem; /* Espaço entre a imagem e o título */
-  background-color: #e0e0e0; /* Cor de fundo para o espaço vago */
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1.25rem;
+  background-color: #e0e0e0;
 `;
 
 export const Tip = styled.div`
@@ -105,9 +112,9 @@ export const HeroContent = styled.div`
 `;
 
 export const HeroRow = styled.div`
-  display: flex; /* -> Alterado de 'grid' para 'flex' */
-  flex-direction: column; /* -> Adicionado para empilhar os itens verticalmente */
-  align-items: flex-start; /* -> Garante que tudo fique alinhado à esquerda */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 2rem;
   margin-top: 2rem;
   padding-bottom: 40px;
@@ -148,9 +155,10 @@ export const HeroImage = styled.img`
   width: 100%;
   max-width: 1200px;
   max-height: 450px;
-  aspect-ratio: 16 / 9; /* -> Força um formato de paisagem (16:9). Ajuste se precisar. */
-  object-fit: cover; /* -> Garante que a imagem cubra a área sem distorcer */
-  border-radius: 8px; /* -> Opcional: um leve arredondamento nas bordas */
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.5);
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     margin: 1rem auto 0;
@@ -166,6 +174,7 @@ export const ButtonMain = styled.button`
   padding: 12px 16px;
   border-radius: 5px;
   margin: 20px 0;
+  cursor: pointer;
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     font-size: 1rem;
@@ -175,7 +184,6 @@ export const ButtonMain = styled.button`
 
 export const HeroDivider = styled.div`
   position: relative;
-  /* height: 60px; */
   background: linear-gradient(
     to bottom,
     ${theme.colors.white} 0%,
@@ -212,8 +220,7 @@ export const ProductButton = styled.button`
   transition: background-color 0.2s ease-in-out;
 
   &:hover {
-    background-color: ${theme.colors
-      .primaryDark}; /* Uma versão mais escura da cor primária */
+    background-color: ${theme.colors.primaryDark};
   }
 `;
 
@@ -311,5 +318,73 @@ export const CTAButtons = styled.div`
     border-radius: 6px;
     text-decoration: none;
     font-weight: 600;
+    cursor: pointer;
+  }
+`;
+
+// --- NOVOS ESTILOS ---
+
+export const BenefitsSection = styled.section`
+  background: ${theme.colors.white};
+  padding: 4rem 0;
+`;
+
+export const BenefitsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+
+  @media (max-width: ${theme.breakpoints.tablet}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: ${theme.breakpoints.mobile}) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+export const BenefitItem = styled.div`
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+
+  h4 {
+    margin: 0.75rem 0 0.5rem;
+    color: ${theme.colors.dark};
+  }
+  p {
+    color: ${theme.colors.mediumGray};
+    font-size:16px;
+  }
+`;
+
+export const BenefitIcon = styled.div`
+  font-size: 2.5rem;
+  color: ${theme.colors.primary};
+`;
+
+export const FAQSection = styled.section`
+  background: ${theme.colors.white};
+  padding: 4rem 0;
+`;
+
+export const FAQItem = styled.div`
+  background: ${theme.colors.lightGray};
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid ${theme.colors.secundary};
+
+  h4 {
+    margin: 0 0 0.5rem;
+    color: ${theme.colors.dark};
+  }
+  
+  p {
+    margin: 0;
+    color: ${theme.colors.mediumGray};
   }
 `;

@@ -14,7 +14,7 @@ export const GlobalContainer = styled.div`
 `;
 
 export const SectionTitle = styled.h2`
-  font-size: 2rem;
+  font-size: 36px;
   font-weight: 700;
   margin-bottom: .6rem;
   text-align: center;

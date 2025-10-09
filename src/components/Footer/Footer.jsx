@@ -9,12 +9,10 @@ const Footer = () => {
       <FooterGrid>
         <FooterColumn>
           <FooterTitle>Serviços</FooterTitle>
-          <FooterLink href="#">Seguro Auto</FooterLink>
-          <FooterLink href="#">Seguro Residencial</FooterLink>
-          <FooterLink href="#">Seguro Saúde</FooterLink>
-          <FooterLink href="#">Seguro de Vida</FooterLink>
-          <FooterLink href="#">Seguro Viagem</FooterLink>
-          <FooterLink href="#">Seguro Empresarial</FooterLink>
+          <FooterLink href="#">Seguros</FooterLink>
+          <FooterLink href="#">Consócios</FooterLink>
+          <FooterLink href="#">Planos Saúde</FooterLink>
+          
         </FooterColumn>
         
         <FooterColumn>
@@ -57,7 +55,7 @@ const Footer = () => {
       </FooterGrid>
       
       <FooterBottom>
-        <p>© {new Date().getFullYear()} Seguros Online. Todos os direitos reservados.</p>
+        <p>© {new Date().getFullYear()} Aba Seguros. Todos os direitos reservados.</p>
         <p>CNPJ: 00.000.000/0000-00 | SUSEP: 00000.000000/0000-00</p>
       </FooterBottom>
     </FooterContainer>

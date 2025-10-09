@@ -63,8 +63,7 @@ const ProductsSection = () => {
     {
       icon: ResidencialIcon,
       title: "Seguro Residencial",
-      description:
-        "Cobertura contra incêndios, roubos e desastres naturais.",
+      description: "Cobertura contra incêndios, roubos e desastres naturais.",
     },
     {
       icon: saudeIcon,
@@ -81,8 +80,7 @@ const ProductsSection = () => {
     {
       icon: viagemIcon,
       title: "Seguro Viagem",
-      description:
-        "Cobertura para emergências médicas e extravio de bagagem.",
+      description: "Cobertura para emergências médicas e extravio de bagagem.",
     },
     {
       icon: empresaIcon,
@@ -116,7 +114,7 @@ const ProductsSection = () => {
                 empresas, com atendimento consultivo e as melhores condições do
                 mercado.
               </HeroSubtitle>
-              <ButtonMain>COTE AGORA</ButtonMain>
+              <ButtonMain>Contrate Agora</ButtonMain>
             </HeroText>
             <HeroImage src={ImgHome} alt="imagem hero" />
           </HeroRow>
@@ -124,7 +122,7 @@ const ProductsSection = () => {
         <HeroDivider />
       </HeroContainer>
       <ProductsContainer id="products">
-        <SectionTitle >Nossos Planos</SectionTitle>
+        <SectionTitle>Nossos Planos</SectionTitle>
         <SectionSubtitle>Opções que cabem no seu orçamento</SectionSubtitle>
 
         {(() => {
@@ -133,21 +131,30 @@ const ProductsSection = () => {
           const scrollBySlide = (direction) => {
             if (!trackRef.current) return;
             const viewport = trackRef.current.parentElement;
-            const slide = trackRef.current.querySelector(':scope > *');
-            const slideWidth = slide ? slide.getBoundingClientRect().width + 16 : viewport.clientWidth; // 16 ~ gap
-            const delta = direction === 'next' ? slideWidth : -slideWidth;
-            trackRef.current.scrollBy({ left: delta, behavior: 'smooth' });
+            const slide = trackRef.current.querySelector(":scope > *");
+            const slideWidth = slide
+              ? slide.getBoundingClientRect().width + 16
+              : viewport.clientWidth; // 16 ~ gap
+            const delta = direction === "next" ? slideWidth : -slideWidth;
+            trackRef.current.scrollBy({ left: delta, behavior: "smooth" });
           };
 
           const handleKeyDown = (e) => {
-            if (e.key === 'ArrowRight') scrollBySlide('next');
-            if (e.key === 'ArrowLeft') scrollBySlide('prev');
+            if (e.key === "ArrowRight") scrollBySlide("next");
+            if (e.key === "ArrowLeft") scrollBySlide("prev");
           };
 
           return (
             <>
-              <ProductsCarouselViewport role="region" aria-label="Carrossel de produtos">
-                <ProductsCarouselTrack ref={trackRef} tabIndex={0} onKeyDown={handleKeyDown}>
+              <ProductsCarouselViewport
+                role="region"
+                aria-label="Carrossel de produtos"
+              >
+                <ProductsCarouselTrack
+                  ref={trackRef}
+                  tabIndex={0}
+                  onKeyDown={handleKeyDown}
+                >
                   {products.map((product, index) => (
                     <ProductSlide key={index} aria-roledescription="slide">
                       <ProductCard>
@@ -156,17 +163,27 @@ const ProductsSection = () => {
                         </IconWrapper>
                         <h3>{product.title}</h3>
                         <p>{product.description}</p>
-                        <a href="#">Saiba mais</a>
+                        
+                        <div className="saiba-mais-wrapper">
+                          <a href="#">Saiba mais </a>{" "}
+                          
+                        </div>
                       </ProductCard>
                     </ProductSlide>
                   ))}
                 </ProductsCarouselTrack>
               </ProductsCarouselViewport>
               <CarouselControls>
-                <CarouselButton aria-label="Anterior" onClick={() => scrollBySlide('prev')}>
+                <CarouselButton
+                  aria-label="Anterior"
+                  onClick={() => scrollBySlide("prev")}
+                >
                   ◀
                 </CarouselButton>
-                <CarouselButton aria-label="Próximo" onClick={() => scrollBySlide('next')}>
+                <CarouselButton
+                  aria-label="Próximo"
+                  onClick={() => scrollBySlide("next")}
+                >
                   ▶
                 </CarouselButton>
               </CarouselControls>
@@ -308,10 +325,9 @@ const ProductsSection = () => {
         </CTAInner>
       </CTABanner>
       <PartnersHomeSection />
-      <TestimonialsSection/>
+      <TestimonialsSection />
 
       <FAQSection />
-     
     </>
   );
 };

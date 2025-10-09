@@ -29,50 +29,60 @@ export const ProductsGrid = styled.div`
 `;
 
 export const ProductCard = styled.div`
-  background: ${theme.colors.white};
+  background: ${theme.colors.lightGray};
   border-radius: 12px;
-  border: 2px solid #26a9e0 ;
-  padding: 1rem;
+  border: 1px solid ${theme.colors.border || "#e5e7eb"};
+  padding: 1.25rem;
   transition: all ${theme.transitions.default};
-  
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 
   h3 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    margin: 0 0 0.75rem;
     color: ${theme.colors.dark};
+    text-align: center;
   }
 
   p {
     color: ${theme.colors.mediumGray};
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .saiba-mais-wrapper {
+    margin-top: auto;
+    text-align: center;
   }
 
   a {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     color: ${theme.colors.white};
     background-color: ${theme.colors.primary};
-    padding: 10px 14px;
-    border-radius: 5px;
-    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
     text-decoration: none;
     transition: all ${theme.transitions.default};
-
-    
+    width: auto;
+    max-width: 200px;
+    margin: 0 auto;
   }
 
   &:hover {
-    /* transform: translateY(-5px); */
     box-shadow: ${theme.shadows.medium};
   }
-`
+`;
 
-// ==========================
-// Products Carousel
-// ==========================
 export const ProductsCarouselViewport = styled.div`
   max-width: 1200px;
   margin: 0 auto;
@@ -93,9 +103,10 @@ export const ProductsCarouselTrack = styled.div`
   padding-bottom: 0.5rem;
   -webkit-overflow-scrolling: touch;
 
-  /* Oculta scrollbar em navegadores compatíveis */
-  scrollbar-width: none; /* Firefox */
-  &::-webkit-scrollbar { display: none; }
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const ProductSlide = styled.div`
@@ -134,29 +145,29 @@ export const CarouselButton = styled.button`
   }
 `;
 export const IconWrapper = styled.div`
-  width: 200px;  
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 1.5rem;
-  display: flex; 
-  align-items: center; /* Centraliza verticalmente */
-  justify-content: center; /* Centraliza horizontalmente */
+  background-color: ${theme.colors.primaryLight};
+  border-radius: 50%;
 
-  
-
-  img { 
-    border-radius: 10px;
-    max-width: 100%; 
-    max-height: 100%;
-    object-fit: contain; 
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 5%;
   }
 `;
 
 export const HeroContainer = styled.section`
   background: ${theme.colors.white};
-  padding: 7rem 0 0;
+  padding: 10rem 0 8rem 0;
   position: relative;
   overflow: hidden;
-  
-  
+
   @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 6rem 0 0;
   }
@@ -166,7 +177,7 @@ export const HeroContent = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-  
+
   @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 0 1rem;
   }
@@ -220,50 +231,36 @@ export const HeroSubtitle = styled.p`
 `;
 
 export const HeroImage = styled.img`
-  max-width: 600px; 
-  width: 100%; 
-  height: auto; 
-  display: block; 
-  margin: 0 auto; 
-  
-  
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+
   @media (max-width: ${theme.breakpoints.mobile}) {
-    margin: 1rem auto 0; 
+    margin: 1rem auto 0;
     max-width: 440px;
   }
 `;
 
-
-export const ButtonMain = styled.button`
-color:#e4e8eb;
-background-color: ${theme.colors.secundary};
-font-size: 1rem;
-border: none;
-padding: 12px 16px;
-border-radius: 5px;
-margin: 20px 0;
-
- @media (max-width: ${theme.breakpoints.mobile}) {
-   font-size: 1rem;
-   padding: 14px 18px;
- }
-`
-
 export const HeroDivider = styled.div`
   position: relative;
-  height: 60px;
-  background: linear-gradient(to bottom, ${theme.colors.white} 0%, ${theme.colors.white} 40%, ${theme.colors.lightGray} 41%, ${theme.colors.lightGray} 100%);
+  
+  background: linear-gradient(
+    to bottom,
+    ${theme.colors.white} 0%,
+    ${theme.colors.white} 40%,
+    ${theme.colors.lightGray} 41%,
+    ${theme.colors.lightGray} 100%
+  );
   clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
 
   @media (max-width: ${theme.breakpoints.mobile}) {
-    height: 40px;
+    
     clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 100%);
   }
 `;
 
-// ==========================
-// Value Proposition Section
-// ==========================
 export const ValuePropsSection = styled.section`
   background: ${theme.colors.white};
   padding: 4rem 0;
@@ -293,7 +290,7 @@ export const ValueGrid = styled.div`
 
 export const ValueCard = styled.div`
   background: ${theme.colors.lightGray};
-  border: 1px solid ${theme.colors.border || '#e5e7eb'};
+  border: 1px solid ${theme.colors.border || "#e5e7eb"};
   border-radius: 12px;
   padding: 1.25rem;
   transition: ${theme.transitions.default};
@@ -320,9 +317,6 @@ export const ValueCard = styled.div`
   }
 `;
 
-// ==========================
-// How It Works Section
-// ==========================
 export const HowItWorksSection = styled.section`
   background: ${theme.colors.lightGray};
   padding: 4rem 0;
@@ -350,7 +344,7 @@ export const Steps = styled.ol`
 
 export const StepItem = styled.li`
   background: ${theme.colors.white};
-  border: 1px solid ${theme.colors.border || '#e5e7eb'};
+  border: 1px solid ${theme.colors.border || "#e5e7eb"};
   border-radius: 12px;
   padding: 1.25rem;
   position: relative;
@@ -372,13 +366,16 @@ export const StepItem = styled.li`
     font-weight: 700;
   }
 
-  h4 { margin: 0 0 0.5rem; color: ${theme.colors.dark}; }
-  p { margin: 0; color: ${theme.colors.mediumGray}; }
+  h4 {
+    margin: 0 0 0.5rem;
+    color: ${theme.colors.dark};
+  }
+  p {
+    margin: 0;
+    color: ${theme.colors.mediumGray};
+  }
 `;
 
-// ==========================
-// Stats Bar
-// ==========================
 export const StatsBar = styled.section`
   background: ${theme.colors.secundary};
   color: ${theme.colors.white};
@@ -405,17 +402,20 @@ export const StatsGrid = styled.div`
 `;
 
 export const StatItem = styled.div`
-  strong { font-size: 1.5rem; display: block; }
-  span { opacity: 0.9; font-size: 0.95rem; }
+  strong {
+    font-size: 1.5rem;
+    display: block;
+  }
+  span {
+    opacity: 0.9;
+    font-size: 0.95rem;
+  }
 `;
 
-// ==========================
-// CTA Banner
-// ==========================
 export const CTABanner = styled.section`
-  background: ${theme.colors.primary};
+  background: ${theme.colors.primary}; /* Cor de destaque */
   color: ${theme.colors.white};
-  padding: 2.5rem 0;
+  padding: 3rem 0;
 `;
 
 export const CTAInner = styled.div`
@@ -425,33 +425,38 @@ export const CTAInner = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 2rem;
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     flex-direction: column;
-    align-items: flex-start;
-    padding: 0 1rem;
+    text-align: center;
   }
 `;
 
 export const CTAButtons = styled.div`
   display: flex;
-  gap: 0.75rem;
+  flex-shrink: 0;
+  
+`;
 
-  a, button {
-    background: ${theme.colors.white};
-    color: ${theme.colors.primary};
-    border: none;
-    padding: 12px 16px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
+export const ButtonMain = styled.button`
+  background: ${theme.colors.secundary};
+  color: ${theme.colors.white};
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+
+  &:hover {
+    background: ${theme.colors.primaryDark};
+    transform: scale(1.05);
   }
 `;
 
-// ==========================
-// Additional Services (Convênios & Consórcios)
-// ==========================
 export const ExtraServices = styled.section`
   background: ${theme.colors.white};
   padding: 4rem 0;
@@ -473,12 +478,24 @@ export const ExtraGrid = styled.div`
 
 export const ExtraCard = styled.div`
   background: ${theme.colors.lightGray};
-  border: 1px solid ${theme.colors.border || '#e5e7eb'};
+  border: 1px solid ${theme.colors.border || "#e5e7eb"};
   border-radius: 12px;
   padding: 1.5rem;
 
-  h3 { margin: 0 0 0.5rem; color: ${theme.colors.dark}; }
-  p { margin: 0 0 1rem; color: ${theme.colors.mediumGray}; }
-  ul { margin: 0; padding-left: 1rem; }
-  li { color: ${theme.colors.mediumGray}; margin: 0.25rem 0; }
+  h3 {
+    margin: 0 0 0.5rem;
+    color: ${theme.colors.dark};
+  }
+  p {
+    margin: 0 0 1rem;
+    color: ${theme.colors.mediumGray};
+  }
+  ul {
+    margin: 0;
+    padding-left: 1rem;
+  }
+  li {
+    color: ${theme.colors.mediumGray};
+    margin: 0.25rem 0;
+  }
 `;

@@ -3,23 +3,59 @@ import { SectionTitle, SectionSubtitle } from "../../App.styles";
 import {
   PageSection,
   ContentWrap,
-  TwoCols,
-  Card,
-  Tip,
+  ProductsGrid,
+  ProductCard,
+  ProductImage,
+  ProductButton,
   HeroContainer,
   HeroContent,
-  HeroImage,
   HeroRow,
-  HeroTitle,
   HeroText,
+  HeroTitle,
+  HeroImage,
   HeroDivider,
-  ProductButton, CardImage
+  HowItWorksSection,
+  StepsGrid,
+  StepItem,
+  BenefitsSection,
+  BenefitsGrid,
+  BenefitItem,
+  BenefitIcon,
+  CTABanner,
+  CTAInner,
+  CTAButtons,
+  ButtonMain,
 } from "./Consorcios.styles";
+
+// Ícones para a seção de vantagens
+import { FaPiggyBank, FaHandHoldingUsd, FaThumbsUp } from "react-icons/fa";
+
+// Imagens
 import ImgConsorcio from "../../assets/Img/img-consorcio.png";
-import Consorcio2 from "../../assets/Img/consorcio2.png"
-import Consorcio1 from "../../assets/Img/consorcio1.png"
+import ConsorcioImovel from "../../assets/Img/consorcio-imovel.png"; // Sugestão de nova imagem
+import ConsorcioVeiculo from "../../assets/Img/consorcio-automovel.png"; // Sugestão de nova imagem
+import ConsorcioServico from "../../assets/Img/consorcio-servicos.png"; // Sugestão de nova imagem
 
 const Consorcios = () => {
+  // Dados para os cards de produtos
+  const products = [
+    {
+      img: ConsorcioImovel,
+      title: "Consórcio Imobiliário",
+      description: "A forma mais inteligente de comprar, construir ou reformar seu imóvel sem juros.",
+    },
+    {
+      img: ConsorcioVeiculo,
+      title: "Consórcio de Veículos",
+      description: "Planeje a compra do seu carro, moto ou utilitário novo ou seminovo com parcelas que cabem no bolso.",
+    },
+    {
+      img: ConsorcioServico,
+      title: "Consórcio de Serviços",
+      description: "Realize seus sonhos como viagens, festas, cirurgias plásticas ou cursos com planejamento e economia.",
+    },
+  ];
+
   return (
     <>
       <HeroContainer>
@@ -27,92 +63,101 @@ const Consorcios = () => {
           <HeroRow>
             <HeroText>
               <HeroTitle>
-                Planos que cabem no seu bolso e te darão um futuro confortável.
+                Conquiste seus maiores sonhos sem pagar juros.
               </HeroTitle>
             </HeroText>
-            <HeroImage src={ImgConsorcio} alt="imagem hero" />
+            <HeroImage src={ImgConsorcio} alt="Família feliz com a conquista da casa própria através de consórcio" />
           </HeroRow>
         </HeroContent>
-
         <HeroDivider />
       </HeroContainer>
+
       <PageSection>
         <ContentWrap>
-          <SectionTitle>Consórcios</SectionTitle>
+          <SectionTitle>Consórcio: O Planejamento Inteligente</SectionTitle>
           <SectionSubtitle>
-            Planejamento inteligente para conquistar bens sem juros: automóveis,
-            imóveis e muito mais.
+            Uma modalidade de compra baseada na união de pessoas que formam uma poupança comum destinada à aquisição de bens ou serviços. Ideal para quem não tem pressa e busca disciplina financeira para atingir grandes objetivos.
           </SectionSubtitle>
 
-          <TwoCols>
-            <Card>
-              <CardImage src={Consorcio1} alt="Representação visual de como funciona o consórcio" />
-              <h3>Como funciona</h3>
-              <p>
-                Você participa de um grupo e contribui mensalmente. A cada mês,
-                uma ou mais pessoas são contempladas via sorteio e/ou lance.
-              </p>
-              <ul>
-                <li>Sem juros: apenas taxa de administração</li>
-                <li>Contemplação por sorteio ou lances</li>
-                <li>Crédito para compra do bem desejado</li>
-              </ul>
-              <Tip>
-                Ótima alternativa para quem busca disciplina financeira e
-                planejamento.
-              </Tip>
-              <ProductButton>Planos a partir de R$ 30,00</ProductButton>
-            </Card>
-
-            <Card>
-              <CardImage src={Consorcio2} alt="Representação visual de como funciona o consórcio" />
-              <h3>Benefícios</h3>
-              <p>
-                Ideal para construir patrimônio pensando no médio e longo prazo. Investimento para um futuro mais seguro com um maior patrimonio.
-              </p>
-              <ul>
-                <li>Parcelas que cabem no orçamento</li>
-                <li>Possibilidade de antecipar com lances</li>
-                <li>Crédito para imóveis, veículos e serviços</li>
-              </ul>
-              <Tip>
-                Perfeito para investimentos futuros e metas como casa própria ou
-                troca de carro.
-              </Tip>
-              <ProductButton>Lances atrativos</ProductButton>
-            </Card>
-          </TwoCols>
-
-          <TwoCols>
-            <Card>
-              <h3>Consórcio Imobiliário</h3>
-              <p>
-                Use o crédito para comprar, construir ou reformar. Pode compor
-                com FGTS conforme regras vigentes.
-              </p>
-              <ul>
-                <li>Prazo estendido e parcelas acessíveis</li>
-                <li>Flexibilidade de uso do crédito</li>
-                <li>Sem entrada obrigatória</li>
-              </ul>
-            </Card>
-            <Card>
-              <h3>Consórcio de Automóveis</h3>
-              <p>Planejamento para adquirir seu veículo sem pagar juros.</p>
-              <ul>
-                <li>Novos e seminovos</li>
-                <li>Lances para antecipação</li>
-                <li>Seguro de vida e outras coberturas acopladas</li>
-              </ul>
-            </Card>
-          </TwoCols>
-
-          <Tip>
-            Fale com um especialista da ABA Corretora para definir prazos,
-            cartas de crédito e estratégias de lance conforme suas metas.
-          </Tip>
+          {/* SEÇÃO DE PRODUTOS COM 3 CARDS */}
+          <ProductsGrid>
+            {products.map((product, index) => (
+              <ProductCard key={index}>
+                <ProductImage src={product.img} alt={product.title} />
+                <h3>{product.title}</h3>
+                <p>{product.description}</p>
+                <ProductButton>Simular Agora</ProductButton>
+              </ProductCard>
+            ))}
+          </ProductsGrid>
         </ContentWrap>
       </PageSection>
+
+      {/* NOVA SEÇÃO: COMO FUNCIONA */}
+      <HowItWorksSection>
+        <ContentWrap>
+          <SectionTitle>Como Funciona na Prática?</SectionTitle>
+          <SectionSubtitle>O processo é simples e transparente. Veja as 4 etapas principais:</SectionSubtitle>
+          <StepsGrid>
+            <StepItem>
+              <h4>1. Formação do Grupo</h4>
+              <p>Você adere a um grupo com outras pessoas que têm o mesmo objetivo que você.</p>
+            </StepItem>
+            <StepItem>
+              <h4>2. Contribuição Mensal</h4>
+              <p>Todos os participantes pagam parcelas mensais, que formam o fundo do grupo.</p>
+            </StepItem>
+            <StepItem>
+              <h4>3. Contemplação</h4>
+              <p>Mensalmente, participantes são contemplados por sorteio ou lance para receber o crédito.</p>
+            </StepItem>
+            <StepItem>
+              <h4>4. Aquisição do Bem</h4>
+              <p>Com a carta de crédito em mãos, você tem poder de compra à vista para adquirir seu bem.</p>
+            </StepItem>
+          </StepsGrid>
+        </ContentWrap>
+      </HowItWorksSection>
+
+      {/* NOVA SEÇÃO: VANTAGENS */}
+      <BenefitsSection>
+        <ContentWrap>
+          <SectionTitle>Principais Vantagens</SectionTitle>
+          <SectionSubtitle>Descubra por que o consórcio é a melhor opção para o seu planejamento.</SectionSubtitle>
+          <BenefitsGrid>
+            <BenefitItem>
+              <BenefitIcon><FaPiggyBank /></BenefitIcon>
+              <h4>Sem Juros</h4>
+              <p>Você paga apenas uma taxa de administração, que é muito menor que os juros de um financiamento.</p>
+            </BenefitItem>
+            <BenefitItem>
+              <BenefitIcon><FaHandHoldingUsd /></BenefitIcon>
+              <h4>Poder de Compra</h4>
+              <p>Ao ser contemplado, você recebe o valor integral da carta de crédito para negociar sua compra à vista.</p>
+            </BenefitItem>
+            <BenefitItem>
+              <BenefitIcon><FaThumbsUp /></BenefitIcon>
+              <h4>Flexibilidade</h4>
+              <p>Utilize o crédito para o bem que desejar dentro da categoria do seu grupo, com total liberdade de escolha.</p>
+            </BenefitItem>
+          </BenefitsGrid>
+        </ContentWrap>
+      </BenefitsSection>
+
+      {/* NOVA SEÇÃO: CALL TO ACTION (CTA) */}
+      <CTABanner>
+        <CTAInner>
+          <div>
+            <h3>Pronto para dar o primeiro passo?</h3>
+            <p>Faça uma simulação gratuita e sem compromisso para encontrar o plano perfeito para você.</p>
+          </div>
+          <CTAButtons>
+            <ButtonMain as="a" href="#contact">
+              Fazer Simulação
+            </ButtonMain>
+          </CTAButtons>
+        </CTAInner>
+      </CTABanner>
     </>
   );
 };

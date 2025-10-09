@@ -23,12 +23,20 @@ import {
   CTABanner,
   CTAInner,
   CTAButtons,
+  BenefitsSection,
+  BenefitsGrid,
+  BenefitItem,
+  BenefitIcon,
+  FAQSection,
+  FAQItem,
 } from "./Seguros.styles";
-import { FaShieldAlt } from "react-icons/fa";
-import { FaRegMoneyBillAlt } from "react-icons/fa";
+
+// Ícones
+import { FaShieldAlt, FaRegMoneyBillAlt } from "react-icons/fa";
 import { FaClockRotateLeft } from "react-icons/fa6";
 import { MdOutlineSupportAgent } from "react-icons/md";
 
+// Imagens
 import ImgHome from "../../assets/Img/img-seguro.png";
 import SeguroAuto from "../../assets/Img/seguro-auto.png";
 import SeguroResidencia from "../../assets/Img/seguro-residencial.png";
@@ -64,6 +72,30 @@ const Seguros = () => {
     },
   ];
 
+  const faqs = [
+    {
+      question: "Como funciona a franquia do seguro?",
+      answer:
+        "A franquia é a participação do segurado nos prejuízos em caso de sinistro. Se o custo do reparo for menor que a franquia, o segurado arca com o valor. Se for maior, a seguradora cobre o excedente.",
+    },
+    {
+      question: "O que é um sinistro e como devo proceder?",
+      answer:
+        "Sinistro é qualquer evento previsto na apólice que cause dano ou prejuízo. Ao ocorrer, você deve entrar em contato com a seguradora o mais rápido possível para receber as orientações de como acionar sua cobertura.",
+    },
+    {
+      question: "Posso cancelar meu seguro a qualquer momento?",
+      answer:
+        "Sim, a maioria dos seguros pode ser cancelada a qualquer momento. A seguradora fará um cálculo para devolver parte do valor pago, proporcional ao tempo que ainda resta de cobertura.",
+    },
+    {
+      question: "Qual a diferença entre seguro e assistência 24h?",
+      answer:
+        "O seguro cobre os prejuízos financeiros de um sinistro (roubo, colisão, etc.), enquanto a assistência 24h oferece serviços emergenciais como guincho, chaveiro e eletricista, garantindo suporte no dia a dia.",
+    },
+  ];
+
+
   return (
     <>
       <HeroContainer>
@@ -77,23 +109,23 @@ const Seguros = () => {
             <HeroImage src={ImgHome} alt="imagem hero" />
           </HeroRow>
         </HeroContent>
-
         <HeroDivider />
       </HeroContainer>
 
       <PageSection>
         <ContentWrap>
-          <SectionTitle>Seguros</SectionTitle>
+          <SectionTitle>Nossos Seguros</SectionTitle>
           <SectionSubtitle>
-            Proteção em todas as fases da vida. Seruros para: veículos,
-            residência, bicicleta, vida, equipamentos e etc.
+            Proteção para todas as fases da sua vida. Encontre a solução ideal
+            para veículos, residência, viagens, vida, equipamentos e muito mais.
           </SectionSubtitle>
 
           <ProductsGrid>
+            {/* CARD SEGURO AUTOMÓVEL */}
             <ProductCard>
               <ProductImage
                 src={SeguroAuto}
-                alt="Ícone representando seguro de viagem"
+                alt="Ícone representando seguro de automóvel"
               />
               <h3>Seguro Automóvel</h3>
               <p>
@@ -112,10 +144,11 @@ const Seguros = () => {
               <ProductButton>Planos a partir de R$ 30,00</ProductButton>
             </ProductCard>
 
+            {/* CARD SEGURO RESIDENCIAL */}
             <ProductCard>
               <ProductImage
                 src={SeguroResidencia}
-                alt="Ícone representando seguro de viagem"
+                alt="Ícone representando seguro residencial"
               />
               <h3>Seguro Residencial</h3>
               <p>
@@ -135,6 +168,7 @@ const Seguros = () => {
               <ProductButton>Planos a partir de R$ 30,00</ProductButton>
             </ProductCard>
 
+            {/* CARD SEGURO VIAGEM */}
             <ProductCard>
               <ProductImage
                 src={SegurViagem}
@@ -151,16 +185,17 @@ const Seguros = () => {
                 <li>Assistência internacional 24h </li>
               </ul>
               <Tip>
-                Essencial para viagens internacionais e recomendado para
-                garantir sua paz de espírito em qualquer destino.
+                Essencial para viagens internacionais e para garantir sua paz de
+                espírito.
               </Tip>
               <ProductButton>Planos a partir de R$ 30,00</ProductButton>
             </ProductCard>
 
+            {/* CARD SEGURO DE VIDA */}
             <ProductCard>
               <ProductImage
                 src={SeguroVida}
-                alt="Ícone representando seguro de viagem"
+                alt="Ícone representando seguro de vida"
               />
               <h3>Seguro de Vida</h3>
               <p>
@@ -170,19 +205,20 @@ const Seguros = () => {
               <ul>
                 <li>Cobertura em caso de falecimento</li>
                 <li>Indenização por invalidez (total ou parcial)</li>
-                <li>Assistência para doenças graves e acidentes pessoais</li>
+                <li>Assistência para doenças graves e acidentes</li>
               </ul>
               <Tip>
-                Essencial para quem deseja proteger financeiramente sua família
-                e entes queridos em qualquer situação.
+                Essencial para proteger financeiramente sua família e entes
+                queridos.
               </Tip>
               <ProductButton>Planos a partir de R$ 30,00</ProductButton>
             </ProductCard>
 
+            {/* CARD EQUIPAMENTOS PORTÁTEIS */}
             <ProductCard>
               <ProductImage
                 src={SeguroEquipamentos}
-                alt="Ícone representando seguro de viagem"
+                alt="Ícone representando seguro de equipamentos"
               />
               <h3>Equipamentos Portáteis</h3>
               <p>
@@ -196,15 +232,16 @@ const Seguros = () => {
               </ul>
               <Tip>
                 Perfeito para profissionais e estudantes que dependem de seus
-                equipamentos no dia a dia.
+                equipamentos.
               </Tip>
               <ProductButton>Planos a partir de R$ 30,00</ProductButton>
             </ProductCard>
 
+            {/* CARD SEGURO DE BICICLETA */}
             <ProductCard>
               <ProductImage
                 src={SeguroBike}
-                alt="Ícone representando seguro de viagem"
+                alt="Ícone representando seguro de bicicleta"
               />
               <h3>Seguro de Bicicleta</h3>
               <p>
@@ -218,45 +255,84 @@ const Seguros = () => {
               </ul>
               <Tip>
                 Ideal para ciclistas urbanos e atletas que querem garantir a
-                segurança de seu investimento.
+                segurança do seu investimento.
               </Tip>
               <ProductButton>Planos a partir de R$ 30,00</ProductButton>
             </ProductCard>
           </ProductsGrid>
         </ContentWrap>
       </PageSection>
+
+      {/* NOVA SEÇÃO DE BENEFÍCIOS */}
+      <BenefitsSection>
+        <ContentWrap>
+          <SectionTitle>Nossos Diferenciais</SectionTitle>
+          <SectionSubtitle>
+            Oferecemos as melhores soluções em proteção para você e sua família.
+          </SectionSubtitle>
+          <BenefitsGrid>
+            {benefits.map((benefit, index) => (
+              <BenefitItem key={index}>
+               <h3>{benefit.title}</h3>
+                <p>{benefit.description}</p>
+              </BenefitItem>
+            ))}
+          </BenefitsGrid>
+        </ContentWrap>
+      </BenefitsSection>
+
       <HowItWorksSection>
-        <SectionTitle>Porque contratar nossos seguros?</SectionTitle>
+        <SectionTitle>Como Contratar?</SectionTitle>
         <SectionSubtitle>
-          Oferecemos as melhores soluções em proteção para você e sua família.
+          Contratar seu seguro é simples, rápido e totalmente digital.
         </SectionSubtitle>
         <Steps>
           <StepItem>
-            <h4>Proteção Completa</h4>
+            <h4>Simulação Online</h4>
             <p>
-              Coberturas abrangentes para todas as situações que você possa
-              imaginar.
+              Escolha o seguro desejado e preencha algumas informações para
+              receber sua cotação.
             </p>
           </StepItem>
           <StepItem>
-            <h4>Preços Acessíveis</h4>
-            <p>Planos que cabem no seu bolso sem abrir mão da qualidade.</p>
-          </StepItem>
-          <StepItem>
-            <h4>Rápida Indenização</h4>
+            <h4>Análise de Perfil</h4>
             <p>
-              Processos ágeis para que você receba o que é seu o mais rápido
-              possível.
+              Nossos especialistas analisam seu perfil para encontrar a melhor
+              cobertura pelo menor preço.
             </p>
           </StepItem>
           <StepItem>
-            <h4>Suporte 24/7</h4>
+            <h4>Emissão da Apólice</h4>
             <p>
-              Atendimento humanizado disponível a qualquer hora, todos os dias.
+              Após a aprovação, sua apólice é emitida e enviada digitalmente
+              para você.
+            </p>
+          </StepItem>
+          <StepItem>
+            <h4>Tudo Pronto!</h4>
+            <p>
+              Você e seu patrimônio estão protegidos. Conte com nosso suporte
+              sempre que precisar.
             </p>
           </StepItem>
         </Steps>
       </HowItWorksSection>
+
+      {/* NOVA SEÇÃO DE FAQ */}
+      <FAQSection>
+        <ContentWrap>
+          <SectionTitle>Perguntas Frequentes</SectionTitle>
+          <SectionSubtitle>Ainda tem dúvidas? A gente ajuda você a esclarecer.</SectionSubtitle>
+          {faqs.map((faq, index) => (
+            <FAQItem key={index}>
+              <h4>{faq.question}</h4>
+              <p>{faq.answer}</p>
+            </FAQItem>
+          ))}
+        </ContentWrap>
+      </FAQSection>
+
+
       <CTABanner>
         <CTAInner>
           <div>
@@ -279,6 +355,7 @@ const Seguros = () => {
           </CTAButtons>
         </CTAInner>
       </CTABanner>
+
       <PartnersSecuritySection />
     </>
   );
