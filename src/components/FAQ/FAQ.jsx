@@ -9,19 +9,19 @@ const FAQSection = () => {
   const faqs = [
     {
       question: 'Como faço para contratar um seguro?',
-      answer: 'Você pode contratar diretamente pelo nosso site, através do telefone ou em uma de nossas agências. O processo é rápido e simples.'
+      answer: 'Você pode contratar diretamente pelo nosso site ou através do WhatsApp. O processo é rápido e simples.'
     },
     {
       question: 'Quanto tempo leva para aprovar uma apólice?',
-      answer: 'A aprovação é quase instantânea para a maioria dos seguros. Em alguns casos específicos pode levar até 24 horas.'
+      answer: 'O prazo legal para aprovação de uma apolice é de 15 dias, conforme regulamentação da SUSEP. No entanto, algumas seguradoras podem ter um processo mais rápido.'
     },
     {
       question: 'Posso cancelar meu seguro a qualquer momento?',
-      answer: 'Sim, você pode cancelar a qualquer momento. Consulte nossas políticas para entender sobre possíveis taxas administrativas.'
+      answer: 'Não tem taxa administrativa em caso de cancelamento.'
     },
     {
       question: 'Como faço para acionar meu seguro?',
-      answer: 'Você pode acionar através do nosso aplicativo, site ou central telefônica 24 horas. Nossa equipe irá guiá-lo em todo o processo.'
+      answer: 'Você pode entrar em contato direto com a companhia através link ou através do nosso canal de atendimento ao segurado (WhatsApp da corretora) e nossa equipe irá guia-lo em todo o processo.'
     },
     {
       question: 'Quais documentos preciso para contratar?',

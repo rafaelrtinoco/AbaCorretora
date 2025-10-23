@@ -29,6 +29,7 @@ import AutomovelIcon from "../../assets/Img/automovel.webp";
 import ResidencialIcon from "../../assets/Img/residencial.webp";
 import saudeIcon from "../../assets/Img/saude.webp";
 import vidaIcon from "../../assets/Img/vida.webp";
+import Financiamento from "../../assets/Img/financiamento.webp";
 import empresaIcon from "../../assets/Img/empresa.webp";
 import viagemIcon from "../../assets/Img/viagem.webp";
 import celularIcon from "../../assets/Img/celular.webp";
@@ -56,47 +57,39 @@ const ProductsSection = () => {
   const products = [
     {
       icon: AutomovelIcon,
-      title: "Seguro Auto",
+      title: "Seguros",
       description:
-        "Proteção completa para seu veículo contra colisões, roubos e danos.",
+        "Seguros que protegem seus patrimônios e vida: automóvel, equipamentos, empresa, residência, viagem, vida e muito mais.",
     },
     {
       icon: ResidencialIcon,
-      title: "Seguro Residencial",
-      description: "Cobertura contra incêndios, roubos e desastres naturais.",
+      title: "Consórcio",
+      description:
+        "O consórcio é o caminho ideal para quem busca comprar um bem com parcelas que cabem no bolso e sem pagar juros.",
     },
     {
       icon: saudeIcon,
       title: "Plano de Saúde",
       description:
-        "Planos individuais ou familiares com ampla rede de hospitais.",
+        "Encontre o plano de saúde (individual, familiar ou empresarial) com a cobertura ideal para suas necessidades e seu orçamento.",
     },
     {
-      icon: vidaIcon,
-      title: "Seguro de Vida",
+      icon: Financiamento,
+      title: "Financiamento",
       description:
-        "Proteção financeira para sua família em caso de imprevistos.",
+        "O financiamento ideal para suas conquistas. Taxas competitivas e planos flexíveis para você tirar seus projetos do papel.",
     },
     {
       icon: viagemIcon,
-      title: "Seguro Viagem",
-      description: "Cobertura para emergências médicas e extravio de bagagem.",
-    },
-    {
-      icon: empresaIcon,
-      title: "Seguro Empresarial",
+      title: "Empréstimo",
       description:
-        "Proteção para seu negócio contra riscos operacionais e patrimoniais.",
-    },
-    {
-      icon: celularIcon,
-      title: "Seguro Celular",
-      description: "Cobertura para danos acidentais e roubo de seu aparelho.",
+        "O empréstimo que você precisa está aqui. Dinheiro na mão para seus objetivos e sonhos.",
     },
     {
       icon: petIcon,
       title: "Petlove Saúde",
-      description: "Planos de saúde para seu animal de estimação.",
+      description:
+        "Planos de saúde para seu animal de estimação. Cuide bem do seu Pet.",
     },
   ];
 
@@ -107,14 +100,15 @@ const ProductsSection = () => {
           <HeroRow>
             <HeroText>
               <HeroTitle>
-                Proteção completa para manter você e sua família seguros.
+                Tranquilidade para sua família, segurança para sua empresa.
               </HeroTitle>
               <HeroSubtitle>
-                Soluções em seguros, convênios e consórcios para pessoas e
-                empresas, com atendimento consultivo e as melhores condições do
-                mercado.
+                Consultoria especializada em seguros, convênios e consórcios. As
+                melhores soluções do mercado para você e sua empresa.
               </HeroSubtitle>
-              <ButtonMain as="a" href="https://wa.me/5511945411551">Contrate Agora</ButtonMain>
+              <ButtonMain as="a" href="https://wa.me/5511945411551">
+                Contrate Agora
+              </ButtonMain>
             </HeroText>
             <HeroImage src={ImgHome} alt="imagem hero" />
           </HeroRow>
@@ -134,7 +128,7 @@ const ProductsSection = () => {
             const slide = trackRef.current.querySelector(":scope > *");
             const slideWidth = slide
               ? slide.getBoundingClientRect().width + 16
-              : viewport.clientWidth; 
+              : viewport.clientWidth;
             const delta = direction === "next" ? slideWidth : -slideWidth;
             trackRef.current.scrollBy({ left: delta, behavior: "smooth" });
           };
@@ -163,10 +157,9 @@ const ProductsSection = () => {
                         </IconWrapper>
                         <h3>{product.title}</h3>
                         <p>{product.description}</p>
-                        
+
                         <div className="saiba-mais-wrapper">
                           <a href="https://wa.me/5511945411551">Saiba mais </a>{" "}
-                          
                         </div>
                       </ProductCard>
                     </ProductSlide>
@@ -275,28 +268,31 @@ const ProductsSection = () => {
       <ExtraServices>
         <SectionTitle>Mais soluções para você</SectionTitle>
         <SectionSubtitle>
-          Além dos seguros, conte com nossos convênios e consórcios para ampliar
-          suas possibilidades.
+          Além dos seguros, conte com nossas soluções em planos de saúde e
+          consórcios para ampliar suas possibilidades.
         </SectionSubtitle>
         <ExtraGrid>
           <ExtraCard>
-            <h3>Convênios</h3>
+            <h3>Planos de Saúde</h3>
             <p>
-              Parcerias para oferecer benefícios exclusivos aos nossos clientes.
+              Cuidar da sua saúde e da sua família é prioridade. Oferecemos
+              planos de saúde individuais, familiares e empresariais, com ampla
+              rede de atendimento e condições acessíveis.
             </p>
             <ul>
-              <li>Descontos em saúde e bem-estar</li>
-              <li>Serviços automotivos e residenciais</li>
-              <li>Assistências 24h</li>
+              <li>Atendimento nacional com hospitais, clínicas e laboratórios de referência.</li>
+              <li>Consultas e exames com agendamento facilitado.</li>
+              <li>Planos com ou sem coparticipação</li>
+              <li>Isenção de carência mediante análise</li>
             </ul>
           </ExtraCard>
           <ExtraCard>
             <h3>Consórcios</h3>
-            <p>Planejamento para aquisição de bens com parcelas acessíveis.</p>
+            <p>Planeje suas conquistas com segurança e parcelas que cabem no seu bolso.</p>
             <ul>
               <li>Consórcio de automóveis</li>
               <li>Consórcio imobiliário</li>
-              <li>Administração confiável</li>
+              <li>Administração confiável e suporte em todas as etapas</li>
             </ul>
           </ExtraCard>
         </ExtraGrid>
