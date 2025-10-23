@@ -14,6 +14,7 @@ import Saude from "./pages/Saude/Saude";
 import Contato from "./pages/Contato/Contato";
 import CookieBanner from "./components/CookieBanner/CookieBanner";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import ContactList from "./pages/ContactList/ContactList";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/consorcios" element={<Consorcios />} />
           <Route path="/saude" element={<Saude />} />
           <Route path="/contato" element={<Contato />} />
+          <Route path="/corretoras" element={<ContactList />} />
         </Routes>
       </main>
       <CookieBanner />

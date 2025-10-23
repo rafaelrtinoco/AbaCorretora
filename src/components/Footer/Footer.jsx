@@ -7,8 +7,10 @@ import {
   FooterLink,
   FooterBottom,
   SocialIcons,
-} from "./Footer.styles";
+  FooterImage,
+} from "../Footer/Footer.styles";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
+import imagemFooter from "/public/LOGO-ABA.png";
 
 const Footer = () => {
   return (
@@ -23,7 +25,6 @@ const Footer = () => {
           <FooterLink>Equipamentos Portáteis</FooterLink>
           <FooterLink>Eventos</FooterLink>
           <FooterLink>Máquinas</FooterLink>
-          <FooterLink>Consócios</FooterLink>
           <FooterLink>Residência</FooterLink>
           <FooterLink>Responsabilidade Civil</FooterLink>
           <FooterLink>Viagem </FooterLink>
@@ -55,6 +56,10 @@ const Footer = () => {
 
         <FooterColumn>
           <FooterTitle>Nossas Redes Sociais</FooterTitle>
+          <FooterImage
+            src={imagemFooter}
+            alt="Descrição da imagem (ex: Selo de Segurança)" // <-- MUDE O TEXTO ALT
+          />
 
           <SocialIcons>
             <a href="#" aria-label="Facebook">

@@ -100,3 +100,9 @@ export const FooterBottom = styled.div`
     margin: 0.5rem 0;
   }
 `;
+
+export const FooterImage = styled.img`
+  width: 30%; /* Faz a imagem ocupar a largura da coluna */
+  height: auto; /* Mantém a proporção da imagem */ 
+  
+`;
