@@ -31,7 +31,7 @@ const FAQSection = () => {
           <Link className="navLink" to="/corretoras">
             página de contatos
           </Link>{" "}
-          ou através do nosso ou através do nosso {" "}
+          ou através do nosso {" "}
           <a
             href="https://wa.me/5511945411551"
             target="_blank"

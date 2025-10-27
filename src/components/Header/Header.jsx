@@ -5,7 +5,6 @@ import {
   NavLogo,
   NavMenu,
   NavItem,
-  NavLink,
   MobileMenuButton,
 } from "./Header.styles";
 import Logo from "../../assets/icons/logo.png";

@@ -11,6 +11,7 @@ import {
 } from "../Footer/Footer.styles";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import imagemFooter from "/public/LOGO-ABA.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -21,7 +22,7 @@ const Footer = () => {
           <FooterLink>Automóvel</FooterLink>
           <FooterLink>Bicicleta</FooterLink>
           <FooterLink>Condomínio</FooterLink>
-          <FooterLink>Empresaial</FooterLink>
+          <FooterLink>Empresarial</FooterLink>
           <FooterLink>Equipamentos Portáteis</FooterLink>
           <FooterLink>Eventos</FooterLink>
           <FooterLink>Máquinas</FooterLink>
@@ -47,18 +48,32 @@ const Footer = () => {
 
         <FooterColumn>
           <FooterTitle>Empresa</FooterTitle>
-          <FooterLink>Home</FooterLink>
-          <FooterLink>Seguros</FooterLink>
-          <FooterLink>Consórcios</FooterLink>
-          <FooterLink>Saúde</FooterLink>
-          <FooterLink>Contato</FooterLink>
+          <FooterLink as={Link} to="/AbaCorretora">
+            Home
+          </FooterLink>
+
+          <FooterLink as={Link} to="/seguros">
+            Seguros
+          </FooterLink>
+
+          <FooterLink as={Link} to="/consorcios">
+            Consórcios
+          </FooterLink>
+
+          <FooterLink as={Link} to="/saude">
+            Saúde
+          </FooterLink>
+
+          <FooterLink as={Link} to="/contato">
+            Contato
+          </FooterLink>
         </FooterColumn>
 
         <FooterColumn>
           <FooterTitle>Nossas Redes Sociais</FooterTitle>
           <FooterImage
             src={imagemFooter}
-            alt="Descrição da imagem (ex: Selo de Segurança)" // <-- MUDE O TEXTO ALT
+            alt="Descrição da imagem (ex: Selo de Segurança)"
           />
 
           <SocialIcons>
@@ -80,7 +95,7 @@ const Footer = () => {
           © {new Date().getFullYear()} ABA SEGUROS. Todos os direitos
           reservados.
         </p>
-        <p>CNPJ: 00.000.000/0000-00 | SUSEP: 00000.000000/0000-00</p>
+        <p>CNPJ: 57.208.516/0001-43 | SUSEP: 2421619-27</p>
       </FooterBottom>
     </FooterContainer>
   );

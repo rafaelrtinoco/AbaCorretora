@@ -47,7 +47,7 @@ function BlogSection() {
       </HeroContainer>
 
       <BlogContainer id="convenios">
-        <SectionTitle>Convênios e Planos de Saúde</SectionTitle>
+        <SectionTitle>Planos de Saúde</SectionTitle>
         <SectionSubtitle>
           Encontre o plano ideal para sua saúde e bem-estar, com cobertura
           completa para você, sua família e até mesmo seu pet.

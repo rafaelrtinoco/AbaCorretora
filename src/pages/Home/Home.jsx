@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import {
   ProductsContainer,
-  ProductsGrid,
   ProductCard,
   HeroContainer,
   HeroContent,
@@ -28,13 +27,9 @@ import ImgHome from "../../assets/Img/img-home.webp";
 import AutomovelIcon from "../../assets/Img/automovel.webp";
 import ResidencialIcon from "../../assets/Img/residencial.webp";
 import saudeIcon from "../../assets/Img/saude.webp";
-import vidaIcon from "../../assets/Img/vida.webp";
 import Financiamento from "../../assets/Img/financiamento.webp";
-import empresaIcon from "../../assets/Img/empresa.webp";
 import viagemIcon from "../../assets/Img/viagem.webp";
-import celularIcon from "../../assets/Img/celular.webp";
 import petIcon from "../../assets/Img/pet.webp";
-// import ContactSection from "../../components/Contacts/Contacts";
 import {
   ValuePropsSection,
   ValueGrid,
@@ -103,7 +98,7 @@ const ProductsSection = () => {
                 Tranquilidade para sua família, segurança para sua empresa.
               </HeroTitle>
               <HeroSubtitle>
-                Consultoria especializada em seguros, convênios e consórcios. As
+                Consultoria especializada em seguros, planos de saúde, odontológico e consórcios. As
                 melhores soluções do mercado para você e sua empresa.
               </HeroSubtitle>
               <ButtonMain as="a" href="https://wa.me/5511945411551">
