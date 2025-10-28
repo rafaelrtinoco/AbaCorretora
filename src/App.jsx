@@ -15,6 +15,7 @@ import Contato from "./pages/Contato/Contato";
 import CookieBanner from "./components/CookieBanner/CookieBanner";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import ContactList from "./pages/ContactList/ContactList";
+import ContrateAgora from './pages/ContrateAgora/ContrateAgora';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="/saude" element={<Saude />} />
           <Route path="/contato" element={<Contato />} />
           <Route path="/corretoras" element={<ContactList />} />
+          <Route path="/contrateAgora" element={<ContrateAgora />} />
         </Routes>
       </main>
       <CookieBanner />
