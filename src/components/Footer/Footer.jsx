@@ -80,10 +80,10 @@ const Footer = () => {
             <a href="#" aria-label="Facebook">
               <FaFacebook />
             </a>
-            <a href="#" aria-label="Instagram">
+            <a href="https://www.instagram.com/abacorretoradeseguros?igsh=N2o0bGFoMmtmbzJ5" aria-label="Instagram">
               <FaInstagram />
             </a>
-            <a href="#" aria-label="YouTube">
+            <a href="https://youtube.com/@abacorretoradeseguros?si=iFRGtmx-0855JW-d" aria-label="YouTube">
               <FaYoutube />
             </a>
           </SocialIcons>

@@ -190,7 +190,7 @@ export const ProductButton = styled.button`
 
   width: 100%;
   padding: 0.75rem 1rem;
-  margin-top: auto;
+  margin-top: auto; /* Garante que o botão fique na parte inferior */
 
   background-color: ${theme.colors.primary};
   color: ${theme.colors.white};
@@ -206,6 +206,25 @@ export const ProductButton = styled.button`
 
   &:hover {
     background-color: ${theme.colors.primaryDark};
+  }
+`;
+
+export const ProductLink = styled.a`
+  display: block; // Para ocupar a largura total e permitir margin-top/bottom
+  text-align: center;
+  margin-top: 0.3rem; 
+  background-color: ${theme.colors.secundary};
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  color: ${theme.colors.white}; 
+  font-size: 1rem; // Um tamanho de fonte menor
+  font-weight: bold;
+  text-decoration: none; // Sem sublinhado por padrão
+  
+  &:hover {
+     color: ${theme.colors.white}; 
   }
 `;
 
