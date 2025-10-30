@@ -77,7 +77,7 @@ const Footer = () => {
           />
 
           <SocialIcons>
-            <a href="#" aria-label="Facebook">
+            <a href="https://www.facebook.com/profile.php?id=61582932668466" aria-label="Facebook">
               <FaFacebook />
             </a>
             <a href="https://www.instagram.com/abacorretoradeseguros?igsh=N2o0bGFoMmtmbzJ5" aria-label="Instagram">
