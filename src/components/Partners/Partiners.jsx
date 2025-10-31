@@ -14,11 +14,11 @@ import Azul from "../../assets/image/azul-seguros.webp";
 import HDI from "../../assets/image/hdi.webp";
 import Itau from "../../assets/image/itau.webp";
 import Liberty from "../../assets/image/liberty.webp";
-import Mapfre from "../../assets/image/Mapfre.webp";
-import Mitsui from "../../assets/image/Mitsui.webp";
+import Mapfre from "../../assets/image/mapfre.webp";
+import Mitsui from "../../assets/image/mitsui.webp";
 import Pier from "../../assets/image/pier.webp";
 import Tokio from "../../assets/image/tokio.webp";
-import Zurich from "../../assets/image/Zurich.webp";
+import Zurich from "../../assets/image/zurich.webp";
 
 import Metlife from "../../assets/image/metlife.webp";
 import Unimed from "../../assets/image/unimed.webp";
