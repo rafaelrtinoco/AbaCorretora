@@ -164,7 +164,7 @@ export const IconWrapper = styled.div`
 
 export const HeroContainer = styled.section`
   background: ${theme.colors.white};
-  padding: 7rem 0 8rem 0;
+  padding: 10rem 0 4rem 0;
   position: relative;
   overflow: hidden;
     
