@@ -29,7 +29,7 @@ const Header = () => {
   return (
     <HeaderContainer $isScrolled={isScrolled}>
       <Nav>
-        <NavLogo href="/AbaCorretora">
+        <NavLogo href="/">
           <img
             src={Logo}
             alt="Logo"
