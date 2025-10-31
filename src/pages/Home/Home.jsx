@@ -23,13 +23,13 @@ import FAQSection from "../../components/FAQ/FAQ";
 import { PartnersHomeSection } from "../../components/Partners/Partiners";
 import TestimonialsSection from "../../components/Testimonials/Testimonials";
 
-import ImgHome from "../../assets/imagem/img-home.webp";
-import AutomovelIcon from "../../assets/imagem/automovel.webp";
-import ResidencialIcon from "../../assets/imagem/residencial.webp";
-import saudeIcon from "../../assets/imagem/saude.webp";
-import Financiamento from "../../assets/imagem/financiamento.webp";
-import viagemIcon from "../../assets/imagem/viagem.webp";
-import petIcon from "../../assets/imagem/pet.webp";
+import ImgHome from "../../assets/image/img-home.webp";
+import AutomovelIcon from "../../assets/image/automovel.webp";
+import ResidencialIcon from "../../assets/image/residencial.webp";
+import saudeIcon from "../../assets/image/saude.webp";
+import Financiamento from "../../assets/image/financiamento.webp";
+import viagemIcon from "../../assets/image/viagem.webp";
+import petIcon from "../../assets/image/pet.webp";
 import {
   ValuePropsSection,
   ValueGrid,
