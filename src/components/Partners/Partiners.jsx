@@ -13,7 +13,7 @@ import Allianz from "../../assets/image/allianz.webp";
 import Azul from "../../assets/image/azul-seguros.webp";
 import HDI from "../../assets/image/hdi.webp";
 import Itau from "../../assets/image/itau.webp";
-import Liberty from "../../assets/image/Liberty.webp";
+import Liberty from "../../assets/image/liberty.webp";
 import Mapfre from "../../assets/image/Mapfre.webp";
 import Mitsui from "../../assets/image/Mitsui.webp";
 import Pier from "../../assets/image/pier.webp";
