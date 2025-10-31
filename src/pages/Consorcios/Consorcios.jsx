@@ -26,11 +26,12 @@ import {
   CTAButtons,
   ButtonMain,
 } from "./Consorcios.styles";
+import { SEO } from "../../components/SEO/SEO"
 import { FaPiggyBank, FaHandHoldingUsd, FaThumbsUp } from "react-icons/fa";
-import ImgConsorcio from "../../assets/Img/img-consorcio.webp";
-import ConsorcioImovel from "../../assets/Img/consorcio-imovel.webp"; 
-import ConsorcioVeiculo from "../../assets/Img/consorcio-automovel.webp"; 
-import ConsorcioServico from "../../assets/Img/consorcio-servicos.webp"; 
+import ImgConsorcio from "../../assets/image/img-consorcio.webp";
+import ConsorcioImovel from "../../assets/image/consorcio-imovel.webp"; 
+import ConsorcioVeiculo from "../../assets/image/consorcio-automovel.webp"; 
+import ConsorcioServico from "../../assets/image/consorcio-servicos.webp"; 
 
 const Consorcios = () => {
   
@@ -54,6 +55,13 @@ const Consorcios = () => {
 
   return (
     <>
+    <SEO
+        title="Consórcios"
+        description="Realize seu sonho da casa própria ou carro novo com nossos planos de consórcio. Simule agora."
+        name="Aba Seguros"
+        type="website"
+        keywords="consórcio imobiliário, consórcio de carro"
+      />
       <HeroContainer>
         <HeroContent>
           <HeroRow>

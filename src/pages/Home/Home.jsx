@@ -23,13 +23,13 @@ import FAQSection from "../../components/FAQ/FAQ";
 import { PartnersHomeSection } from "../../components/Partners/Partiners";
 import TestimonialsSection from "../../components/Testimonials/Testimonials";
 
-import ImgHome from "../../assets/Img/img-home.webp";
-import AutomovelIcon from "../../assets/Img/automovel.webp";
-import ResidencialIcon from "../../assets/Img/residencial.webp";
-import saudeIcon from "../../assets/Img/saude.webp";
-import Financiamento from "../../assets/Img/financiamento.webp";
-import viagemIcon from "../../assets/Img/viagem.webp";
-import petIcon from "../../assets/Img/pet.webp";
+import ImgHome from "../../assets/imagem/img-home.webp";
+import AutomovelIcon from "../../assets/imagem/automovel.webp";
+import ResidencialIcon from "../../assets/imagem/residencial.webp";
+import saudeIcon from "../../assets/imagem/saude.webp";
+import Financiamento from "../../assets/imagem/financiamento.webp";
+import viagemIcon from "../../assets/imagem/viagem.webp";
+import petIcon from "../../assets/imagem/pet.webp";
 import {
   ValuePropsSection,
   ValueGrid,
@@ -47,6 +47,7 @@ import {
   ExtraGrid,
   ExtraCard,
 } from "./Home.styles";
+import { SEO } from '../../components/SEO/SEO'
 
 const ProductsSection = () => {
   const products = [
@@ -90,6 +91,12 @@ const ProductsSection = () => {
 
   return (
     <>
+    <SEO
+        title="Aba Seguros - Seguros, Consórcios e Saúde"
+        description="Encontre os melhores seguros, planos de saúde e consórcios. Faça uma cotação online agora mesmo."
+        name="Aba Seguros" 
+        type="website"
+      />
       <HeroContainer>
         <HeroContent>
           <HeroRow>

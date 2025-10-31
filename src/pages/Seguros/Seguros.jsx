@@ -30,6 +30,7 @@ import {
   FAQSection,
   FAQItem,
 } from "./Seguros.styles";
+import { SEO } from "../../components/SEO/SEO"
 
 // Ícones
 import { FaShieldAlt, FaRegMoneyBillAlt } from "react-icons/fa";
@@ -37,13 +38,13 @@ import { FaClockRotateLeft } from "react-icons/fa6";
 import { MdOutlineSupportAgent } from "react-icons/md";
 
 // Imagens
-import ImgHome from "../../assets/Img/img-seguro.webp";
-import SeguroAuto from "../../assets/Img/seguro-auto.webp";
-import SeguroResidencia from "../../assets/Img/seguro-residencial.webp";
-import SeguroEquipamentos from "../../assets/Img/seguro-equipamentos.webp";
-import SeguroBike from "../../assets/Img/seguro-bike.webp";
-import SeguroVida from "../../assets/Img/seguro-vida.webp";
-import SegurViagem from "../../assets/Img/seguro-viagem.webp";
+import ImgHome from "../../assets/image/img-seguro.webp";
+import SeguroAuto from "../../assets/image/seguro-auto.webp";
+import SeguroResidencia from "../../assets/image/seguro-residencial.webp";
+import SeguroEquipamentos from "../../assets/image/seguro-equipamentos.webp";
+import SeguroBike from "../../assets/image/seguro-bike.webp";
+import SeguroVida from "../../assets/image/seguro-vida.webp";
+import SegurViagem from "../../assets/image/seguro-viagem.webp";
 
 const Seguros = () => {
   const benefits = [
@@ -97,6 +98,13 @@ const Seguros = () => {
 
   return (
     <>
+    <SEO
+        title="Seguros" 
+        description="Conheça nossas opções de seguro auto, residencial, vida e mais. Proteja o que é importante para você."
+        name="Aba Seguros"
+        type="website"
+        keywords="seguro auto, seguro residencial, seguro de vida"
+      />
       <HeroContainer>
         <HeroContent>
           <HeroRow>

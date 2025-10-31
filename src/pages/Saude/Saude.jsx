@@ -20,17 +20,25 @@ import {
   CTAButtons,
   ButtonMain,
 } from "./Saude.styles";
+import { SEO } from "../../components/SEO/SEO"
 
 import { PartnersHealthSection } from "../../components/Partners/Partiners";
 
-import ImgSaude from "../../assets/Img/img-saude.webp";
-import ImgConvenioMedico from "../../assets/Img/convenio-medico.webp";
-import ImgConvenioOdonto from "../../assets/Img/convenio-odonto.webp";
-import ImgConvenioPet from "../../assets/Img/convenio-pet.webp";
+import ImgSaude from "../../assets/image/img-saude.webp";
+import ImgConvenioMedico from "../../assets/image/convenio-medico.webp";
+import ImgConvenioOdonto from "../../assets/image/convenio-odonto.webp";
+import ImgConvenioPet from "../../assets/image/convenio-pet.webp";
 
 function BlogSection() {
   return (
     <>
+    <SEO
+        title="Planos de Saúde" 
+        description="Encontre os melhores planos de saúde para você, sua família ou sua empresa. Trabalhamos com as melhores operadoras. Faça uma cotação online."
+        name="Aba Corretora"
+        type="website"
+        keywords="plano de saúde, plano de saúde individual, plano de saúde familiar, plano de saúde empresarial, plano de saúde pj, cotação plano de saúde, corretora de saúde"
+      />
       <HeroContainer>
         <HeroContent>
           <HeroRow>

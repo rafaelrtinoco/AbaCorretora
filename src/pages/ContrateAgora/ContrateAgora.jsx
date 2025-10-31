@@ -30,28 +30,28 @@ import {
 } from "./ContrateAgora.styles"; 
 
 
-import ImgServicosHero from "../../assets/Img/contrate.webp"; 
-import ImgCartao from "../../assets/Img/cartao.webp"; 
-import ImgConta from "../../assets/Img/conta.webp"; 
-import ImgEquip from "../../assets/Img/equipamentos.webp"; 
-import ImgArCond from "../../assets/Img/arCondicionado.webp"; 
-import ImgArCons from "../../assets/Img/reparoArCondicionado.webp"; 
-import ImgEletro from "../../assets/Img/eletro.webp"; 
-import ImgFechadura from "../../assets/Img/fechadura.webp"; 
-import ImgLimpezaAr from "../../assets/Img/limpezaAr.webp"; 
-import ImgLimpezaSofa from "../../assets/Img/limpezaSofa.webp"; 
-import ImgAquecedor from "../../assets/Img/aquecedor.webp"; 
-import ImgResidencia from "../../assets/Img/seguro-residencial.webp"; 
-import ImgVida from "../../assets/Img/seguro-vida.webp"; 
-import ImgViagem from "../../assets/Img/seguro-viagem.webp"; 
-import ImgAzul from "../../assets/Img/azul.webp"; 
-import ImgAuto from "../../assets/Img/seguro-auto.webp"; 
-import ImgServicos from "../../assets/Img/servicosGerais.webp"; // (Trocar)
-import ImgDesentupir from "../../assets/Img/desentupidora.webp"; // (Trocar)
-import ImgHidraulico from "../../assets/Img/hidraulico.webp"; // (Trocar)
-import ImgGuincho from "../../assets/Img/guincho.webp"; // (Trocar)
-import ImgEletrico from "../../assets/Img/eletrica.webp"; // (Trocar)
-import ImgCelular from "../../assets/Img/celular.webp"; // (Trocar)
+import ImgServicosHero from "../../assets/image/contrate.webp"; 
+import ImgCartao from "../../assets/image/cartao.webp"; 
+import ImgConta from "../../assets/image/conta.webp"; 
+import ImgEquip from "../../assets/image/equipamentos.webp"; 
+import ImgArCond from "../../assets/image/arCondicionado.webp"; 
+import ImgArCons from "../../assets/image/reparoArCondicionado.webp"; 
+import ImgEletro from "../../assets/image/eletro.webp"; 
+import ImgFechadura from "../../assets/image/fechadura.webp"; 
+import ImgLimpezaAr from "../../assets/image/limpezaAr.webp"; 
+import ImgLimpezaSofa from "../../assets/image/limpezaSofa.webp"; 
+import ImgAquecedor from "../../assets/image/aquecedor.webp"; 
+import ImgResidencia from "../../assets/image/seguro-residencial.webp"; 
+import ImgVida from "../../assets/image/seguro-vida.webp"; 
+import ImgViagem from "../../assets/image/seguro-viagem.webp"; 
+import ImgAzul from "../../assets/image/azul.webp"; 
+import ImgAuto from "../../assets/image/seguro-auto.webp"; 
+import ImgServicos from "../../assets/image/servicosGerais.webp"; // (Trocar)
+import ImgDesentupir from "../../assets/image/desentupidora.webp"; // (Trocar)
+import ImgHidraulico from "../../assets/image/hidraulico.webp"; // (Trocar)
+import ImgGuincho from "../../assets/image/guincho.webp"; // (Trocar)
+import ImgEletrico from "../../assets/image/eletrica.webp"; // (Trocar)
+import ImgCelular from "../../assets/image/celular.webp"; // (Trocar)
 
 // --- (IMPORTANTE) ---
 // 2. Adicione os links corretos, preços e tags

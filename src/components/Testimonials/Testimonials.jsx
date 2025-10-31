@@ -13,11 +13,11 @@ import {
   TestimonialCarouselButton,
 } from "./Testimonials.styles";
 
-import Cliente1 from "../../assets/Img/jucelino.png";
-import Cliente2 from "../../assets/Img/tamires.png";
-import Cliente3 from "../../assets/Img/thiago.png";
-import Cliente4 from "../../assets/Img/camila.png";
-import Cliente5 from "../../assets/Img/vitor.png";
+import Cliente1 from "../../assets/image/jucelino.png";
+import Cliente2 from "../../assets/image/tamires.png";
+import Cliente3 from "../../assets/image/thiago.png";
+import Cliente4 from "../../assets/image/camila.png";
+import Cliente5 from "../../assets/image/vitor.png";
 
 const testimonials = [
   {

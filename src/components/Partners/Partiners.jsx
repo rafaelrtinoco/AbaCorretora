@@ -5,35 +5,35 @@ import {
   MarqueeTrack,
   PartnerLogo,
 } from "./Partiners.styles";
-import Porto from "../../assets/Img/Porto.webp";
-import Suhai from "../../assets/Img/suhai.webp";
-import Bradesco from "../../assets/Img/bradesco-seguros.webp";
-import Akad from "../../assets/Img/akad.webp";
-import Allianz from "../../assets/Img/allianz.webp";
-import Azul from "../../assets/Img/azul-seguros.webp";
-import HDI from "../../assets/Img/hdi.webp";
-import Itau from "../../assets/Img/itau.webp";
-import Liberty from "../../assets/Img/Liberty.webp";
-import Mapfre from "../../assets/Img/Mapfre.webp";
-import Mitsui from "../../assets/Img/Mitsui.webp";
-import Pier from "../../assets/Img/pier.webp";
-import Tokio from "../../assets/Img/tokio.webp";
-import Zurich from "../../assets/Img/Zurich.webp";
+import Porto from "../../assets/image/Porto.webp";
+import Suhai from "../../assets/image/suhai.webp";
+import Bradesco from "../../assets/image/bradesco-seguros.webp";
+import Akad from "../../assets/image/akad.webp";
+import Allianz from "../../assets/image/allianz.webp";
+import Azul from "../../assets/image/azul-seguros.webp";
+import HDI from "../../assets/image/hdi.webp";
+import Itau from "../../assets/image/itau.webp";
+import Liberty from "../../assets/image/Liberty.webp";
+import Mapfre from "../../assets/image/Mapfre.webp";
+import Mitsui from "../../assets/image/Mitsui.webp";
+import Pier from "../../assets/image/pier.webp";
+import Tokio from "../../assets/image/tokio.webp";
+import Zurich from "../../assets/image/Zurich.webp";
 
-import Metlife from "../../assets/Img/metlife.webp";
-import Unimed from "../../assets/Img/unimed.webp";
-import Sulamerica from "../../assets/Img/sulamerica.webp";
-import Portosaude from "../../assets/Img/portosaude.webp";
-import Amil from "../../assets/img/amil.webp";
-import BradescoSaude from "../../assets/Img/bradesco-saude.webp";
-import Hapvida from "../../assets/Img/hapvida.webp";
-import Saocristovao from "../../assets/Img/sao-cristovao.webp";
-import Saomiguel from "../../assets/Img/sao-miguel-saude.webp";
-import Alice from "../../assets/Img/alice.webp";
-import Allcare from "../../assets/Img/allcare.webp";
-import Medsenior from "../../assets/Img/medsenior.webp";
-import Preventsenior from "../../assets/Img/preventsenior.webp";
-import Omint from "../../assets/Img/omint.webp";
+import Metlife from "../../assets/image/metlife.webp";
+import Unimed from "../../assets/image/unimed.webp";
+import Sulamerica from "../../assets/image/sulamerica.webp";
+import Portosaude from "../../assets/image/portosaude.webp";
+import Amil from "../../assets/image/amil.webp";
+import BradescoSaude from "../../assets/image/bradesco-saude.webp";
+import Hapvida from "../../assets/image/hapvida.webp";
+import Saocristovao from "../../assets/image/sao-cristovao.webp";
+import Saomiguel from "../../assets/image/sao-miguel-saude.webp";
+import Alice from "../../assets/image/alice.webp";
+import Allcare from "../../assets/image/allcare.webp";
+import Medsenior from "../../assets/image/medsenior.webp";
+import Preventsenior from "../../assets/image/preventsenior.webp";
+import Omint from "../../assets/image/omint.webp";
 
 export const PartnersHomeSection = () => {
   const partners = [

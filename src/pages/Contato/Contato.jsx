@@ -47,7 +47,7 @@ const ContactPage = () => {
             </div>
           </ChannelCard>
 
-          <ChannelCard href="tel:+551140044004">
+          <ChannelCard href="tel:+5511945411551">
             <FaPhoneAlt />
             <div>
               <h3>Telefone</h3>
