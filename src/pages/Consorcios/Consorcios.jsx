@@ -82,7 +82,7 @@ const Consorcios = () => {
                 <ProductImage src={product.img} alt={product.title} />
                 <h3>{product.title}</h3>
                 <p>{product.description}</p>
-                <ProductButton as="a" href="https://wa.me/5511945411551">Simular Agora</ProductButton>
+                <ProductButton target="_blank" as="a" href="https://wa.me/5511945411551">Simular Agora</ProductButton>
               </ProductCard>
             ))}
           </ProductsGrid>
@@ -145,7 +145,7 @@ const Consorcios = () => {
             <p>Faça uma simulação gratuita e sem compromisso para encontrar o plano perfeito para você.</p>
           </div>
           <CTAButtons>
-            <ButtonMain as="a" href="https://wa.me/5511945411551">
+            <ButtonMain as="a" target="_blank" href="https://wa.me/5511945411551">
               Fazer Simulação
             </ButtonMain>
           </CTAButtons>

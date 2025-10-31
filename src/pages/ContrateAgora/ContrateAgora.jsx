@@ -177,7 +177,7 @@ const Servicos = () => {
                 <ServicePrice>{service.price}</ServicePrice>
                 <ServiceButton
                   as="a"
-                  href={service.link} // <-- LINK VEM DO ARRAY
+                  href={service.link} 
                   target="_blank" // Abre em nova aba
                   rel="noopener noreferrer"
                 >
@@ -250,7 +250,7 @@ const Servicos = () => {
             </p>
           </div>
           <CTAButtons>
-            <ButtonMain as="a" href="https://wa.me/5511945411551">
+            <ButtonMain as="a" target="_blank" href="https://wa.me/5511945411551">
               Falar pelo WhatsApp
             </ButtonMain>
           </CTAButtons>

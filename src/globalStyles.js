@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import '@fontsource/inter'; // Importa a fonte Inter
-import '@fontsource/roboto'; // Importa a fonte Roboto
+import '@fontsource/inter'; 
+import '@fontsource/roboto'; 
 
 const GlobalStyles = createGlobalStyle`
   body {

@@ -23,18 +23,18 @@ export const BlogCard = styled.article`
   border-radius: 12px;
   overflow: hidden;
   transition: all ${theme.transitions.default};
-  border: 1px solid ${theme.colors.border || "#e5e7eb"}; 
-  background: ${theme.colors.white}; 
-  display: flex; 
-  flex-direction: column; 
-  height: 100%; 
-  padding-bottom: 0; 
+  border: 1px solid ${theme.colors.border || "#e5e7eb"};
+  background: ${theme.colors.white};
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 0;
 
   .image-container {
     position: relative;
     height: 200px;
     overflow: hidden;
-    border-bottom: 1px solid ${theme.colors.border || "#e5e7eb"}; 
+    border-bottom: 1px solid ${theme.colors.border || "#e5e7eb"};
 
     img {
       width: 100%;
@@ -58,20 +58,20 @@ export const BlogCard = styled.article`
 
   h3 {
     font-size: 1.25rem;
-    margin: 1.5rem 1.25rem 1rem; 
+    margin: 1.5rem 1.25rem 1rem;
     line-height: 1.4;
     color: ${theme.colors.dark};
   }
 
   p {
-    margin: 0 1.25rem 1.5rem; 
+    margin: 0 1.25rem 1.5rem;
     color: ${theme.colors.mediumGray};
-    flex-grow: 1; 
+    flex-grow: 1;
   }
 
   .read-more {
     display: inline-block;
-    margin: 0 1.25rem 1.5rem; 
+    margin: 0 1.25rem 1.5rem;
     color: ${theme.colors.primary};
     font-weight: 500;
     text-decoration: none;
@@ -113,9 +113,9 @@ export const HeroContent = styled.div`
 `;
 
 export const HeroRow = styled.div`
-  display: flex; 
-  flex-direction: column; 
-  align-items: flex-start; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 2rem;
   margin-top: 2rem;
   padding-bottom: 40px;
@@ -135,7 +135,7 @@ export const HeroTitle = styled.h1`
   font-weight: 800;
   margin: 0;
   line-height: 1.2;
-  text-align:center;
+  text-align: center;
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     font-size: 1.8rem;
@@ -157,9 +157,9 @@ export const HeroImage = styled.img`
   width: 100%;
   max-width: 1200px;
   max-height: 500px;
-  aspect-ratio: 16 / 9; 
-  object-fit: cover; 
-  border-radius: 8px; 
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
   box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.5);
 
   @media (max-width: ${theme.breakpoints.mobile}) {
@@ -191,9 +191,8 @@ export const Tip = styled.div`
   border-radius: 8px;
   color: ${theme.colors.mediumGray};
   margin-top: 1rem;
-  margin: 1rem 1.25rem 1.25rem; 
+  margin: 1rem 1.25rem 1.25rem;
 `;
-
 
 export const SectionTitle = styled.h2`
   font-size: 2.5rem;
@@ -221,14 +220,12 @@ export const SectionSubtitle = styled.p`
   }
 `;
 
-
 export const BlogContainer = styled.section`
   padding: 3rem 0;
   background-color: ${theme.colors.white};
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 3rem 0;
-   
   }
 `;
 
@@ -256,25 +253,23 @@ export const HealthPlanCard = styled.article`
       object-fit: cover;
       transition: transform ${theme.transitions.default};
     }
-
-    /* REMOVIDO: .category, pois não se encaixa aqui */
   }
 
   h3 {
-    font-size: 1.5rem; /* Um pouco maior que o BlogCard, mais próximo do ProductCard */
-    margin: 1.25rem 1.25rem 0.75rem; /* Ajusta as margens internas do título */
+    font-size: 1.5rem;
+    margin: 1.25rem 1.25rem 0.75rem;
     line-height: 1.4;
     color: ${theme.colors.dark};
   }
 
   p {
-    margin: 0 1.25rem 1rem; /* Margens para o parágrafo */
+    margin: 0 1.25rem 1rem;
     color: ${theme.colors.mediumGray};
-    flex-grow: 1; /* Permite que o parágrafo ocupe o espaço restante */
+    flex-grow: 1;
   }
 
   ul {
-    margin: 0 1.25rem 1rem; /* Margens para a lista */
+    margin: 0 1.25rem 1rem;
     padding-left: 1.5rem;
   }
   li {
@@ -296,7 +291,6 @@ export const HealthPlanCard = styled.article`
   }
 `;
 
-
 export const ProductButton = styled.button`
   display: flex;
   align-items: center;
@@ -316,9 +310,10 @@ export const ProductButton = styled.button`
   text-align: center;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
+  text-decoration: none;
 
   &:hover {
-    background-color: ${theme.colors.primaryDark};
+    background-color: ${theme.colors.primary};
   }
 `;
 
@@ -346,7 +341,6 @@ export const CTAInner = styled.div`
 export const CTAButtons = styled.div`
   display: flex;
   flex-shrink: 0;
-  
 `;
 
 export const ButtonMain = styled.button`

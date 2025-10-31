@@ -78,7 +78,7 @@ function BlogSection() {
               serviços de saúde de qualidade.
             </Tip>
             <div className="card-button-wrapper">
-              <ProductButton>Ver Planos Médicos </ProductButton>
+              <ProductButton as="a" target="_blank" href="https://wa.me/5511945411551">Ver Planos Médicos </ProductButton>
             </div>
           </HealthPlanCard>
 
@@ -106,7 +106,7 @@ function BlogSection() {
               inesperados com o dentista.
             </Tip>
             <div className="card-button-wrapper">
-              <ProductButton>Ver Planos Odontológicos </ProductButton>
+              <ProductButton as="a" target="_blank" href="https://wa.me/5511945411551">Ver Planos Odontológicos </ProductButton>
             </div>
           </HealthPlanCard>
 
@@ -134,7 +134,7 @@ function BlogSection() {
               bem-estar de seus animais de estimação.
             </Tip>
             <div className="card-button-wrapper">
-              <ProductButton>Ver Planos Pet </ProductButton>
+              <ProductButton as="a" target="_blank" href="https://wa.me/5511945411551">Ver Planos Pet </ProductButton>
             </div>
           </HealthPlanCard>
         </BlogGrid>
@@ -261,7 +261,7 @@ function BlogSection() {
             <p>Receba uma consultoria gratuita para encontrar o plano ideal.</p>
           </div>
           <CTAButtons>
-            <ButtonMain as="a" href="https://wa.me/5511945411551">
+            <ButtonMain as="a" target="_blank" href="https://wa.me/5511945411551">
               Solicitar cotação
             </ButtonMain>
           </CTAButtons>

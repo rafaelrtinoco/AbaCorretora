@@ -139,10 +139,10 @@ const Seguros = () => {
                 Indicado para quem busca tranquilidade no dia a dia e proteção
                 patrimonial.
               </Tip>
-              <ProductButton as="a" href="http://www.porto.vc/SEGUROAUTO_2C888J_4adc4d250fef4398bff082d6ec55c22d">
+              <ProductButton as="a" target="_blank" href="http://www.porto.vc/SEGUROAUTO_2C888J_4adc4d250fef4398bff082d6ec55c22d">
                 Contratar Agora
               </ProductButton>
-              <ProductLink as="a" href="https://wa.me/5511945411551">
+              <ProductLink as="a" target="_blank" href="https://wa.me/5511945411551">
                 Falar com Especialista
               </ProductLink>
             </ProductCard>
@@ -168,10 +168,10 @@ const Seguros = () => {
               <Tip>
                 Excelente custo-benefício para proteger seu patrimônio e rotina.
               </Tip>
-               <ProductButton as="a" href="http://www.porto.vc/RESIDENCIAESSENCIAL_2C888J_61958aa0450642a5b951525d33924932">
+               <ProductButton as="a" target="_blank" href="http://www.porto.vc/RESIDENCIAESSENCIAL_2C888J_61958aa0450642a5b951525d33924932">
                 Contratar Agora
               </ProductButton>
-              <ProductLink as="a" href="https://wa.me/5511945411551">
+              <ProductLink as="a" target="_blank" href="https://wa.me/5511945411551">
                 Falar com Especialista
               </ProductLink>
             </ProductCard>
@@ -196,15 +196,15 @@ const Seguros = () => {
                 Essencial para viagens internacionais e para garantir sua paz de
                 espírito.
               </Tip>
-               <ProductButton as="a" href="http://www.porto.vc/VIAGEM_2C888J_4e6ceaf7a7994221896910f63bbdc78d">
+               <ProductButton as="a" target="_blank" href="http://www.porto.vc/VIAGEM_2C888J_4e6ceaf7a7994221896910f63bbdc78d">
                 Contratar Agora
               </ProductButton>
-              <ProductLink as="a" href="https://wa.me/5511945411551">
+              <ProductLink as="a" target="_blank" href="https://wa.me/5511945411551">
                 Falar com Especialista
               </ProductLink>
             </ProductCard>
 
-            {/* CARD SEGURO DE VIDA */}
+            
             <ProductCard>
               <ProductImage
                 src={SeguroVida}
@@ -224,10 +224,10 @@ const Seguros = () => {
                 Essencial para proteger financeiramente sua família e entes
                 queridos.
               </Tip>
-               <ProductButton as="a" href=" http://www.porto.vc/SEGURODEVIDAON_2C888J_2cc78e5c020f4904814a1f187c934e26">
+               <ProductButton as="a" target="_blank" href=" http://www.porto.vc/SEGURODEVIDAON_2C888J_2cc78e5c020f4904814a1f187c934e26">
                 Contratar Agora
               </ProductButton>
-              <ProductLink as="a" href="https://wa.me/5511945411551">
+              <ProductLink as="a" target="_blank" href="https://wa.me/5511945411551">
                 Falar com Especialista
               </ProductLink>
             </ProductCard>
@@ -252,10 +252,10 @@ const Seguros = () => {
                 Perfeito para profissionais e estudantes que dependem de seus
                 equipamentos.
               </Tip>
-              <ProductButton as="a" href="http://www.porto.vc/EQUIPAMENTOSPORTATEIS_2C888J_9c024469b4cd40d493617ac9c3ec506e">
+              <ProductButton as="a" target="_blank" href="http://www.porto.vc/EQUIPAMENTOSPORTATEIS_2C888J_9c024469b4cd40d493617ac9c3ec506e">
                 Contratar Agora
               </ProductButton>
-              <ProductLink as="a" href="https://wa.me/5511945411551">
+              <ProductLink as="a" target="_blank" href="https://wa.me/5511945411551">
                 Falar com Especialista
               </ProductLink>
             </ProductCard>
@@ -279,10 +279,10 @@ const Seguros = () => {
                 Ideal para ciclistas urbanos e atletas que querem garantir a
                 segurança do seu investimento.
               </Tip>
-               <ProductButton as="a" href="https://wa.me/5511945411551">
+               <ProductButton as="a" target="_blank" href="https://wa.me/5511945411551">
                 Contratar Agora
               </ProductButton>
-              <ProductLink as="a" href="https://wa.me/5511945411551">
+              <ProductLink as="a" target="_blank" href="https://wa.me/5511945411551">
                 Falar com Especialista
               </ProductLink>
             </ProductCard>
@@ -368,7 +368,7 @@ const Seguros = () => {
             </p>
           </div>
           <CTAButtons>
-            <ButtonMain as="a" href="https://wa.me/5511945411551">
+            <ButtonMain as="a" target="_blank" href="https://wa.me/5511945411551">
               Solicitar cotação
             </ButtonMain>
           </CTAButtons>

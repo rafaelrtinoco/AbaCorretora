@@ -102,6 +102,8 @@ export const FooterBottom = styled.div`
 `;
 
 export const FooterImage = styled.img`
-  width: 30%; 
+  width: 50%; 
   height: auto; 
+  margin-top: -20px;
+  margin-bottom: -30px;
 `;

@@ -101,7 +101,7 @@ const ProductsSection = () => {
                 Consultoria especializada em seguros, planos de saúde, odontológico e consórcios. As
                 melhores soluções do mercado para você e sua empresa.
               </HeroSubtitle>
-              <ButtonMain as="a" href="https://wa.me/5511945411551">
+              <ButtonMain as="a" target="_blank" href="https://wa.me/5511945411551">
                 Contrate Agora
               </ButtonMain>
             </HeroText>
@@ -154,7 +154,7 @@ const ProductsSection = () => {
                         <p>{product.description}</p>
 
                         <div className="saiba-mais-wrapper">
-                          <a href="https://wa.me/5511945411551">Saiba mais </a>{" "}
+                          <a target="_blank" href="https://wa.me/5511945411551">Saiba mais </a>{" "}
                         </div>
                       </ProductCard>
                     </ProductSlide>
@@ -302,7 +302,7 @@ const ProductsSection = () => {
             </p>
           </div>
           <CTAButtons>
-            <ButtonMain as="a" href="https://wa.me/5511945411551">
+            <ButtonMain as="a" target="_blank" href="https://wa.me/5511945411551">
               Solicitar cotação
             </ButtonMain>
             <ButtonMain
