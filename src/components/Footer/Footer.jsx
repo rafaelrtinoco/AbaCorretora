@@ -48,7 +48,7 @@ const Footer = () => {
 
         <FooterColumn>
           <FooterTitle>Empresa</FooterTitle>
-          <FooterLink as={Link} to="/AbaCorretora">
+          <FooterLink as={Link} to="/">
             Home
           </FooterLink>
 
