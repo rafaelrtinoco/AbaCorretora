@@ -99,10 +99,10 @@ const Footer = () => {
 
       <FooterBottom>
         <p>
-          © {new Date().getFullYear()} ABA SEGUROS. Todos os direitos
-          reservados.
+          © {new Date().getFullYear()} ABA SEGUROS. TODOS OS DIREITOS RESERVADOS.
         </p>
-        <p>CNPJ: 57.208.516/0001-43 | SUSEP: 2421619-27</p>
+        <p>CNPJ: 57.208.516/0001-43</p> 
+        <p>SUSEP: 2421619-27</p>
       </FooterBottom>
     </FooterContainer>
   );
