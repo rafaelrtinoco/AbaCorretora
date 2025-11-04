@@ -35,14 +35,14 @@ const Footer = () => {
         <FooterColumn>
           <FooterTitle>Demais Serviços</FooterTitle>
           <FooterLink as={Link} to="/consorcios">Consórcio</FooterLink>
-          <FooterLink as={Link} to="/AbaCorretora">Empréstimo</FooterLink>
-          <FooterLink as={Link} to="/AbaCorretora">Financiamento</FooterLink>
-          <FooterLink as={Link} to="/AbaCorretora">Capitalização</FooterLink>
+          <FooterLink as={Link} to="/">Empréstimo</FooterLink>
+          <FooterLink as={Link} to="/">Financiamento</FooterLink>
+          <FooterLink as={Link} to="/">Capitalização</FooterLink>
           <FooterLink as={Link} to="/saude">Plano de Saúde</FooterLink>
           <FooterLink as={Link} to="/saude">Plano Odontológico</FooterLink>
           <FooterLink as="a" target="_blank" href="https://www.portoseguro.com.br/servicos">Serviços</FooterLink>
-          <FooterLink as={Link} to="/AbaCorretora">Carro por Assinatura</FooterLink>
-          <FooterLink as={Link} to="/AbaCorretora">Celular por Assinatura</FooterLink>
+          <FooterLink as={Link} to="/">Carro por Assinatura</FooterLink>
+          <FooterLink as={Link} to="/">Celular por Assinatura</FooterLink>
           <FooterLink as={Link} to="/saude">PetLove</FooterLink>
         </FooterColumn>
 
