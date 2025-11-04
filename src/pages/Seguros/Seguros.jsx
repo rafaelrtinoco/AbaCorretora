@@ -45,6 +45,7 @@ import SeguroEquipamentos from "../../assets/image/seguro-equipamentos.webp";
 import SeguroBike from "../../assets/image/seguro-bike.webp";
 import SeguroVida from "../../assets/image/seguro-vida.webp";
 import SegurViagem from "../../assets/image/seguro-viagem.webp";
+import { PartnerCTA } from "../../components/PartnerCTA/PartnerCTA";
 
 const Seguros = () => {
   const benefits = [
@@ -315,6 +316,8 @@ const Seguros = () => {
         </ContentWrap>
       </BenefitsSection>
 
+      
+
       <HowItWorksSection>
         <SectionTitle>Como Contratar?</SectionTitle>
         <SectionSubtitle>
@@ -351,6 +354,8 @@ const Seguros = () => {
           </StepItem>
         </Steps>
       </HowItWorksSection>
+
+      <PartnerCTA />
 
       <FAQSection>
         <ContentWrap>

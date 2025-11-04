@@ -48,6 +48,7 @@ import {
   ExtraCard,
 } from "./Home.styles";
 import { SEO } from '../../components/SEO/SEO'
+import { PartnerCTA } from "../../components/PartnerCTA/PartnerCTA";
 
 const ProductsSection = () => {
   const products = [
@@ -324,6 +325,7 @@ const ProductsSection = () => {
       </CTABanner>
       <PartnersHomeSection />
       <TestimonialsSection />
+      <PartnerCTA />
 
       <FAQSection />
     </>
