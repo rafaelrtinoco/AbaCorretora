@@ -28,6 +28,7 @@ import {
   FAQSection,
   FAQItem,
 } from "./ContrateAgora.styles"; 
+import {SEO} from "../../components/SEO/SEO"
 
 
 import ImgServicosHero from "../../assets/image/contrate.webp"; 
@@ -143,6 +144,13 @@ const faqs = [
 const Servicos = () => {
   return (
     <>
+    <SEO
+            title="Serviços" 
+            description="Conheça nossas opções de serviços residênciais, como: eletricista, encanador. instação de ar condicionado e muito mais."
+            name="Aba Serviços"
+            type="website"
+            keywords="serviços residênciais"
+          />
       <HeroContainer>
         <HeroContent>
           <HeroRow>
