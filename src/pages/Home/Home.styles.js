@@ -501,3 +501,58 @@ export const ExtraCard = styled.div`
     margin: 0.25rem 0;
   }
 `;
+
+// Estilos para o Pop-up
+export const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); // Fundo escurecido solicitado
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+`;
+
+export const PopupContainer = styled.div`
+  position: relative;
+  max-width: 550px;
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: pointer;
+  }
+`;
+
+export const CloseBtn = styled.button`
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: #001f3D; // Cor secundária da Aba Seguros
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;
