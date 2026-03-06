@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import {
   ProductsContainer,
   ProductCard,
@@ -17,6 +17,9 @@ import {
   ProductSlide,
   CarouselControls,
   CarouselButton,
+  Overlay,
+  PopupContainer,
+  CloseBtn,
 } from "./Home.styles";
 import { SectionTitle, SectionSubtitle } from "../../App.styles";
 import FAQSection from "../../components/FAQ/FAQ";
@@ -30,6 +33,8 @@ import saudeIcon from "../../assets/image/saude.webp";
 import Financiamento from "../../assets/image/financiamento.webp";
 import viagemIcon from "../../assets/image/viagem.webp";
 import petIcon from "../../assets/image/pet.webp";
+import PopupBannerImg from "../../assets/image/pop-up.webp";
+
 import {
   ValuePropsSection,
   ValueGrid,
@@ -47,10 +52,39 @@ import {
   ExtraGrid,
   ExtraCard,
 } from "./Home.styles";
-import { SEO } from '../../components/SEO/SEO'
+import { SEO } from "../../components/SEO/SEO";
 import { PartnerCTA } from "../../components/PartnerCTA/PartnerCTA";
 
+// 👇 Aponta para a página de parcerias
+const POPUP_TARGET_URL = "/parcerias";
+
+const PromoPopup = ({ onClose }) => (
+  <Overlay onClick={onClose}>
+    <PopupContainer onClick={(e) => e.stopPropagation()}>
+      <CloseBtn onClick={onClose} aria-label="Fechar pop-up">
+        ✕
+      </CloseBtn>
+      <a href={POPUP_TARGET_URL}>
+        <img
+          src={PopupBannerImg}
+          alt="Parceria Aba Seguros e Bruno Holanda Turismo — Seguro Viagem"
+        />
+      </a>
+    </PopupContainer>
+  </Overlay>
+);
+
 const ProductsSection = () => {
+  const [showPromoPopup, setShowPromoPopup] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPromoPopup(true);
+    }, 10000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const products = [
     {
       icon: AutomovelIcon,
@@ -92,12 +126,17 @@ const ProductsSection = () => {
 
   return (
     <>
-    <SEO
+      <SEO
         title="Aba Seguros - Seguros, Consórcios e Saúde"
         description="Encontre os melhores seguros, planos de saúde e consórcios. Faça uma cotação online agora mesmo."
-        name="Aba Seguros" 
+        name="Aba Seguros"
         type="website"
       />
+
+      {showPromoPopup && (
+        <PromoPopup onClose={() => setShowPromoPopup(false)} />
+      )}
+
       <HeroContainer>
         <HeroContent>
           <HeroRow>
@@ -106,8 +145,9 @@ const ProductsSection = () => {
                 Tranquilidade para sua família, segurança para sua empresa.
               </HeroTitle>
               <HeroSubtitle>
-                Consultoria especializada em seguros, planos de saúde, odontológico e consórcios. As
-                melhores soluções do mercado para você e sua empresa.
+                Consultoria especializada em seguros, planos de saúde,
+                odontológico e consórcios. As melhores soluções do mercado para
+                você e sua empresa.
               </HeroSubtitle>
               <ButtonMain as="a" target="_blank" href="https://wa.me/5511945411551">
                 Contrate Agora
@@ -118,6 +158,7 @@ const ProductsSection = () => {
         </HeroContent>
         <HeroDivider />
       </HeroContainer>
+
       <ProductsContainer id="products">
         <SectionTitle>Nossos Planos</SectionTitle>
         <SectionSubtitle>Opções que cabem no seu orçamento</SectionSubtitle>
@@ -160,9 +201,10 @@ const ProductsSection = () => {
                         </IconWrapper>
                         <h3>{product.title}</h3>
                         <p>{product.description}</p>
-
                         <div className="saiba-mais-wrapper">
-                          <a target="_blank" href="https://wa.me/5511945411551">Saiba mais </a>{" "}
+                          <a target="_blank" href="https://wa.me/5511945411551">
+                            Saiba mais
+                          </a>
                         </div>
                       </ProductCard>
                     </ProductSlide>
@@ -291,7 +333,9 @@ const ProductsSection = () => {
           </ExtraCard>
           <ExtraCard>
             <h3>Consórcios</h3>
-            <p>Planeje suas conquistas com segurança e parcelas que cabem no seu bolso.</p>
+            <p>
+              Planeje suas conquistas com segurança e parcelas que cabem no seu bolso.
+            </p>
             <ul>
               <li>Consórcio de automóveis</li>
               <li>Consórcio imobiliário</li>
@@ -305,9 +349,7 @@ const ProductsSection = () => {
         <CTAInner>
           <div>
             <h3>Fale com um especialista</h3>
-            <p>
-              Receba uma consultoria gratuita para encontrar a proteção ideal.
-            </p>
+            <p>Receba uma consultoria gratuita para encontrar a proteção ideal.</p>
           </div>
           <CTAButtons>
             <ButtonMain as="a" target="_blank" href="https://wa.me/5511945411551">
@@ -323,10 +365,10 @@ const ProductsSection = () => {
           </CTAButtons>
         </CTAInner>
       </CTABanner>
+
       <PartnersHomeSection />
       <TestimonialsSection />
       <PartnerCTA />
-
       <FAQSection />
     </>
   );

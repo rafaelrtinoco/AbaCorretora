@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { theme } from "../../theme";
 
 export const ProductsContainer = styled.section`
@@ -144,6 +144,7 @@ export const CarouselButton = styled.button`
     color: ${theme.colors.white};
   }
 `;
+
 export const IconWrapper = styled.div`
   width: 100%;
   height: auto;
@@ -167,7 +168,6 @@ export const HeroContainer = styled.section`
   padding: 10rem 0 4rem 0;
   position: relative;
   overflow: hidden;
-    
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 6rem 0 0;
@@ -178,7 +178,6 @@ export const HeroContent = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
-  
 
   @media (max-width: ${theme.breakpoints.mobile}) {
     padding: 0 1rem;
@@ -247,7 +246,7 @@ export const HeroImage = styled.img`
 
 export const HeroDivider = styled.div`
   position: relative;
-  
+
   background: linear-gradient(
     to bottom,
     ${theme.colors.white} 0%,
@@ -258,7 +257,6 @@ export const HeroDivider = styled.div`
   clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
 
   @media (max-width: ${theme.breakpoints.mobile}) {
-    
     clip-path: polygon(0 0, 100% 25%, 100% 100%, 0 100%);
   }
 `;
@@ -415,7 +413,7 @@ export const StatItem = styled.div`
 `;
 
 export const CTABanner = styled.section`
-  background: ${theme.colors.primary}; /* Cor de destaque */
+  background: ${theme.colors.primary};
   color: ${theme.colors.white};
   padding: 3rem 0;
 `;
@@ -438,7 +436,6 @@ export const CTAInner = styled.div`
 export const CTAButtons = styled.div`
   display: flex;
   flex-shrink: 0;
-  
 `;
 
 export const ButtonMain = styled.button`
@@ -502,19 +499,28 @@ export const ExtraCard = styled.div`
   }
 `;
 
-// Estilos para o Pop-up
+/* ─── Pop-up promocional ───────────────────────────────────────────── */
+
+const fadeIn = keyframes`
+  from { opacity: 0; }
+  to   { opacity: 1; }
+`;
+
+const slideUp = keyframes`
+  from { opacity: 0; transform: translateY(32px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+`;
+
 export const Overlay = styled.div`
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8); // Fundo escurecido solicitado
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
   padding: 20px;
+  animation: ${fadeIn} 0.25s ease;
 `;
 
 export const PopupContainer = styled.div`
@@ -524,35 +530,44 @@ export const PopupContainer = styled.div`
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  animation: ${slideUp} 0.3s ease;
 
   img {
     width: 100%;
     height: auto;
     display: block;
     cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.92;
+    }
   }
 `;
 
 export const CloseBtn = styled.button`
   position: absolute;
   top: 10px;
-  right: 15px;
-  background: #001f3D; // Cor secundária da Aba Seguros
+  right: 12px;
+  background: #001f3d;
   color: white;
   border: none;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
+  font-size: 0.85rem;
   font-weight: bold;
   cursor: pointer;
   z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.2s;
+  transition: opacity 0.2s, transform 0.2s;
+  line-height: 1;
 
   &:hover {
     opacity: 0.8;
+    transform: scale(1.1);
   }
 `;
