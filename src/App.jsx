@@ -5,6 +5,7 @@ import GlobalStyles from "./globalStyles";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import WhatsAppFloat from "./components/WhatsAppFloat/WhatsAppFloat";
+import ChatAI from "./components/ChatAI/ChatAI";
 
 import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home/Home";
@@ -42,6 +43,7 @@ function App() {
       <CookieBanner />
       <Footer />
       <WhatsAppFloat />
+      <ChatAI />
     </ThemeProvider>
   );
 }
