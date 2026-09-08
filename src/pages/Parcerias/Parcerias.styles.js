@@ -58,9 +58,15 @@ export const PartnerBlock = styled.section`
   }
 `;
 
+/*
+ * $hasImage: quando o parceiro não tiver imagem (ex: consórcio, ainda sem
+ * arte definida), o card ocupa a largura toda em coluna única e o texto
+ * fica centralizado, em vez de manter a coluna vazia ao lado.
+ */
 export const PartnerBlockInner = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
+  grid-template-columns: ${({ $hasImage }) =>
+    $hasImage ? "1fr 1.1fr" : "1fr"};
   gap: 3rem;
   align-items: center;
   background: ${theme.colors.white};
@@ -68,6 +74,14 @@ export const PartnerBlockInner = styled.div`
   border-radius: 16px;
   padding: 2.5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+
+  ${({ $hasImage }) =>
+    !$hasImage &&
+    `
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    `}
 
   @media (max-width: ${theme.breakpoints.tablet}) {
     grid-template-columns: 1fr;
