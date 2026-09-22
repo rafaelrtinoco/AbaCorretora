@@ -1,17 +1,6 @@
-import React, { useRef } from "react";
-import {
-  TestimonialsContainer,
-  TestimonialContent,
-  TestimonialText,
-  TestimonialCard,
-  SectionTitle,
-  CarouselWrapper,
-  TestimonialCarouselViewport,
-  TestimonialCarouselTrack,
-  TestimonialSlide,
-  TestimonialCarouselControls,
-  TestimonialCarouselButton,
-} from "./Testimonials.styles";
+import { Section } from "../ui/Section";
+import { SectionTitle } from "../ui/SectionHeading";
+import { Carousel } from "../ui/Carousel";
 
 import Cliente1 from "../../assets/image/jucelino.png";
 import Cliente2 from "../../assets/image/tamires.png";
@@ -47,7 +36,7 @@ const testimonials = [
   {
     id: 4,
     quote:
-      "Mariana é uma corretora excelente: muito atenciosa, detalhista, com atendimento cordial e vasto conhecimento do mercado segurador. Sempre nos apresenta as melhores opções para proteger a vida, os bens, os serviços e também em soluções financeiras. ",
+      "Mariana é uma corretora excelente: muito atenciosa, detalhista, com atendimento cordial e vasto conhecimento do mercado segurador. Sempre nos apresenta as melhores opções para proteger a vida, os bens, os serviços e também em soluções financeiras.",
     name: "Camila Barbosa",
     title: "Cliente há 4 anos",
     image: Cliente4,
@@ -63,76 +52,51 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
-  const trackRef = useRef(null);
-
-  const scrollBySlide = (direction) => {
-    if (!trackRef.current) return;
-
-    const slide = trackRef.current.querySelector(":scope > *");
-    if (!slide) return;
-
-    const slideWidth = slide.getBoundingClientRect().width;
-
-    const trackStyle = window.getComputedStyle(trackRef.current);
-    const gap = parseFloat(trackStyle.gap) || 16;
-
-    const delta = direction === "next" ? slideWidth + gap : -(slideWidth + gap);
-
-    trackRef.current.scrollBy({ left: delta, behavior: "smooth" });
-  };
-
   return (
-    <TestimonialsContainer id="testimonials">
-      <TestimonialContent>
-        <div>
-          <SectionTitle>O que nossos clientes dizem</SectionTitle>
-          <TestimonialText>
-            Mais de 400 clientes confiam em nossos serviços de proteção. Sua
-            satisfação é nossa maior recompensa.
-          </TestimonialText>
+    <Section id="testimonials" tone="navy">
+      <div className="grid min-w-0 items-center gap-12 lg:grid-cols-2">
+        <div className="min-w-0">
+          <SectionTitle inverted align="left">
+            O que nossos clientes dizem
+          </SectionTitle>
+          <p className="mt-4 text-lg leading-relaxed text-white/80">
+            Mais de 400 clientes confiam em nossos serviços de proteção. Sua satisfação é nossa maior
+            recompensa.
+          </p>
         </div>
 
-        <CarouselWrapper>
-          <TestimonialCarouselViewport>
-            <TestimonialCarouselTrack ref={trackRef}>
-              {testimonials.map((testimonial) => (
-                <TestimonialSlide key={testimonial.id}>
-                  <TestimonialCard>
-                    <div className="quote">"</div>
-                    <p className="testimonial">{testimonial.quote}</p>
-                    <div className="author">
-                      <img
-                        src={testimonial.image}
-                        alt={`Cliente ${testimonial.name}`}
-                      />
-                      <div>
-                        <h4>{testimonial.name}</h4>
-                        <span>{testimonial.title}</span>
-                      </div>
-                    </div>
-                  </TestimonialCard>
-                </TestimonialSlide>
-              ))}
-            </TestimonialCarouselTrack>
-          </TestimonialCarouselViewport>
-
-          <TestimonialCarouselControls>
-            <TestimonialCarouselButton
-              aria-label="Anterior"
-              onClick={() => scrollBySlide("prev")}
-            >
-              ◀
-            </TestimonialCarouselButton>
-            <TestimonialCarouselButton
-              aria-label="Próximo"
-              onClick={() => scrollBySlide("next")}
-            >
-              ▶
-            </TestimonialCarouselButton>
-          </TestimonialCarouselControls>
-        </CarouselWrapper>
-      </TestimonialContent>
-    </TestimonialsContainer>
+        <Carousel
+          items={testimonials}
+          getKey={(item) => item.id}
+          ariaLabel="Depoimentos de clientes"
+          controlsAlign="end"
+          buttonVariant="dark"
+          renderItem={(testimonial) => (
+            <div className="relative flex h-full flex-col rounded-2xl bg-white p-8 text-navy-900 md:p-10">
+              <span className="absolute left-6 top-4 text-6xl font-bold text-brand-500" aria-hidden="true">
+                &ldquo;
+              </span>
+              <p className="relative z-10 mt-4 flex-grow leading-relaxed">{testimonial.quote}</p>
+              <div className="mt-6 flex items-center gap-4">
+                <img
+                  src={testimonial.image}
+                  alt={`Cliente ${testimonial.name}`}
+                  width={50}
+                  height={50}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-[50px] w-[50px] rounded-full object-cover"
+                />
+                <div>
+                  <h4 className="font-semibold">{testimonial.name}</h4>
+                  <span className="text-sm text-slate-500">{testimonial.title}</span>
+                </div>
+              </div>
+            </div>
+          )}
+        />
+      </div>
+    </Section>
   );
 };
 
