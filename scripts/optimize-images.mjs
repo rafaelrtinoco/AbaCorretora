@@ -52,11 +52,15 @@ const HERO_IMAGES = ["img-home.webp", "img-seguro.webp", "img-saude.webp", "img-
 // Promo pop-up banner — displayed up to 550px wide.
 const POPUP_IMAGES = ["pop-up.webp"];
 
+// Chat/avatar portraits — displayed at roughly 40-56px in the Ana chat widget.
+const AVATAR_IMAGES = ["ana.webp"];
+
 const GROUPS = [
   { files: PARTNER_LOGOS, targetWidth: 400, label: "partner logo" },
   { files: CARD_IMAGES, targetWidth: 900, label: "card image" },
   { files: HERO_IMAGES, targetWidth: 1400, label: "hero image" },
   { files: POPUP_IMAGES, targetWidth: 1100, label: "popup banner" },
+  { files: AVATAR_IMAGES, targetWidth: 160, label: "avatar" },
 ];
 
 const EXTRA_TARGETS = [
