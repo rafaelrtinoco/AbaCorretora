@@ -1,215 +1,210 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { FaPlane, FaBug, FaCalculator } from "react-icons/fa";
+import { FiChevronDown, FiTag } from "react-icons/fi";
 import { SEO } from "../../components/SEO/SEO";
 import { Hero } from "../../components/ui/Hero";
 import { Section } from "../../components/ui/Section";
 import { SectionHeading } from "../../components/ui/SectionHeading";
 import { Card } from "../../components/ui/Card";
 import { Button } from "../../components/ui/Button";
+import { cn } from "../../lib/cn";
 
 // ─────────────────────────────────────────────
-// Para adicionar um novo parceiro no futuro,
-// basta incluir um novo objeto neste array.
-// O campo "image" é opcional: se não houver imagem,
-// o bloco se ajusta automaticamente para ocupar a largura toda.
+// Para adicionar um novo parceiro, basta incluir um novo
+// objeto neste array: o grid e o card se ajustam sozinhos.
+// "highlights" são só rótulos curtos (sem texto longo) para
+// manter o card enxuto mesmo expandido.
 // ─────────────────────────────────────────────
 const parceiros = [
   {
     id: "bruno-holanda",
+    icon: FaPlane,
     badge: "Seguro Viagem",
-    title: "Aba Seguros + Bruno Holanda Turismo",
-    image: null,
-    imageAlt: "Parceria Aba Seguros e Bruno Holanda Turismo",
+    title: "Bruno Holanda Turismo",
+    tagline: "Seguro viagem completo para viajar tranquilo, no Brasil ou no exterior.",
     description:
       "A Aba Seguros firmou parceria com a agência Bruno Holanda Turismo para oferecer o melhor seguro viagem do mercado. Combinamos a expertise em turismo da Bruno Holanda com a experiência em seguros da Aba para garantir que você viaje sempre protegido, seja no Brasil ou no exterior.",
-    featuresIntro: "Imprevistos acontecem — viaje sempre protegido.",
-    coveragesIntro: "Planos completos pensados para cada tipo de viagem.",
-    features: [
-      { icon: "🏥", title: "Emergências médicas", text: "Cobertura completa para atendimentos hospitalares e médicos, que no exterior podem custar dezenas de milhares de reais." },
-      { icon: "🧳", title: "Bagagem extraviada", text: "Indenização em caso de perda, roubo ou dano de bagagem durante a viagem." },
-      { icon: "✈️", title: "Cancelamento de voo", text: "Reembolso por despesas extras causadas por atrasos, cancelamentos ou conexões perdidas." },
-      { icon: "🦷", title: "Urgência odontológica", text: "Cobertura para emergências dentárias onde quer que você esteja." },
-      { icon: "🌍", title: "Assistência 24h", text: "Suporte completo a qualquer hora do dia ou da noite, em qualquer lugar do mundo." },
-      { icon: "📋", title: "Exigência de vistos", text: "Vários países — especialmente na Europa — exigem seguro viagem como requisito obrigatório para entrada." },
-    ],
-    coverages: [
-      "Despesas médicas e hospitalares",
-      "Translado médico e remoção",
-      "Regresso sanitário",
-      "Morte acidental no exterior",
-      "Invalidez por acidente",
-      "Perda e extravio de bagagem",
-      "Cancelamento e interrupção de viagem",
-      "Atraso de voo e conexão perdida",
+    highlights: [
+      "Emergências médicas",
+      "Bagagem extraviada",
+      "Cancelamento de voo",
       "Urgência odontológica",
-      "Assistência jurídica no exterior",
-      "Responsabilidade civil",
-      "Central de assistência 24h",
+      "Assistência 24h",
+      "Exigência de visto",
     ],
     ctaLabel: "Cotar seguro viagem",
     ctaHref: "https://wa.me/5511945411551",
   },
 
   {
-    id: "porto-seguro-consorcio",
-    badge: "Consórcio",
-    title: "Aba Seguros + Porto Seguro Consórcios",
-    image: null,
-    imageAlt: "Parceria Aba Seguros e Porto Seguro Consórcios",
-    description:
-      "A Aba Seguros é parceira da Porto Seguro Consórcios para ajudar você a conquistar bens e serviços sem pagar juros. No consórcio, um grupo de pessoas contribui mensalmente para um fundo comum e, por sorteio ou lance, os participantes vão sendo contemplados com a carta de crédito para usar como quiser. É uma forma disciplinada e planejada de comprar um imóvel, um veículo ou até financiar uma reforma, com parcelas mais previsíveis do que em um financiamento tradicional.",
-    featuresIntro: "Planeje sua conquista sem pagar juros.",
-    coveragesIntro: "Tudo o que você pode conquistar com o consórcio Porto Seguro.",
-    features: [
-      { icon: "🚫", title: "Sem juros", text: "Você paga apenas uma taxa de administração diluída ao longo do plano, sem os juros altos cobrados pelo financiamento bancário tradicional." },
-      { icon: "🏠", title: "Múltiplas finalidades", text: "Cartas de crédito para imóveis, veículos, motos, reformas e até serviços, de acordo com o plano escolhido." },
-      { icon: "🎯", title: "Estratégia de lances", text: "Lance livre, fixo ou embutido para acelerar sua contemplação e antecipar o recebimento da carta de crédito." },
-      { icon: "📆", title: "Parcelas previsíveis", text: "Valores fixos e planejados, o que facilita o controle do orçamento mês a mês." },
-      { icon: "🛡️", title: "Seguro prestamista incluso", text: "Em caso de morte ou invalidez permanente do titular, o saldo devedor da cota é quitado, protegendo a família." },
-      { icon: "📈", title: "Poupança com propósito", text: "Uma forma disciplinada de guardar dinheiro todo mês com um objetivo claro e construir patrimônio ao longo do tempo." },
-    ],
-    coverages: [
-      "Carta de crédito para imóvel novo ou usado",
-      "Carta de crédito para veículos, motos e caminhões",
-      "Crédito para reforma ou construção",
-      "Uso do FGTS em lances e amortização (imóveis)",
-      "Lance livre, fixo ou embutido",
-      "Parcelas ajustáveis ao seu orçamento",
-      "Quitação antecipada com lance vencedor",
-      "Seguro prestamista incluso",
-      "Possibilidade de transferência da cota",
-      "Sem entrada obrigatória",
-      "Administração regulada pelo Banco Central",
-      "Atendimento Porto Seguro em todo o Brasil",
-    ],
-    ctaLabel: "Simular meu consórcio",
-    ctaHref: "https://wa.me/5511945411551",
-  },
-
-  {
     id: "insetnew",
+    icon: FaBug,
     badge: "Controle de Pragas",
-    title: "Aba Seguros + InsetNew",
-    // TODO: a logo original enviada (inset.jpeg) foi perdida durante o recorte —
-    // adicione o arquivo novamente em src/assets/image/ e importe aqui.
-    image: null,
-    imageAlt: "Logotipo InsetNew Controle Ambiental",
+    title: "InsetNew",
+    tagline: "Controle de pragas e higienização ambiental com laudos técnicos certificados.",
     description:
-      "A Aba Seguros é parceira da InsetNew, empresa especializada em controle de pragas e higienização ambiental. A InsetNew atua com dedetização, desratização, descupinização, sanitização de ambientes e higienização de reservatórios de água para residências, condomínios, empresas e órgãos públicos, sempre com laudos técnicos e produtos certificados pela ANVISA, IBAMA e INEA.",
-    featuresIntro: "Diagnóstico completo e planos preventivos para manter o ambiente livre de pragas.",
-    coveragesIntro: "Serviços disponíveis para residências, condomínios, empresas e órgãos públicos.",
-    features: [
-      { icon: "🐜", title: "Dedetização", text: "Controle de insetos como baratas, formigas e outras pragas urbanas comuns." },
-      { icon: "🐀", title: "Desratização", text: "Eliminação e prevenção contra ratos e outros roedores no ambiente." },
-      { icon: "🪵", title: "Descupinização", text: "Tratamento contra cupins para proteger a estrutura de imóveis e móveis." },
-      { icon: "🦟", title: "Controle de mosquitos", text: "Ações preventivas e corretivas contra mosquitos transmissores de doenças." },
-      { icon: "💧", title: "Higienização de reservatórios", text: "Limpeza e desinfecção de caixas d'água conforme normas sanitárias." },
-      { icon: "🧴", title: "Sanitização de ambientes", text: "Desinfecção de espaços residenciais, comerciais e industriais." },
-    ],
-    coverages: [
-      "Desinsetização (baratas, formigas e outros insetos)",
-      "Desratização e controle de roedores",
-      "Descupinização preventiva e corretiva",
-      "Sanitização de areia e áreas de lazer",
-      "Sanitização e desinfecção de ambientes",
-      "Higienização de reservatórios de água potável",
-      "Controle de mosquitos",
-      "Manejo de pombos",
-      "Diagnóstico técnico completo do ambiente",
-      "Planos preventivos personalizados",
-      "Atendimento residencial, comercial e industrial",
-      "Certificações ANVISA, IBAMA e INEA",
+      "A Aba Seguros é parceira da InsetNew, empresa especializada em controle de pragas e higienização ambiental. Atua com dedetização, desratização, descupinização, sanitização de ambientes e higienização de reservatórios de água, sempre com laudos técnicos e produtos certificados pela ANVISA, IBAMA e INEA.",
+    highlights: [
+      "Dedetização",
+      "Desratização",
+      "Descupinização",
+      "Sanitização de ambientes",
+      "Higienização de reservatórios",
+      "Certificação ANVISA/IBAMA",
     ],
     ctaLabel: "Solicitar orçamento",
     ctaHref: "https://wa.me/5511945411551",
   },
+
+  {
+    id: "totality-contabilidade",
+    icon: FaCalculator,
+    badge: "Contabilidade",
+    title: "Totality Contabilidade",
+    tagline: "Contabilidade digital estratégica para o seu negócio crescer com segurança.",
+    description:
+      "A Aba Seguros é parceira da Totality Contabilidade, escritório de contabilidade digital de São Paulo especializado em negócios digitais, como e-commerces, infoprodutores, afiliados, YouTubers e gestores de tráfego, além de profissionais de saúde, arquitetos, engenheiros e MEIs. Suporte humanizado por WhatsApp, telefone, e-mail e videochamada, com portal do cliente e relatórios em tempo real.",
+    highlights: [
+      "Planejamento tributário",
+      "Abertura de empresa",
+      "Folha de pagamento",
+      "Diagnóstico financeiro",
+      "Portal do cliente 24h",
+      "Do MEI ao Lucro Real",
+    ],
+    ctaLabel: "Falar sobre contabilidade",
+    ctaHref: "https://wa.me/5511945411551",
+  },
 ];
 
-const Parcerias = () => (
-  <>
-    <SEO
-      title="Parcerias — Aba Seguros"
-      description="Conheça as parcerias exclusivas da Aba Seguros e aproveite soluções completas com as melhores empresas do mercado."
-      name="Aba Seguros"
-      type="website"
-    />
+const PartnerCard = ({ partner, isOpen, onToggle }) => {
+  const Icon = partner.icon;
+  const panelId = `parceiro-detalhes-${partner.id}`;
+  const buttonId = `parceiro-toggle-${partner.id}`;
 
-    <Hero
-      title="Nossas Parcerias"
-      subtitle="A Aba Seguros une forças com empresas referência em seus segmentos para oferecer soluções completas e exclusivas para você."
-    />
-
-    {parceiros.map((p, index) => (
-      <div key={p.id} id={p.id}>
-        <Section tone={index % 2 === 0 ? "white" : "muted"}>
-          <div className={p.image ? "grid gap-10 lg:grid-cols-2 lg:items-center" : "mx-auto max-w-3xl text-center"}>
-            {p.image && (
-              <img
-                src={p.image}
-                alt={p.imageAlt}
-                width={550}
-                height={367}
-                loading="lazy"
-                decoding="async"
-                className="w-full rounded-2xl shadow-card"
-              />
-            )}
-            <div>
-              <span className="inline-block rounded-full bg-brand-100 px-4 py-1.5 text-sm font-semibold text-brand-700">
-                {p.badge}
-              </span>
-              <h2 className="mt-4 text-3xl font-bold tracking-tight text-navy-900 md:text-4xl">{p.title}</h2>
-              <p className="mt-4 leading-relaxed text-slate-500">{p.description}</p>
-              <Button as="a" target="_blank" href={p.ctaHref} className="mt-6">
-                {p.ctaLabel}
-              </Button>
-            </div>
-          </div>
-
-          <div className="mt-16">
-            <SectionHeading title="Por que contratar?" subtitle={p.featuresIntro} />
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {p.features.map((feature) => (
-                <Card key={feature.title} hover={false}>
-                  <span className="text-3xl" aria-hidden="true">{feature.icon}</span>
-                  <h4 className="mt-3 font-semibold text-navy-900">{feature.title}</h4>
-                  <p className="mt-2 text-sm text-slate-500">{feature.text}</p>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-16">
-            <SectionHeading title="O que está incluído" subtitle={p.coveragesIntro} />
-            <ul className="mx-auto mt-10 grid max-w-4xl list-none gap-x-8 gap-y-3 sm:grid-cols-2">
-              {p.coverages.map((coverage) => (
-                <li key={coverage} className="flex items-start gap-3 text-slate-600">
-                  <span className="mt-0.5 text-brand-500" aria-hidden="true">✔</span>
-                  {coverage}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Section>
-
-        <Section tone="navy">
-          <div className="flex flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
-            <div>
-              <h3 className="text-xl font-bold md:text-2xl">Pronto para aproveitar esta parceria?</h3>
-              <p className="mt-2 text-white/80">Fale agora com um especialista e receba sua cotação gratuitamente.</p>
-            </div>
-            <div className="flex shrink-0 flex-wrap justify-center gap-4">
-              <Button as="a" target="_blank" href={p.ctaHref}>
-                {p.ctaLabel}
-              </Button>
-              <Button as={Link} to="/" variant="outline">
-                Voltar ao início
-              </Button>
-            </div>
-          </div>
-        </Section>
+  return (
+    <Card as="article" id={partner.id} className="flex flex-col" hover={false}>
+      <div className="flex items-start justify-between gap-3">
+        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-2xl text-brand-600">
+          <Icon aria-hidden="true" />
+        </span>
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 ring-1 ring-inset ring-emerald-200">
+          <FiTag aria-hidden="true" /> Desconto exclusivo
+        </span>
       </div>
-    ))}
-  </>
-);
+
+      <span className="mt-4 inline-block w-fit rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold text-brand-700">
+        {partner.badge}
+      </span>
+      <h3 className="mt-3 text-xl font-bold text-navy-900">{partner.title}</h3>
+      <p className="mt-2 text-sm leading-relaxed text-slate-500">{partner.tagline}</p>
+
+      <button
+        type="button"
+        id={buttonId}
+        aria-expanded={isOpen}
+        aria-controls={panelId}
+        onClick={onToggle}
+        className="mt-4 flex items-center gap-1.5 self-start text-sm font-semibold text-brand-600 transition-colors hover:text-brand-700"
+      >
+        {isOpen ? "Ver menos" : "Ver detalhes"}
+        <FiChevronDown
+          className={cn("transition-transform duration-200", isOpen && "rotate-180")}
+          aria-hidden="true"
+        />
+      </button>
+
+      <div
+        id={panelId}
+        role="region"
+        aria-labelledby={buttonId}
+        className="grid transition-[grid-template-rows] duration-300 ease-in-out"
+        style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
+      >
+        <div className="overflow-hidden">
+          <p className="mt-4 text-sm leading-relaxed text-slate-500">{partner.description}</p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {partner.highlights.map((highlight) => (
+              <span
+                key={highlight}
+                className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600"
+              >
+                {highlight}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <Button
+        as="a"
+        target="_blank"
+        rel="noreferrer"
+        href={partner.ctaHref}
+        variant="outline"
+        className="mt-6 w-full"
+      >
+        {partner.ctaLabel}
+      </Button>
+    </Card>
+  );
+};
+
+const Parcerias = () => {
+  const [openId, setOpenId] = useState(null);
+
+  const toggle = (id) => setOpenId((current) => (current === id ? null : id));
+
+  return (
+    <>
+      <SEO
+        title="Parcerias"
+        description="Conheça as parcerias exclusivas da Aba Seguros e aproveite descontos com as melhores empresas do mercado."
+        name="Aba Seguros"
+        type="website"
+      />
+
+      <Hero
+        title="Nossas Parcerias"
+        subtitle="A Aba Seguros une forças com empresas referência em seus segmentos para oferecer soluções completas e exclusivas para você."
+        trust={[
+          "Desconto exclusivo em todas as parcerias",
+          "Empresas selecionadas e confiáveis",
+          "Atendimento rápido via WhatsApp",
+        ]}
+      />
+
+      <Section tone="white">
+        <SectionHeading
+          title="Quem são nossos parceiros"
+          subtitle="Clique em um card para ver os detalhes de cada parceria."
+        />
+
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {parceiros.map((partner) => (
+            <PartnerCard
+              key={partner.id}
+              partner={partner}
+              isOpen={openId === partner.id}
+              onToggle={() => toggle(partner.id)}
+            />
+          ))}
+        </div>
+      </Section>
+
+      <Section tone="navy">
+        <div className="flex flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
+          <div>
+            <h3 className="text-xl font-bold md:text-2xl">Quer aproveitar um desses descontos?</h3>
+            <p className="mt-2 text-white/80">Fale agora com um especialista e receba sua cotação gratuitamente.</p>
+          </div>
+          <Button as="a" target="_blank" rel="noreferrer" href="https://wa.me/5511945411551" className="shrink-0">
+            Falar no WhatsApp
+          </Button>
+        </div>
+      </Section>
+    </>
+  );
+};
 
 export default Parcerias;
