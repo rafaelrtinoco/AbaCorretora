@@ -1,215 +1,230 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { FaPlane, FaPiggyBank, FaBug, FaCalculator } from "react-icons/fa";
+import { FiChevronDown, FiTag } from "react-icons/fi";
 import { SEO } from "../../components/SEO/SEO";
 import { Hero } from "../../components/ui/Hero";
 import { Section } from "../../components/ui/Section";
 import { SectionHeading } from "../../components/ui/SectionHeading";
 import { Card } from "../../components/ui/Card";
 import { Button } from "../../components/ui/Button";
+import { cn } from "../../lib/cn";
 
 // ─────────────────────────────────────────────
-// Para adicionar um novo parceiro no futuro,
-// basta incluir um novo objeto neste array.
-// O campo "image" é opcional: se não houver imagem,
-// o bloco se ajusta automaticamente para ocupar a largura toda.
+// Para adicionar um novo parceiro, basta incluir um novo
+// objeto neste array — o grid e o card se ajustam sozinhos.
+// "highlights" são só rótulos curtos (sem texto longo) para
+// manter o card enxuto mesmo expandido.
 // ─────────────────────────────────────────────
 const parceiros = [
   {
     id: "bruno-holanda",
+    icon: FaPlane,
     badge: "Seguro Viagem",
-    title: "Aba Seguros + Bruno Holanda Turismo",
-    image: null,
-    imageAlt: "Parceria Aba Seguros e Bruno Holanda Turismo",
+    title: "Bruno Holanda Turismo",
+    tagline: "Seguro viagem completo para viajar tranquilo, no Brasil ou no exterior.",
     description:
       "A Aba Seguros firmou parceria com a agência Bruno Holanda Turismo para oferecer o melhor seguro viagem do mercado. Combinamos a expertise em turismo da Bruno Holanda com a experiência em seguros da Aba para garantir que você viaje sempre protegido, seja no Brasil ou no exterior.",
-    featuresIntro: "Imprevistos acontecem — viaje sempre protegido.",
-    coveragesIntro: "Planos completos pensados para cada tipo de viagem.",
-    features: [
-      { icon: "🏥", title: "Emergências médicas", text: "Cobertura completa para atendimentos hospitalares e médicos, que no exterior podem custar dezenas de milhares de reais." },
-      { icon: "🧳", title: "Bagagem extraviada", text: "Indenização em caso de perda, roubo ou dano de bagagem durante a viagem." },
-      { icon: "✈️", title: "Cancelamento de voo", text: "Reembolso por despesas extras causadas por atrasos, cancelamentos ou conexões perdidas." },
-      { icon: "🦷", title: "Urgência odontológica", text: "Cobertura para emergências dentárias onde quer que você esteja." },
-      { icon: "🌍", title: "Assistência 24h", text: "Suporte completo a qualquer hora do dia ou da noite, em qualquer lugar do mundo." },
-      { icon: "📋", title: "Exigência de vistos", text: "Vários países — especialmente na Europa — exigem seguro viagem como requisito obrigatório para entrada." },
-    ],
-    coverages: [
-      "Despesas médicas e hospitalares",
-      "Translado médico e remoção",
-      "Regresso sanitário",
-      "Morte acidental no exterior",
-      "Invalidez por acidente",
-      "Perda e extravio de bagagem",
-      "Cancelamento e interrupção de viagem",
-      "Atraso de voo e conexão perdida",
+    highlights: [
+      "Emergências médicas",
+      "Bagagem extraviada",
+      "Cancelamento de voo",
       "Urgência odontológica",
-      "Assistência jurídica no exterior",
-      "Responsabilidade civil",
-      "Central de assistência 24h",
+      "Assistência 24h",
+      "Exigência de visto",
     ],
     ctaLabel: "Cotar seguro viagem",
     ctaHref: "https://wa.me/5511945411551",
   },
 
   {
-    id: "totality-contabilidade",
-    badge: "Contabilidade",
-    title: "Aba Seguros + Totality Contabilidade",
-    image: null,
-    imageAlt: "Parceria Aba Seguros e Totality Contabilidade",
+    id: "porto-seguro-consorcio",
+    icon: FaPiggyBank,
+    badge: "Consórcio",
+    title: "Porto Seguro Consórcios",
+    tagline: "Conquiste um imóvel, veículo ou reforma sem pagar juros.",
     description:
-      "A Aba Seguros é parceira da Totality Contabilidade, escritório de contabilidade digital de São Paulo especializado em negócios digitais — e-commerces, infoprodutores, afiliados, YouTubers e gestores de tráfego — além de profissionais de saúde, arquitetos, engenheiros e MEIs. Com suporte humanizado por WhatsApp, telefone, e-mail e videochamada, e um portal do cliente com relatórios em tempo real, a Totality cuida da parte contábil e tributária para que você foque em fazer seu negócio crescer.",
-    featuresIntro: "Contabilidade estratégica para o seu negócio crescer com segurança.",
-    coveragesIntro: "Serviços contábeis completos, do MEI ao Lucro Real.",
-    features: [
-      { icon: "📊", title: "Contabilidade completa", text: "Gestão contábil, fiscal e societária de ponta a ponta, com demonstrações sempre em dia." },
-      { icon: "💰", title: "Planejamento tributário", text: "Inteligência tributária para reduzir a carga de impostos dentro da lei — a Totality relata economia média de 32,9% para negócios digitais." },
-      { icon: "🧾", title: "Folha de pagamento", text: "Gestão completa da folha e das obrigações trabalhistas, sem dor de cabeça para o empreendedor." },
-      { icon: "🚀", title: "Abertura de empresa", text: "Orientação estratégica desde o CNPJ, incluindo escolha do regime tributário mais vantajoso." },
-      { icon: "📱", title: "Portal e app do cliente", text: "Relatórios 24 horas com faturamento, demonstrativos, certidões e dashboards na palma da mão." },
-      { icon: "🩺", title: "Diagnóstico financeiro", text: "Análise da saúde financeira do negócio e estudos previdenciários personalizados." },
+      "A Aba Seguros é parceira da Porto Seguro Consórcios para ajudar você a conquistar bens e serviços sem pagar juros. Um grupo de pessoas contribui mensalmente para um fundo comum e, por sorteio ou lance, os participantes vão sendo contemplados com a carta de crédito para usar como quiser.",
+    highlights: [
+      "Sem juros",
+      "Imóveis e veículos",
+      "Lance livre ou fixo",
+      "Parcelas previsíveis",
+      "Seguro prestamista incluso",
+      "Regulado pelo Banco Central",
     ],
-    coverages: [
-      "Contabilidade e demonstrações contábeis",
-      "Gestão de folha de pagamento",
-      "Processamento fiscal e legislação",
-      "Gestão societária",
-      "Declaração de Imposto de Renda",
-      "Planejamento e inteligência tributária",
-      "Abertura de empresa com orientação estratégica",
-      "Diagnóstico de saúde financeira",
-      "Estudos previdenciários",
-      "Outsourcing contábil e fiscal",
-      "Integração com mais de 100 ERPs",
-      "Atendimento Simples Nacional, Lucro Presumido e Lucro Real",
-    ],
-    ctaLabel: "Falar sobre contabilidade",
+    ctaLabel: "Simular meu consórcio",
     ctaHref: "https://wa.me/5511945411551",
   },
 
   {
     id: "insetnew",
+    icon: FaBug,
     badge: "Controle de Pragas",
-    title: "Aba Seguros + InsetNew",
-    // TODO: a logo original enviada (inset.jpeg) foi perdida durante o recorte —
-    // adicione o arquivo novamente em src/assets/image/ e importe aqui.
-    image: null,
-    imageAlt: "Logotipo InsetNew Controle Ambiental",
+    title: "InsetNew",
+    tagline: "Controle de pragas e higienização ambiental com laudos técnicos certificados.",
     description:
-      "A Aba Seguros é parceira da InsetNew, empresa especializada em controle de pragas e higienização ambiental. A InsetNew atua com dedetização, desratização, descupinização, sanitização de ambientes e higienização de reservatórios de água para residências, condomínios, empresas e órgãos públicos, sempre com laudos técnicos e produtos certificados pela ANVISA, IBAMA e INEA.",
-    featuresIntro: "Diagnóstico completo e planos preventivos para manter o ambiente livre de pragas.",
-    coveragesIntro: "Serviços disponíveis para residências, condomínios, empresas e órgãos públicos.",
-    features: [
-      { icon: "🐜", title: "Dedetização", text: "Controle de insetos como baratas, formigas e outras pragas urbanas comuns." },
-      { icon: "🐀", title: "Desratização", text: "Eliminação e prevenção contra ratos e outros roedores no ambiente." },
-      { icon: "🪵", title: "Descupinização", text: "Tratamento contra cupins para proteger a estrutura de imóveis e móveis." },
-      { icon: "🦟", title: "Controle de mosquitos", text: "Ações preventivas e corretivas contra mosquitos transmissores de doenças." },
-      { icon: "💧", title: "Higienização de reservatórios", text: "Limpeza e desinfecção de caixas d'água conforme normas sanitárias." },
-      { icon: "🧴", title: "Sanitização de ambientes", text: "Desinfecção de espaços residenciais, comerciais e industriais." },
-    ],
-    coverages: [
-      "Desinsetização (baratas, formigas e outros insetos)",
-      "Desratização e controle de roedores",
-      "Descupinização preventiva e corretiva",
-      "Sanitização de areia e áreas de lazer",
-      "Sanitização e desinfecção de ambientes",
-      "Higienização de reservatórios de água potável",
-      "Controle de mosquitos",
-      "Manejo de pombos",
-      "Diagnóstico técnico completo do ambiente",
-      "Planos preventivos personalizados",
-      "Atendimento residencial, comercial e industrial",
-      "Certificações ANVISA, IBAMA e INEA",
+      "A Aba Seguros é parceira da InsetNew, empresa especializada em controle de pragas e higienização ambiental. Atua com dedetização, desratização, descupinização, sanitização de ambientes e higienização de reservatórios de água, sempre com laudos técnicos e produtos certificados pela ANVISA, IBAMA e INEA.",
+    highlights: [
+      "Dedetização",
+      "Desratização",
+      "Descupinização",
+      "Sanitização de ambientes",
+      "Higienização de reservatórios",
+      "Certificação ANVISA/IBAMA",
     ],
     ctaLabel: "Solicitar orçamento",
     ctaHref: "https://wa.me/5511945411551",
   },
+
+  {
+    id: "totality-contabilidade",
+    icon: FaCalculator,
+    badge: "Contabilidade",
+    title: "Totality Contabilidade",
+    tagline: "Contabilidade digital estratégica para o seu negócio crescer com segurança.",
+    description:
+      "A Aba Seguros é parceira da Totality Contabilidade, escritório de contabilidade digital de São Paulo especializado em negócios digitais — e-commerces, infoprodutores, afiliados, YouTubers e gestores de tráfego — além de profissionais de saúde, arquitetos, engenheiros e MEIs. Suporte humanizado por WhatsApp, telefone, e-mail e videochamada, com portal do cliente e relatórios em tempo real.",
+    highlights: [
+      "Planejamento tributário",
+      "Abertura de empresa",
+      "Folha de pagamento",
+      "Diagnóstico financeiro",
+      "Portal do cliente 24h",
+      "Do MEI ao Lucro Real",
+    ],
+    ctaLabel: "Falar sobre contabilidade",
+    ctaHref: "https://wa.me/5511945411551",
+  },
 ];
 
-const Parcerias = () => (
-  <>
-    <SEO
-      title="Parcerias — Aba Seguros"
-      description="Conheça as parcerias exclusivas da Aba Seguros e aproveite soluções completas com as melhores empresas do mercado."
-      name="Aba Seguros"
-      type="website"
-    />
+const PartnerCard = ({ partner, isOpen, onToggle }) => {
+  const Icon = partner.icon;
+  const panelId = `parceiro-detalhes-${partner.id}`;
+  const buttonId = `parceiro-toggle-${partner.id}`;
 
-    <Hero
-      title="Nossas Parcerias"
-      subtitle="A Aba Seguros une forças com empresas referência em seus segmentos para oferecer soluções completas e exclusivas para você."
-    />
-
-    {parceiros.map((p, index) => (
-      <div key={p.id} id={p.id}>
-        <Section tone={index % 2 === 0 ? "white" : "muted"}>
-          <div className={p.image ? "grid gap-10 lg:grid-cols-2 lg:items-center" : "mx-auto max-w-3xl text-center"}>
-            {p.image && (
-              <img
-                src={p.image}
-                alt={p.imageAlt}
-                width={550}
-                height={367}
-                loading="lazy"
-                decoding="async"
-                className="w-full rounded-2xl shadow-card"
-              />
-            )}
-            <div>
-              <span className="inline-block rounded-full bg-brand-100 px-4 py-1.5 text-sm font-semibold text-brand-700">
-                {p.badge}
-              </span>
-              <h2 className="mt-4 text-3xl font-bold tracking-tight text-navy-900 md:text-4xl">{p.title}</h2>
-              <p className="mt-4 leading-relaxed text-slate-500">{p.description}</p>
-              <Button as="a" target="_blank" href={p.ctaHref} className="mt-6">
-                {p.ctaLabel}
-              </Button>
-            </div>
-          </div>
-
-          <div className="mt-16">
-            <SectionHeading title="Por que contratar?" subtitle={p.featuresIntro} />
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {p.features.map((feature) => (
-                <Card key={feature.title} hover={false}>
-                  <span className="text-3xl" aria-hidden="true">{feature.icon}</span>
-                  <h4 className="mt-3 font-semibold text-navy-900">{feature.title}</h4>
-                  <p className="mt-2 text-sm text-slate-500">{feature.text}</p>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-16">
-            <SectionHeading title="O que está incluído" subtitle={p.coveragesIntro} />
-            <ul className="mx-auto mt-10 grid max-w-4xl list-none gap-x-8 gap-y-3 sm:grid-cols-2">
-              {p.coverages.map((coverage) => (
-                <li key={coverage} className="flex items-start gap-3 text-slate-600">
-                  <span className="mt-0.5 text-brand-500" aria-hidden="true">✔</span>
-                  {coverage}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Section>
-
-        <Section tone="navy">
-          <div className="flex flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
-            <div>
-              <h3 className="text-xl font-bold md:text-2xl">Pronto para aproveitar esta parceria?</h3>
-              <p className="mt-2 text-white/80">Fale agora com um especialista e receba sua cotação gratuitamente.</p>
-            </div>
-            <div className="flex shrink-0 flex-wrap justify-center gap-4">
-              <Button as="a" target="_blank" href={p.ctaHref}>
-                {p.ctaLabel}
-              </Button>
-              <Button as={Link} to="/" variant="outline">
-                Voltar ao início
-              </Button>
-            </div>
-          </div>
-        </Section>
+  return (
+    <Card as="article" id={partner.id} className="flex flex-col" hover={false}>
+      <div className="flex items-start justify-between gap-3">
+        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-2xl text-brand-600">
+          <Icon aria-hidden="true" />
+        </span>
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 ring-1 ring-inset ring-emerald-200">
+          <FiTag aria-hidden="true" /> Desconto exclusivo
+        </span>
       </div>
-    ))}
-  </>
-);
+
+      <span className="mt-4 inline-block w-fit rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold text-brand-700">
+        {partner.badge}
+      </span>
+      <h3 className="mt-3 text-xl font-bold text-navy-900">{partner.title}</h3>
+      <p className="mt-2 text-sm leading-relaxed text-slate-500">{partner.tagline}</p>
+
+      <button
+        type="button"
+        id={buttonId}
+        aria-expanded={isOpen}
+        aria-controls={panelId}
+        onClick={onToggle}
+        className="mt-4 flex items-center gap-1.5 self-start text-sm font-semibold text-brand-600 transition-colors hover:text-brand-700"
+      >
+        {isOpen ? "Ver menos" : "Ver detalhes"}
+        <FiChevronDown
+          className={cn("transition-transform duration-200", isOpen && "rotate-180")}
+          aria-hidden="true"
+        />
+      </button>
+
+      <div
+        id={panelId}
+        role="region"
+        aria-labelledby={buttonId}
+        className="grid transition-[grid-template-rows] duration-300 ease-in-out"
+        style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
+      >
+        <div className="overflow-hidden">
+          <p className="mt-4 text-sm leading-relaxed text-slate-500">{partner.description}</p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {partner.highlights.map((highlight) => (
+              <span
+                key={highlight}
+                className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600"
+              >
+                {highlight}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <Button
+        as="a"
+        target="_blank"
+        rel="noreferrer"
+        href={partner.ctaHref}
+        variant="outline"
+        className="mt-6 w-full"
+      >
+        {partner.ctaLabel}
+      </Button>
+    </Card>
+  );
+};
+
+const Parcerias = () => {
+  const [openId, setOpenId] = useState(null);
+
+  const toggle = (id) => setOpenId((current) => (current === id ? null : id));
+
+  return (
+    <>
+      <SEO
+        title="Parcerias — Aba Seguros"
+        description="Conheça as parcerias exclusivas da Aba Seguros e aproveite descontos com as melhores empresas do mercado."
+        name="Aba Seguros"
+        type="website"
+      />
+
+      <Hero
+        title="Nossas Parcerias"
+        subtitle="A Aba Seguros une forças com empresas referência em seus segmentos para oferecer soluções completas e exclusivas para você."
+        trust={[
+          "Desconto exclusivo em todas as parcerias",
+          "Empresas selecionadas e confiáveis",
+          "Atendimento rápido via WhatsApp",
+        ]}
+      />
+
+      <Section tone="white">
+        <SectionHeading
+          title="Quem são nossos parceiros"
+          subtitle="Clique em um card para ver os detalhes de cada parceria."
+        />
+
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {parceiros.map((partner) => (
+            <PartnerCard
+              key={partner.id}
+              partner={partner}
+              isOpen={openId === partner.id}
+              onToggle={() => toggle(partner.id)}
+            />
+          ))}
+        </div>
+      </Section>
+
+      <Section tone="navy">
+        <div className="flex flex-col items-center justify-between gap-6 text-center md:flex-row md:text-left">
+          <div>
+            <h3 className="text-xl font-bold md:text-2xl">Quer aproveitar um desses descontos?</h3>
+            <p className="mt-2 text-white/80">Fale agora com um especialista e receba sua cotação gratuitamente.</p>
+          </div>
+          <Button as="a" target="_blank" rel="noreferrer" href="https://wa.me/5511945411551" className="shrink-0">
+            Falar no WhatsApp
+          </Button>
+        </div>
+      </Section>
+    </>
+  );
+};
 
 export default Parcerias;
