@@ -1,12 +1,60 @@
-# React + Vite
+# ABA Corretora de Seguros
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site institucional da ABA Seguros: cotação e contato para seguros, planos de saúde, consórcios e parcerias, com atendimento via WhatsApp. Produção em [abacorretoradeseguros.com.br](https://abacorretoradeseguros.com.br).
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend:** React 19 + Vite 7 (JavaScript, sem TypeScript)
+- **Estilo:** Tailwind CSS v4 (`@tailwindcss/vite`), tokens de design em `src/index.css`
+- **Roteamento:** React Router v7 (`BrowserRouter`)
+- **SEO:** `react-helmet-async` via `src/components/SEO/SEO.jsx`
+- **Infra:** Vercel (SPA estática)
 
-## Expanding the ESLint configuration
+## Rodando localmente
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install              # instala dependências
+npm run dev               # sobe o dev server (Vite)
+npm run build              # build de produção em dist/
+npm run preview            # serve o build de produção localmente
+npm run lint                # eslint
+npm run optimize:images      # redimensiona/recomprime imagens em src/assets/image
+```
+
+> Não há suite de testes nem typecheck configurados neste projeto.
+
+## Estrutura de pastas
+
+```
+src/
+├── main.jsx                 # bootstrap: HelmetProvider > BrowserRouter > App
+├── App.jsx                  # layout fixo (Header/Footer/etc.) + definição das rotas
+├── index.css                 # @import "tailwindcss" + tokens de design (@theme)
+├── lib/
+│   └── cn.js                  # joiner de className (sem tailwind-merge, ver comentário no arquivo)
+├── components/
+│   ├── ui/                     # primitivas compartilhadas: Button, Card, Carousel,
+│   │                            # Container, Hero, Section, SectionHeading
+│   └── <Nome>/<Nome>.jsx        # componentes de layout: Header, Footer, FAQ, Partners,
+│                                # Testimonials, CookieBanner, WhatsAppFloat, ScrollToTop, SEO
+└── pages/
+    └── <Pagina>/<Pagina>.jsx    # uma pasta por página (Home, Seguros, Saude, Consorcios,
+                                 # Contato, ContactList, ContrateAgora, Parcerias)
+```
+
+Cada página/componente mora em sua própria pasta nomeada igual ao arquivo (`src/pages/Saude/Saude.jsx`, `src/components/Header/Header.jsx`). O alias `@` aponta para `src/` (configurado em `vite.config.js`).
+
+## Convenções
+
+- **Rota nova:** criar a página em `src/pages/<Nome>/<Nome>.jsx`, registrar em `src/App.jsx` e, se for item de menu, incluir no array `NAV_LINKS` de `src/components/Header/Header.jsx`.
+- **Seguradora nova/edição de contato:** editar o array `brokerages` em `src/pages/ContactList/brokerages.js` — cada seguradora é um objeto com sua própria lista de `contacts`.
+- **Cores, fontes e sombras:** só no bloco `@theme` de `src/index.css` (paleta `navy-*`/`brand-*`, `--font-sans`, `--shadow-card`) — não hardcodar hex direto nos componentes.
+- **Classes condicionais:** usar `cn()` de `src/lib/cn.js`.
+- **Imagens:** sempre `.webp` em `src/assets/image/`; depois de adicionar/trocar uma imagem, rodar `npm run optimize:images` (script idempotente via `sharp`, ver `scripts/optimize-images.mjs`).
+- **Textos de UI:** em pt-BR.
+
+## Deploy (Vercel)
+
+- Push em `main` → deploy de **produção** (`abacorretoradeseguros.com.br`).
+- Push em qualquer outra branch → deploy de **Preview** automático, com URL própria.
+- `vercel.json` reescreve todas as rotas para `/index.html` — necessário porque o roteamento é client-side (`BrowserRouter`); sem isso, acessar uma rota como `/seguradoras` direto na URL retornaria 404.
