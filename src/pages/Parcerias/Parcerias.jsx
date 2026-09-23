@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaPlane, FaPiggyBank, FaBug, FaCalculator } from "react-icons/fa";
+import { FaPlane, FaBug, FaCalculator } from "react-icons/fa";
 import { FiChevronDown, FiTag } from "react-icons/fi";
 import { SEO } from "../../components/SEO/SEO";
 import { Hero } from "../../components/ui/Hero";
@@ -11,7 +11,7 @@ import { cn } from "../../lib/cn";
 
 // ─────────────────────────────────────────────
 // Para adicionar um novo parceiro, basta incluir um novo
-// objeto neste array — o grid e o card se ajustam sozinhos.
+// objeto neste array: o grid e o card se ajustam sozinhos.
 // "highlights" são só rótulos curtos (sem texto longo) para
 // manter o card enxuto mesmo expandido.
 // ─────────────────────────────────────────────
@@ -33,26 +33,6 @@ const parceiros = [
       "Exigência de visto",
     ],
     ctaLabel: "Cotar seguro viagem",
-    ctaHref: "https://wa.me/5511945411551",
-  },
-
-  {
-    id: "porto-seguro-consorcio",
-    icon: FaPiggyBank,
-    badge: "Consórcio",
-    title: "Porto Seguro Consórcios",
-    tagline: "Conquiste um imóvel, veículo ou reforma sem pagar juros.",
-    description:
-      "A Aba Seguros é parceira da Porto Seguro Consórcios para ajudar você a conquistar bens e serviços sem pagar juros. Um grupo de pessoas contribui mensalmente para um fundo comum e, por sorteio ou lance, os participantes vão sendo contemplados com a carta de crédito para usar como quiser.",
-    highlights: [
-      "Sem juros",
-      "Imóveis e veículos",
-      "Lance livre ou fixo",
-      "Parcelas previsíveis",
-      "Seguro prestamista incluso",
-      "Regulado pelo Banco Central",
-    ],
-    ctaLabel: "Simular meu consórcio",
     ctaHref: "https://wa.me/5511945411551",
   },
 
@@ -83,7 +63,7 @@ const parceiros = [
     title: "Totality Contabilidade",
     tagline: "Contabilidade digital estratégica para o seu negócio crescer com segurança.",
     description:
-      "A Aba Seguros é parceira da Totality Contabilidade, escritório de contabilidade digital de São Paulo especializado em negócios digitais — e-commerces, infoprodutores, afiliados, YouTubers e gestores de tráfego — além de profissionais de saúde, arquitetos, engenheiros e MEIs. Suporte humanizado por WhatsApp, telefone, e-mail e videochamada, com portal do cliente e relatórios em tempo real.",
+      "A Aba Seguros é parceira da Totality Contabilidade, escritório de contabilidade digital de São Paulo especializado em negócios digitais, como e-commerces, infoprodutores, afiliados, YouTubers e gestores de tráfego, além de profissionais de saúde, arquitetos, engenheiros e MEIs. Suporte humanizado por WhatsApp, telefone, e-mail e videochamada, com portal do cliente e relatórios em tempo real.",
     highlights: [
       "Planejamento tributário",
       "Abertura de empresa",
@@ -178,7 +158,7 @@ const Parcerias = () => {
   return (
     <>
       <SEO
-        title="Parcerias — Aba Seguros"
+        title="Parcerias"
         description="Conheça as parcerias exclusivas da Aba Seguros e aproveite descontos com as melhores empresas do mercado."
         name="Aba Seguros"
         type="website"
