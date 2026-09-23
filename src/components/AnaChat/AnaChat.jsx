@@ -126,7 +126,7 @@ const AnaChat = () => {
             </button>
           </div>
 
-          <div className="flex-1 space-y-3 overflow-y-auto bg-slate-50 p-4">
+          <div className="flex-1 space-y-3 overflow-y-auto bg-slate-50 p-4" aria-live="polite">
             <ChatBubble from="ana">Oi! 👋 Eu sou a Ana, atendente virtual da Aba Seguros.</ChatBubble>
             <ChatBubble from="ana">Qual serviço você está buscando hoje?</ChatBubble>
 

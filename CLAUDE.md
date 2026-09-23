@@ -45,7 +45,7 @@ src/
 ├── lib/cn.js              # joiner de className
 ├── components/
 │   ├── ui/                 # Button, Card, Carousel, Container, Hero, Section, SectionHeading
-│   └── <Nome>/<Nome>.jsx     # Header, Footer, FAQ, Partners, Testimonials, CookieBanner, WhatsAppFloat, SEO
+│   └── <Nome>/<Nome>.jsx     # Header, Footer, FAQ, Partners, Testimonials, CookieBanner, WhatsAppFloat, AnaChat, SEO
 └── pages/
     └── <Pagina>/<Pagina>.jsx  # Home, Seguros, Saude, Consorcios, Contato, ContactList, ContrateAgora, Parcerias
 ```
@@ -70,3 +70,4 @@ src/
 - Não adicionar dependências sem necessidade clara.
 - Não importar imagem sem antes rodar `npm run optimize:images`.
 - Não fazer `git push --force` em `main`.
+- O chat da Ana (`AnaChat.jsx`) é mocado de propósito — não ligar a uma IA ou backend real sem o usuário pedir explicitamente.

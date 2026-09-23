@@ -36,7 +36,8 @@ src/
 │   ├── ui/                     # primitivas compartilhadas: Button, Card, Carousel,
 │   │                            # Container, Hero, Section, SectionHeading
 │   └── <Nome>/<Nome>.jsx        # componentes de layout: Header, Footer, FAQ, Partners,
-│                                # Testimonials, CookieBanner, WhatsAppFloat, ScrollToTop, SEO
+│                                # Testimonials, CookieBanner, WhatsAppFloat, AnaChat,
+│                                # ScrollToTop, SEO
 └── pages/
     └── <Pagina>/<Pagina>.jsx    # uma pasta por página (Home, Seguros, Saude, Consorcios,
                                  # Contato, ContactList, ContrateAgora, Parcerias)
@@ -52,6 +53,10 @@ Cada página/componente mora em sua própria pasta nomeada igual ao arquivo (`sr
 - **Classes condicionais:** usar `cn()` de `src/lib/cn.js`.
 - **Imagens:** sempre `.webp` em `src/assets/image/`; depois de adicionar/trocar uma imagem, rodar `npm run optimize:images` (script idempotente via `sharp`, ver `scripts/optimize-images.mjs`).
 - **Textos de UI:** em pt-BR.
+
+## Chat da Ana (`src/components/AnaChat/AnaChat.jsx`)
+
+Botão flutuante com a foto e o nome da Ana, atendente virtual da Aba Seguros. É um chat mocado: não há IA nem backend por trás, só um roteiro fixo. A pessoa escolhe uma categoria (Seguros, Consórcios, Saúde, Serviços ou Parcerias) e o chat abre o WhatsApp com uma mensagem já pronta sobre o assunto escolhido. Para adicionar uma categoria nova, basta incluir um objeto no array `CATEGORIES` do componente.
 
 ## Deploy (Vercel)
 
