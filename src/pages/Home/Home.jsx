@@ -20,7 +20,7 @@ import viagemIcon from "../../assets/image/viagem.webp";
 import petIcon from "../../assets/image/pet.webp";
 import PopupBannerImg from "../../assets/image/pop-up.webp";
 
-const POPUP_TARGET_URL = "/parcerias#porto-seguro-consorcio";
+const POPUP_TARGET_URL = "/consorcios";
 
 const products = [
   {
